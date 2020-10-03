@@ -1,0 +1,25 @@
+footer {
+    .footer-placer {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        text-align: center;
+        font-family: $font-primary;
+        .compartir-en {
+            margin: 20px 0;
+            font-family: $font-secondary;
+            img {
+                width: 18px;
+                height: 18px;
+                margin: 10px 7px;
+                 :hover {
+                    background-image: $font-color-primary;
+                }
+            }
+        }
+        .derechos {
+            margin-bottom: 30px;
+            font-family: $font-secondary;
+        }
+    }
+}

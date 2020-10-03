@@ -1,0 +1,91 @@
+header {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    margin: 0;
+    box-sizing: border-box;
+    border-top: 5px rgb(87, 46, 229) solid;
+    // Ocultamos lo que no necesitamos aun
+    .logo-placer,
+    .logo-noc-placer,
+    .logo-mob-noc-placer,
+    .button,
+    .button-hover,
+    .button-active {
+        display: none;
+    }
+    .logo-mob-placer {
+        .logo-mob {
+            width: 49px;
+            height: 49px;
+        }
+    }
+    .searcher-placer {
+        display: none;
+    }
+    .menu-close {
+        display: none;
+    }
+    // Menu hamburguesa
+    #menu-selector {
+        display: none;
+    }
+    .menu-open {
+        display: block;
+        .burger {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+    }
+    .menu-placer {
+        display: none;
+    }
+    #menu-selector:checked~.menu-placer {
+        display: flex;
+        flex-flow: column nowrap;
+        position: fixed;
+        left: 0;
+        top: 15vh;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        align-items: center;
+        background-color: rgba(87, 46, 229, 0.8);
+        ul {
+            list-style: none;
+            text-align: center;
+            hr {
+                margin: 0px auto;
+                margin-top: 15px;
+                width: 30%;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: 1.5em;
+                width: auto;
+                font-family: 'Montserrat', sans-serif;
+                li {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+    #menu-selector:checked~.menu-open {
+        display: none;
+    }
+    #menu-selector:checked~.menu-close {
+        display: block;
+        width: 1.3rem;
+        height: 1.3rem;
+        .close-burger {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+    }
+}

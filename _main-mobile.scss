@@ -1,0 +1,180 @@
+main {
+    #buscador-principal {
+        box-sizing: border-box;
+        width: 100%;
+        h1 {
+            font-family: $font-primary;
+            font-size: 25px;
+            color: $font-color-primary;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+            #texto-dif {
+                color: $font-color-variant;
+            }
+        }
+        .ilustracion {
+            width: 85%;
+            margin: 0 7.5%;
+            margin-top: 30px;
+        }
+        .searcher-placer {
+            width: 95%;
+            margin: 0 auto;
+            text-align: center;
+            .search-container {
+                width: 100%;
+                border: 2px solid $font-color-primary;
+                border-radius: 27px;
+                height: 50px;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-around;
+                align-items: center;
+                padding: 0 2%;
+                box-sizing: border-box;
+                #buscar-top {
+                    height: 22px;
+                    width: 70%;
+                    border: none;
+                    font-size: 18px;
+                }
+            }
+            .opciones {
+                display: none;
+            }
+        }
+        #trending {
+            text-align: center;
+            .trending-placer {
+                width: 70%;
+                margin: 0 auto;
+                color: #4a1ee3;
+                font-family: $font-primary;
+                .trending-title {
+                    font-size: 18px;
+                    margin-top: 50px;
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: 1rem;
+                }
+                hr {
+                    margin: 40px auto 60px auto;
+                    width: 50%;
+                    color: rgba(192, 192, 192, 0.7);
+                }
+            }
+            .busqueda {
+                width: 100%;
+                margin: 40px auto;
+                color: #4a1ee3;
+                font-family: $font-primary;
+                .search {
+                    font-size: 25px;
+                }
+            }
+            .gifo-container {
+                display: grid;
+                padding: 0 4%;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(6, 38vw);
+                row-gap: 6vw;
+                column-gap: 4vw;
+                // border: 3px blue dotted;
+                box-sizing: border-box;
+                .card-gifo {
+                    position: relative;
+                    // border: 3px yellow dotted;
+                    .gifo-trend {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: -1;
+                        // border: 3px green dotted;
+                    }
+                }
+            }
+            .ver-mas {
+                border: 1px solid $font-color-primary;
+                border-radius: 27px;
+                height: 16vw;
+                width: 40vw;
+                margin: 70px auto;
+                p {
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    font-family: $font-primary;
+                    margin: auto;
+                    line-height: 16vw;
+                    font-weight: 700;
+                    color: $font-color-primary;
+                }
+            }
+        }
+    }
+    #gifos-tendencia {
+        position: relative;
+        background-color: #f3f5f8;
+        z-index: 2;
+        .gifos-tendencia {
+            display: flex;
+            flex-flow: column nowrap;
+            .trending-placer {
+                width: 100%;
+                text-align: center;
+                margin: 30px auto;
+                h3 {
+                    font-size: 25px;
+                    font-family: $font-primary;
+                    margin: auto;
+                    line-height: 16vw;
+                    font-weight: 700;
+                    color: $font-color-primary;
+                }
+                p {
+                    width: 80%;
+                    margin: 10px auto 10px auto;
+                    font-size: 16px;
+                    font-family: $font-primary;
+                    line-height: 16px;
+                    color: black;
+                }
+            }
+            .slider {
+                display: none;
+            }
+            .gifos {
+                // display: flex;
+                // flex-direction: row;
+                // flex-wrap: nowrap;
+                // justify-content: space-between;
+                display: grid;
+                grid-template-columns: 76vw 76vw 76vw;
+                grid-template-rows: 58vw;
+                column-gap: 20px;
+                padding: 10px;
+                box-sizing: border-box;
+                width: 100%;
+                overflow: scroll;
+                .card-gifo-carousel {
+                    position: relative;
+                    width: 100%;
+                    margin: 0;
+                    box-sizing: border-box;
+                    .gifo-trend {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 76vw;
+                        height: 58vw;
+                        margin: 0;
+                        z-index: 3;
+                    }
+                }
+            }
+        }
+    }
+}
