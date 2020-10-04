@@ -1,227 +1,34 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
-@import "./variables";
-body {
-    position: relative;
-    width: 100%;
-    //    header mobile
-    @import "./header-mobile";
-    // fin del header
-    // inicio del main
-    @import "./main-mobile";
-    // fin del main
-    // inicio del footer
-    @import "./footer-mobile";
-    // fin del footer
-    // media query desktop
-}
-
-@media (min-width: 769px) and (max-width: 1445px) {
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    @import "./variables";
     body {
-        // inicio del header
-        header {
-            padding: 40px 5%;
-            // Oculto lo que no debe verse de la version mobile
-            .menu-open {
-                display: none;
-            }
-            .menu-close {
-                display: none;
-            }
-            .logo-mob-placer {
-                display: none;
-            }
-            // muestro lo que debo mostrar
-            .logo-placer {
-                display: block;
-                width: 60px;
-                height: 60px;
-            }
-            .menu-placer {
-                list-style: none;
-                display: flex;
-                flex-flow: row nowrap;
-                width: 500px;
-                height: auto;
-                ul {
-                    list-style: none;
-                    width: 100%;
-                    display: flex;
-                    flex-flow: row nowrap;
-                    hr {
-                        display: none;
-                    }
-                    a {
-                        text-decoration: none;
-                        width: auto;
-                        font-family: 'Montserrat', sans-serif;
-                        color: rgb(87, 46, 229);
-                        font-size: 13px;
-                        line-height: 16px;
-                        font-weight: 700;
-                        text-transform: uppercase;
-                        font-family: 'Montserrat', sans-serif;
-                        li {
-                            margin: 0 20px;
-                        }
-                    }
-                }
-            }
-            .button {
-                display: block;
-                position: absolute;
-                right: 5%;
-                top: 15px;
-                width: 54px;
-                height: 54px;
-            }
-        }
+        position: relative;
+        width: 100%;
+        //    header mobile
+        @import "./header-mobile";
         // fin del header
         // inicio del main
-        main {
-            #buscador-principal {
-                h1 {
-                    font-size: 35px;
-                    line-height: 50px;
-                    width: 40%;
-                    margin: 40px auto;
-                    margin-top: 80px;
-                }
-                .ilustracion {
-                    width: 30%;
-                    margin: 0 35%;
-                }
-                .searcher-placer {
-                    width: 45%;
-                    margin-top: -5px;
-                    border: 2px solid #572EE5;
-                    border-radius: 27px;
-                    text-align: left;
-                    padding: 5px 5px 15px 5px;
-                    .search-container {
-                        width: 100%;
-                        margin: 0 auto;
-                        padding: 0;
-                        border: none;
-                        #buscar-top {
-                            width: 80%;
-                        }
-                    }
-                    .opciones {
-                        display: flex;
-                        flex-flow: column nowrap;
-                        width: 95%;
-                        margin: 0 auto;
-                        p {
-                            line-height: 16px;
-                            margin-top: 10px;
-                            img {
-                                opacity: 30%;
-                            }
-                            label {
-                                margin-left: 15px;
-                                font-size: 20px;
-                                vertical-align: auto;
-                                color: gray;
-                                font-family: Arial, Helvetica, sans-serif;
-                            }
-                        }
-                    }
-                }
-                #trending {
-                    .trending-placer {
-                        margin: 80px auto;
-                        .trending-title {
-                            line-height: 25px;
-                        }
-                        p {
-                            line-height: 25px;
-                            font-family: 'Roboto', sans-serif;
-                        }
-                    }
-                    .busqueda {
-                        width: 100%;
-                        margin: 40px auto;
-                        color: #4a1ee3;
-                        font-family: 'Montserrat', sans-serif;
-                        .search {
-                            font-size: 35px;
-                        }
-                    }
-                    .gifo-container {
-                        grid-template-columns: 1fr 1fr 1fr 1fr;
-                        grid-template-rows: repeat(3, 14vw);
-                        row-gap: 2vw;
-                        column-gap: 3vw;
-                        .card-gifo {
-                            .gifo-trend {
-                                width: 95%;
-                            }
-                        }
-                    }
-                    .ver-mas {
-                        border-radius: 25px;
-                        height: 50px;
-                        width: 127px;
-                        p {
-                            line-height: 50px;
-                        }
-                    }
-                }
-            }
-            #gifos-tendencia {
-                .gifos-tendencia {
-                    display: flex;
-                    flex-flow: column nowrap;
-                    .trending-placer {
-                        h3 {
-                            font-size: 30px;
-                            line-height: 30px;
-                            margin: 50px auto 0 auto;
-                        }
-                        p {
-                            font-size: 18px;
-                            line-height: 21px;
-                            margin: 20px auto;
-                        }
-                    }
-                    .gifos {
-                        grid-template-columns: 35vw 35vw 35vw;
-                        grid-template-rows: 26.8vw;
-                        column-gap: 20px;
-                        .card-gifo-carousel {
-                            .gifo-trend {
-                                width: 35vw;
-                                height: 26.8vw;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        footer {
-            .footer-placer {
-                flex-flow: row nowrap;
-                align-items: center;
-                margin: 0;
-                border-bottom: 5px rgb(87, 46, 229) solid;
-                height: 20vh;
-                .compartir-en {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    width: 30%;
-                    margin-left: 20px;
-                    font-family: 'Roboto', sans-serif;
-                }
-                .derechos {
-                    margin: 20px;
-                    font-family: 'Roboto', sans-serif;
-                }
-            }
+        @import "./main-mobile";
+        // fin del main
+        // inicio del footer
+        @import "./footer-mobile";
+        // fin del footer
+        // media query desktop
+    }
+    
+    @media (min-width: 769px) and (max-width: 1445px) {
+        body {
+            // inicio del header
+            @import "./header-desktop";
+            // fin del header
+            // inicio del main
+            @import "./main-desktop";
+            // fin del main
+            // inicio del footer
+            @import "./footer-desktop";
+            // fin del footer
         }
     }
-}

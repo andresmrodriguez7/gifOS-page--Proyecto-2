@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,CAAC,CAAC;EACE,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;CACZ",
-    "sources": [
-        "styles-noche.scss"
-    ],
-    "names": [],
-    "file": "styles-noche.css"
-}
