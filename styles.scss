@@ -3,18 +3,18 @@
         margin: 0;
     }
     
-    @import "./variables";
+    @import "./partials/variables/variables";
     body {
         position: relative;
         width: 100%;
         //    header mobile
-        @import "./header-mobile";
+        @import "./partials/parciales-mobile/parciales-landing/header-mobile";
         // fin del header
         // inicio del main
-        @import "./main-mobile";
+        @import "./partials/parciales-mobile/parciales-landing/main-mobile";
         // fin del main
         // inicio del footer
-        @import "./footer-mobile";
+        @import "./partials/parciales-mobile/parciales-landing/footer-mobile";
         // fin del footer
         // media query desktop
     }
@@ -22,13 +22,13 @@
     @media (min-width: 769px) and (max-width: 1445px) {
         body {
             // inicio del header
-            @import "./header-desktop";
+            @import "./partials/parciales-desktop/parciales-landing/header-desktop";
             // fin del header
             // inicio del main
-            @import "./main-desktop";
+            @import "./partials/parciales-desktop/parciales-landing/main-desktop";
             // fin del main
             // inicio del footer
-            @import "./footer-desktop";
+            @import "./partials/parciales-desktop/parciales-landing/footer-desktop";
             // fin del footer
         }
     }

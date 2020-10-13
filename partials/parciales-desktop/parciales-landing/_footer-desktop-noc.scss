@@ -1,0 +1,21 @@
+footer {
+    .footer-placer {
+        flex-flow: row nowrap;
+        align-items: center;
+        margin: 0;
+        border-bottom: 5px rgb(87, 46, 229) solid;
+        height: 20vh;
+        .compartir-en {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 30%;
+            margin-left: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .derechos {
+            margin: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+}

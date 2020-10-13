@@ -1,0 +1,121 @@
+main {
+    #buscador-principal {
+        h1 {
+            font-size: 35px;
+            line-height: 50px;
+            width: 40%;
+            margin: 40px auto;
+            margin-top: 80px;
+        }
+        .ilustracion {
+            width: 30%;
+            margin: 0 35%;
+        }
+        .searcher-placer {
+            width: 45%;
+            margin-top: -5px;
+            border: 2px solid #572EE5;
+            border-radius: 27px;
+            text-align: left;
+            padding: 5px 5px 15px 5px;
+            .search-container {
+                width: 100%;
+                margin: 0 auto;
+                padding: 0;
+                border: none;
+                #buscar-top {
+                    width: 80%;
+                }
+            }
+            .opciones {
+                display: flex;
+                flex-flow: column nowrap;
+                width: 95%;
+                margin: 0 auto;
+                p {
+                    line-height: 16px;
+                    margin-top: 10px;
+                    img {
+                        opacity: 30%;
+                    }
+                    label {
+                        margin-left: 15px;
+                        font-size: 20px;
+                        vertical-align: auto;
+                        color: gray;
+                        font-family: Arial, Helvetica, sans-serif;
+                    }
+                }
+            }
+        }
+        #trending {
+            .trending-placer {
+                margin: 80px auto;
+                .trending-title {
+                    line-height: 25px;
+                }
+                p {
+                    line-height: 25px;
+                    font-family: 'Roboto', sans-serif;
+                }
+            }
+            .busqueda {
+                width: 100%;
+                margin: 40px auto;
+                color: #4a1ee3;
+                font-family: 'Montserrat', sans-serif;
+                .search {
+                    font-size: 35px;
+                }
+            }
+            .gifo-container {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: repeat(3, 14vw);
+                row-gap: 2vw;
+                column-gap: 3vw;
+                .card-gifo {
+                    .gifo-trend {
+                        width: 95%;
+                    }
+                }
+            }
+            .ver-mas {
+                border-radius: 25px;
+                height: 50px;
+                width: 127px;
+                p {
+                    line-height: 50px;
+                }
+            }
+        }
+    }
+    #gifos-tendencia {
+        .gifos-tendencia {
+            display: flex;
+            flex-flow: column nowrap;
+            .trending-placer {
+                h3 {
+                    font-size: 30px;
+                    line-height: 30px;
+                    margin: 50px auto 0 auto;
+                }
+                p {
+                    font-size: 18px;
+                    line-height: 21px;
+                    margin: 20px auto;
+                }
+            }
+            .gifos {
+                grid-template-columns: 35vw 35vw 35vw;
+                grid-template-rows: 26.8vw;
+                column-gap: 20px;
+                .card-gifo-carousel {
+                    .gifo-trend {
+                        width: 35vw;
+                        height: 26.8vw;
+                    }
+                }
+            }
+        }
+    }
+}

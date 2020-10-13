@@ -1,0 +1,475 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  width: 100%;
+}
+
+body header {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 5%;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 5px #572ee5 solid;
+}
+
+body header .logo-placer,
+body header .logo-noc-placer,
+body header .logo-mob-noc-placer,
+body header .button,
+body header .button-hover,
+body header .button-active {
+  display: none;
+}
+
+body header .logo-mob-placer .logo-mob {
+  width: 49px;
+  height: 49px;
+}
+
+body header .searcher-placer {
+  display: none;
+}
+
+body header .menu-close {
+  display: none;
+}
+
+body header #menu-selector {
+  display: none;
+}
+
+body header .menu-open {
+  display: block;
+}
+
+body header .menu-open .burger {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+body header .menu-placer {
+  display: none;
+}
+
+body header #menu-selector:checked ~ .menu-placer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  position: fixed;
+  left: 0;
+  top: 15vh;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(87, 46, 229, 0.8);
+}
+
+body header #menu-selector:checked ~ .menu-placer ul {
+  list-style: none;
+  text-align: center;
+}
+
+body header #menu-selector:checked ~ .menu-placer ul hr {
+  margin: 0px auto;
+  margin-top: 15px;
+  width: 30%;
+}
+
+body header #menu-selector:checked ~ .menu-placer ul a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5em;
+  width: auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body header #menu-selector:checked ~ .menu-placer ul a li {
+  margin-top: 30px;
+}
+
+body header #menu-selector:checked ~ .menu-open {
+  display: none;
+}
+
+body header #menu-selector:checked ~ .menu-close {
+  display: block;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+body header #menu-selector:checked ~ .menu-close .close-burger {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+body main #trending {
+  text-align: center;
+}
+
+body main #trending .trending-placer {
+  width: 70%;
+  margin: 0 auto;
+  color: #4a1ee3;
+  font-family: "Montserrat", sans-serif;
+}
+
+body main #trending .trending-placer .trending-title {
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+body main #trending .trending-placer img {
+  margin-top: 40px;
+  width: 30px;
+  height: 30px;
+}
+
+body main #trending .gifo-container {
+  border: 2px red;
+  display: -ms-grid;
+  display: grid;
+  padding: 0 4%;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: (38vw)[4];
+      grid-template-rows: repeat(4, 38vw);
+  row-gap: 6vw;
+  -webkit-column-gap: 4vw;
+          column-gap: 4vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body main #trending .gifo-container .card-gifo {
+  position: relative;
+}
+
+body main #trending .gifo-container .card-gifo .gifo-trend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+body main #trending .ver-mas {
+  border: 1px solid #572EE5;
+  border-radius: 27px;
+  height: 16vw;
+  width: 40vw;
+  margin: 70px auto;
+}
+
+body main #trending .ver-mas p {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  margin: auto;
+  line-height: 16vw;
+  font-weight: 700;
+  color: #572EE5;
+}
+
+body main #gifos-tendencia {
+  position: relative;
+  background-color: #f3f5f8;
+  z-index: 2;
+}
+
+body main #gifos-tendencia .gifos-tendencia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+body main #gifos-tendencia .gifos-tendencia .trending-placer {
+  width: 100%;
+  text-align: center;
+  margin: 30px auto;
+}
+
+body main #gifos-tendencia .gifos-tendencia .trending-placer h3 {
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  margin: auto;
+  line-height: 16vw;
+  font-weight: 700;
+  color: #572EE5;
+}
+
+body main #gifos-tendencia .gifos-tendencia .trending-placer p {
+  width: 80%;
+  margin: 10px auto 10px auto;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 16px;
+  color: black;
+}
+
+body main #gifos-tendencia .gifos-tendencia .slider {
+  display: none;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 76vw 76vw 76vw;
+      grid-template-columns: 76vw 76vw 76vw;
+  -ms-grid-rows: 58vw;
+      grid-template-rows: 58vw;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  overflow: scroll;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .gifo-trend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76vw;
+  height: 58vw;
+  margin: 0;
+  z-index: 3;
+}
+
+body footer .footer-placer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+body footer .footer-placer .compartir-en {
+  margin: 20px 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body footer .footer-placer .compartir-en img {
+  width: 18px;
+  height: 18px;
+  margin: 10px 7px;
+}
+
+body footer .footer-placer .compartir-en img :hover {
+  background-image: #572EE5;
+}
+
+body footer .footer-placer .derechos {
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (min-width: 769px) and (max-width: 1445px) {
+  body header {
+    padding: 40px 5%;
+  }
+  body header .menu-open {
+    display: none;
+  }
+  body header .menu-close {
+    display: none;
+  }
+  body header .logo-mob-placer {
+    display: none;
+  }
+  body header .logo-placer {
+    display: block;
+    width: 60px;
+    height: 60px;
+  }
+  body header .menu-placer {
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    width: 500px;
+    height: auto;
+  }
+  body header .menu-placer ul {
+    list-style: none;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  body header .menu-placer ul hr {
+    display: none;
+  }
+  body header .menu-placer ul a {
+    text-decoration: none;
+    width: auto;
+    font-family: 'Montserrat', sans-serif;
+    color: #572ee5;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+  }
+  body header .menu-placer ul a li {
+    margin: 0 20px;
+  }
+  body header .button {
+    display: block;
+    position: absolute;
+    right: 5%;
+    top: 15px;
+    width: 54px;
+    height: 54px;
+  }
+  body main #trending .trending-placer {
+    margin: 80px auto;
+  }
+  body main #trending .trending-placer .trending-title {
+    line-height: 25px;
+    margin-bottom: 0;
+  }
+  body main #trending .trending-placer img {
+    margin-top: 0px;
+    width: 30px;
+    height: 30px;
+  }
+  body main #trending .gifo-container {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: (14vw)[2];
+        grid-template-rows: repeat(2, 14vw);
+    row-gap: 2vw;
+    -webkit-column-gap: 3vw;
+            column-gap: 3vw;
+  }
+  body main #trending .gifo-container .card-gifo .gifo-trend {
+    width: 95%;
+  }
+  body main #trending .ver-mas {
+    border-radius: 25px;
+    height: 50px;
+    width: 127px;
+  }
+  body main #trending .ver-mas p {
+    line-height: 50px;
+  }
+  body main #gifos-tendencia .gifos-tendencia {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  body main #gifos-tendencia .gifos-tendencia .trending-placer h3 {
+    font-size: 30px;
+    line-height: 30px;
+    margin: 50px auto 0 auto;
+  }
+  body main #gifos-tendencia .gifos-tendencia .trending-placer p {
+    font-size: 18px;
+    line-height: 21px;
+    margin: 20px auto;
+  }
+  body main #gifos-tendencia .gifos-tendencia .gifos {
+    -ms-grid-columns: 35vw 35vw 35vw;
+        grid-template-columns: 35vw 35vw 35vw;
+    -ms-grid-rows: 26.8vw;
+        grid-template-rows: 26.8vw;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
+  body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .gifo-trend {
+    width: 35vw;
+    height: 26.8vw;
+  }
+  body footer .footer-placer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0;
+    border-bottom: 5px #572ee5 solid;
+    height: 20vh;
+  }
+  body footer .footer-placer .compartir-en {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 30%;
+    margin-left: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  body footer .footer-placer .derechos {
+    margin: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+/*# sourceMappingURL=styles-gifos.css.map */
