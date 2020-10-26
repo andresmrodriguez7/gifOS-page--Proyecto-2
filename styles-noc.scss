@@ -7,19 +7,12 @@
 body {
     position: relative;
     width: 100%;
-    //    header mobile
     @import "./partials/parciales-mobile/parciales-landing/header-mobile-noc";
-    // fin del header
-    // inicio del main
     @import "./partials/parciales-mobile/parciales-landing/main-mobile-noc";
-    // fin del main
-    // inicio del footer
     @import "./partials/parciales-mobile/parciales-landing/footer-mobile-noc";
-    // fin del footer
-    // media query desktop
 }
 
-@media (min-width: 769px) and (max-width: 1445px) {
+@media (min-width: 769px) and (max-width: 1500px) {
     body {
         // inicio del header
         @import "./partials/parciales-desktop/parciales-landing/header-desktop-noc";

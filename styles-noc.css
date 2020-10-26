@@ -30,7 +30,7 @@ body header {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-top: 5px black solid;
-  background-color: #6e6e6e;
+  background-color: #37383C;
 }
 
 body header .logo-placer,
@@ -135,15 +135,17 @@ body main #buscador-principal {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
+  background-color: #37383C;
+  border-top: 50px #37383C solid;
 }
 
 body main #buscador-principal h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 25px;
-  color: #572EE5;
+  color: white;
   text-align: center;
   width: 80%;
-  margin: 0 auto;
+  margin: -10px auto;
 }
 
 body main #buscador-principal h1 #texto-dif {
@@ -160,11 +162,12 @@ body main #buscador-principal .searcher-placer {
   width: 95%;
   margin: 0 auto;
   text-align: center;
+  background-color: #37383C;
 }
 
 body main #buscador-principal .searcher-placer .search-container {
   width: 100%;
-  border: 2px solid #572EE5;
+  border: 2px solid white;
   border-radius: 27px;
   height: 50px;
   display: -webkit-box;
@@ -182,6 +185,7 @@ body main #buscador-principal .searcher-placer .search-container {
   padding: 0 2%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: #37383C;
 }
 
 body main #buscador-principal .searcher-placer .search-container #buscar-top {
@@ -189,6 +193,7 @@ body main #buscador-principal .searcher-placer .search-container #buscar-top {
   width: 70%;
   border: none;
   font-size: 18px;
+  background-color: #37383C;
 }
 
 body main #buscador-principal .searcher-placer .opciones {
@@ -197,12 +202,13 @@ body main #buscador-principal .searcher-placer .opciones {
 
 body main #buscador-principal #trending {
   text-align: center;
+  border-bottom: 50px #37383C solid;
 }
 
 body main #buscador-principal #trending .trending-placer {
   width: 70%;
   margin: 0 auto;
-  color: #4a1ee3;
+  color: white;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -225,7 +231,7 @@ body main #buscador-principal #trending .trending-placer hr {
 body main #buscador-principal #trending .busqueda {
   width: 100%;
   margin: 40px auto;
-  color: #4a1ee3;
+  color: white;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -250,6 +256,17 @@ body main #buscador-principal #trending .gifo-container {
 
 body main #buscador-principal #trending .gifo-container .card-gifo {
   position: relative;
+  z-index: 2;
+}
+
+body main #buscador-principal #trending .gifo-container .card-gifo .gif-user,
+body main #buscador-principal #trending .gifo-container .card-gifo .gif-title,
+body main #buscador-principal #trending .gifo-container .card-gifo img {
+  position: relative;
+  color: white;
+  z-index: 2;
+  width: 25px;
+  height: 25px;
 }
 
 body main #buscador-principal #trending .gifo-container .card-gifo .gifo-trend {
@@ -258,15 +275,15 @@ body main #buscador-principal #trending .gifo-container .card-gifo .gifo-trend {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 1;
 }
 
 body main #buscador-principal #trending .ver-mas {
-  border: 1px solid #572EE5;
+  border: 1px solid white;
   border-radius: 27px;
   height: 16vw;
   width: 40vw;
-  margin: 70px auto;
+  margin: 70px auto 0px auto;
 }
 
 body main #buscador-principal #trending .ver-mas p {
@@ -276,12 +293,12 @@ body main #buscador-principal #trending .ver-mas p {
   margin: auto;
   line-height: 16vw;
   font-weight: 700;
-  color: #572EE5;
+  color: white;
 }
 
 body main #gifos-tendencia {
   position: relative;
-  background-color: #f3f5f8;
+  background-color: #222326;
   z-index: 2;
 }
 
@@ -307,7 +324,7 @@ body main #gifos-tendencia .gifos-tendencia .trending-placer h3 {
   margin: auto;
   line-height: 16vw;
   font-weight: 700;
-  color: #572EE5;
+  color: white;
 }
 
 body main #gifos-tendencia .gifos-tendencia .trending-placer p {
@@ -316,7 +333,7 @@ body main #gifos-tendencia .gifos-tendencia .trending-placer p {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   line-height: 16px;
-  color: black;
+  color: white;
 }
 
 body main #gifos-tendencia .gifos-tendencia .slider {
@@ -357,6 +374,10 @@ body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .gifo-tre
   z-index: 3;
 }
 
+body footer {
+  background-color: #37383C;
+}
+
 body footer .footer-placer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -375,6 +396,7 @@ body footer .footer-placer {
 body footer .footer-placer .compartir-en {
   margin: 20px 0;
   font-family: "Roboto", sans-serif;
+  color: white;
 }
 
 body footer .footer-placer .compartir-en img {
@@ -388,11 +410,12 @@ body footer .footer-placer .compartir-en img :hover {
 }
 
 body footer .footer-placer .derechos {
+  color: white;
   margin-bottom: 30px;
   font-family: "Roboto", sans-serif;
 }
 
-@media (min-width: 769px) and (max-width: 1445px) {
+@media (min-width: 769px) and (max-width: 1500px) {
   body header {
     padding: 40px 5%;
   }
@@ -403,6 +426,9 @@ body footer .footer-placer .derechos {
     display: none;
   }
   body header .logo-mob-placer {
+    display: none;
+  }
+  body header .logo-mob-noc {
     display: none;
   }
   body header .logo-placer {
@@ -590,7 +616,7 @@ body footer .footer-placer .derechos {
         -ms-flex-align: center;
             align-items: center;
     margin: 0;
-    border-bottom: 5px #572ee5 solid;
+    border-bottom: 5px black solid;
     height: 20vh;
   }
   body footer .footer-placer .compartir-en {
