@@ -1,10 +1,13 @@
 main {
     #trending {
         text-align: center;
+        background-color: #37383C;
+        border-top: 20px #37383C solid;
+        border-bottom: 50px #37383C solid;
         .trending-placer {
             width: 70%;
             margin: 0 auto;
-            color: #4a1ee3;
+            color: white;
             font-family: $font-primary;
             .trending-title {
                 margin-top: 30px;
@@ -27,6 +30,9 @@ main {
             box-sizing: border-box;
             .card-gifo {
                 position: relative;
+                z-index: 2;
+                color: white;
+                font-family: $font-primary;
                 // border: 3px yellow dotted;
                 .gifo-trend {
                     position: absolute;
@@ -40,11 +46,11 @@ main {
             }
         }
         .ver-mas {
-            border: 1px solid $font-color-primary;
+            border: 1px solid white;
             border-radius: 27px;
             height: 16vw;
             width: 40vw;
-            margin: 70px auto;
+            margin: 70px auto 0px auto;
             p {
                 font-size: 16px;
                 text-transform: uppercase;
@@ -52,13 +58,13 @@ main {
                 margin: auto;
                 line-height: 16vw;
                 font-weight: 700;
-                color: $font-color-primary;
+                color: white;
             }
         }
     }
     #gifos-tendencia {
         position: relative;
-        background-color: #f3f5f8;
+        background-color: #222326;
         z-index: 2;
         .gifos-tendencia {
             display: flex;
@@ -73,7 +79,7 @@ main {
                     margin: auto;
                     line-height: 16vw;
                     font-weight: 700;
-                    color: $font-color-primary;
+                    color: white;
                 }
                 p {
                     width: 80%;
@@ -81,7 +87,7 @@ main {
                     font-size: 16px;
                     font-family: $font-primary;
                     line-height: 16px;
-                    color: black;
+                    color: white;
                 }
             }
             .slider {

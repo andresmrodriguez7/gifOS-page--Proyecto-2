@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@import "./partials/variables/variables";
+body {
+    position: relative;
+    width: 100%;
+    @import "./partials/parciales-mobile/parciales-landing/header-mobile-noc";
+    @import "./partials/parciales-mobile/parciales-favoritos/main-mobile-fav-noc";
+    @import "./partials/parciales-mobile/parciales-landing/footer-mobile-noc";
+}
+
+@media (min-width: 769px) and (max-width: 1500px) {
+    body {
+        // inicio del header
+        @import "./partials/parciales-desktop/parciales-landing/header-desktop-noc";
+        // fin del header
+        // inicio del main
+        @import "./partials/parciales-desktop/parciales-favoritos/main-desktop-fav";
+        // fin del main
+        // inicio del footer
+        @import "./partials/parciales-desktop/parciales-landing/footer-desktop-noc";
+        // fin del footer
+    }
+}
