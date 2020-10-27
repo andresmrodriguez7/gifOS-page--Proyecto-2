@@ -10,6 +10,9 @@ header {
     .logo-mob-placer {
         display: none;
     }
+    .logo-mob-noc {
+        display: none;
+    }
     // muestro lo que debo mostrar
     .logo-placer {
         display: block;
@@ -34,7 +37,7 @@ header {
                 text-decoration: none;
                 width: auto;
                 font-family: 'Montserrat', sans-serif;
-                color: rgb(87, 46, 229);
+                color: white;
                 font-size: 13px;
                 line-height: 16px;
                 font-weight: 700;

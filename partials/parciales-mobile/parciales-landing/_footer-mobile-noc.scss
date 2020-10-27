@@ -1,4 +1,5 @@
 footer {
+    background-color: #37383C;
     .footer-placer {
         display: flex;
         flex-flow: column nowrap;
@@ -8,6 +9,7 @@ footer {
         .compartir-en {
             margin: 20px 0;
             font-family: $font-secondary;
+            color: white;
             img {
                 width: 18px;
                 height: 18px;
@@ -18,6 +20,7 @@ footer {
             }
         }
         .derechos {
+            color: white;
             margin-bottom: 30px;
             font-family: $font-secondary;
         }

@@ -7,7 +7,7 @@
     <title>gifOS Page | Favoritos</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="all" href="styles-fav.css">
+    <link id="estilos-fav" rel="stylesheet" type="text/css" media="all" href="styles-fav-noc.css">
 </head>
 
 <body>
@@ -48,7 +48,7 @@
 
             <nav class="menu-placer">
                 <ul class="menu">
-                    <a href="">
+                    <a class="dia" id="noc-mode">
                         <li>Modo Nocturno</li>
                     </a>
                     <hr>
@@ -64,11 +64,11 @@
             </nav>
             <!-- El boton de crear gifo tiene un active y un hover -->
             <!-- boton normal -->
-            <img src="./imgs/button-crear-gifo.svg" alt="boton-crear-gifo" class="button">
+            <a href="./crear.html"><img src="./imgs/button-crear-gifo.svg" alt="boton-crear-gifo" class="button"></a>
             <!-- boton hover -->
-            <img src="./imgs/CTA-crear-gifo-hover.svg" alt="boton-crear-gifo" class="button-hover">
+            <a href="./crear.html"> <img src="./imgs/CTA-crear-gifo-hover.svg" alt="boton-crear-gifo" class="button-hover"></a>
             <!-- boton active -->
-            <img src="./imgs/CTA-crear-gifo-active.svg" alt="boton-crear-gifo" class="button-active">
+            <a href="./crear.html"> <img src="./imgs/CTA-crear-gifo-active.svg" alt="boton-crear-gifo" class="button-active"></a> <img src="./imgs/CTA-crear-gifo-active.svg" alt="boton-crear-gifo" class="button-active">
             <!-- fin del boton crear gifo -->
         </div>
     </header>
@@ -285,7 +285,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="./apps/noc-mode.js"></script>
 </body>
 
 

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gifOS Page | Crear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link id="estilos-crear" rel="stylesheet" type="text/css" media="all" href="styles-crear-noc.css">
+</head>
+
+<body>
+    <header>
+        <!-- logo desktop diurno -->
+        <div class="logo-placer">
+            <a href="./index.html"> <img src="./imgs/logo-desktop.svg" alt="logo-desktop" class="logo"></a>
+        </div>
+        <!-- logo desktop nocturno -->
+        <div class="logo-noc-placer">
+            <a href="./index.html"> <img src="./imgs/Logo-modo-noc.svg" alt="logo-desktop" class="logo-noc"></a>
+        </div>
+        <!-- logo mobile -->
+        <div class="logo-mob-placer">
+            <a href="./index.html"> <img src="./imgs/logo-mobile.svg" alt="logo-mobile" class="logo-mob"> </a>
+        </div>
+        <!-- logo mobile nocturno -->
+        <div class="logo-mob-noc-placer">
+            <a href="./index.html"> <img src="./imgs/logo-mobile-modo-noct.svg" alt="logo-mobile" class="logo-mob-noc"></a>
+        </div>
+        <!-- Este buscador solo aparece con el header sticky -->
+        <div class="searcher-placer">
+            <div class="search-container">
+                <input type="text" name="buscador" id="buscar-principal" placeholder="Busca GIFOS y más">
+                <img src="./imgs/icon-search.svg" alt="buscar" class="lupa">
+            </div>
+        </div>
+        <!-- fin del buscador sticky -->
+        <!-- VERSION MOBILE -->
+        <div>
+            <input type="checkbox" name="menu-selector" id="menu-selector">
+            <label for="menu-selector" class="menu-open"><img
+                        src="./imgs/burger.svg"
+                        alt="burger" class="burger" ></label>
+            <label for="menu-selector" class="menu-close"><img
+                        src="./imgs/close.svg"
+                        alt="burger" class="close-burger"></label>
+
+            <nav class="menu-placer">
+                <ul class="menu">
+                    <a class="dia" id="noc-mode">
+                        <li>Modo Nocturno</li>
+                    </a>
+                    <hr>
+                    <a href="./favoritos.html">
+                        <li>Favoritos</li>
+                    </a>
+                    <hr>
+                    <a href="./misGifos.html">
+                        <li>Mis GIFOS</li>
+                    </a>
+                    <hr>
+                </ul>
+            </nav>
+            <!-- El boton de crear gifo tiene un active y un hover -->
+            <!-- boton normal -->
+            <a href="./crear.html"><img src="./imgs/button-crear-gifo.svg" alt="boton-crear-gifo" class="button"></a>
+            <!-- boton hover -->
+            <a href="./crear.html"> <img src="./imgs/CTA-crear-gifo-hover.svg" alt="boton-crear-gifo" class="button-hover"></a>
+            <!-- boton active -->
+            <a href="./crear.html"> <img src="./imgs/CTA-crear-gifo-active.svg" alt="boton-crear-gifo" class="button-active"></a> <img src="./imgs/CTA-crear-gifo-active.svg" alt="boton-crear-gifo" class="button-active">
+            <!-- fin del boton crear gifo -->
+        </div>
+    </header>
+    <main>
+        <div class="adornos">
+            <img class="camara" src="./imgs/camara.svg" alt="camera">
+            <img class="luz-camara" src="./imgs/element-luz-camara.svg" alt="luz-camara">
+            <img class="pelicula" src="./imgs/pelicula.svg" alt="pelicula">
+        </div>
+        <div class="bordeador">
+            <div id="container-externo">
+                <div id="intermediate-container">
+                    <div class="esq-sup-izq"></div>
+                    <div class="esq-sup-der"></div>
+                    <div class="esq-inf-izq"></div>
+                    <div class="esq-inf-der"></div>
+                    <div id="marco-camara"> <img id="camara-activa" src="https://picsum.photos/id/684/480/320" alt=""> </div>
+                </div>
+                <div class="pasos">
+                    <div>
+                        <p>1</p>
+                    </div>
+                    <div>
+                        <p>2</p>
+                    </div>
+                    <div>
+                        <p>3</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="btn-buscar">
+                    <p>COMENZAR</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="footer-placer">
+            <div class="compartir-en">
+                <p>Compartir en:</p>
+                <img src="./imgs/icon_facebook.svg" alt="icon-face">
+                <img src="./imgs/icon-twitter.svg" alt="icon-twit">
+                <img src="./imgs/icon_instagram.svg" alt="icon-inst">
+            </div>
+            <div class="derechos">
+                <p>(c) GIFOS 2020 All Right Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="./apps/noc-mode.js"></script>
+</body>
+
+
+</html>

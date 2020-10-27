@@ -8,7 +8,7 @@ body {
     position: relative;
     width: 100%;
     @import "./partials/parciales-mobile/parciales-landing/header-mobile-noc";
-    @import "./partials/parciales-mobile/parciales-landing/main-mobile-noc";
+    @import "./partials/parciales-mobile/parciales-favoritos/main-mobile-fav-noc";
     @import "./partials/parciales-mobile/parciales-landing/footer-mobile-noc";
 }
 
@@ -18,7 +18,7 @@ body {
         @import "./partials/parciales-desktop/parciales-landing/header-desktop-noc";
         // fin del header
         // inicio del main
-        @import "./partials/parciales-desktop/parciales-landing/main-desktop-noc";
+        @import "./partials/parciales-desktop/parciales-favoritos/main-desktop-fav";
         // fin del main
         // inicio del footer
         @import "./partials/parciales-desktop/parciales-landing/footer-desktop-noc";
