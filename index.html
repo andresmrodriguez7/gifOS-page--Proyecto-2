@@ -41,7 +41,7 @@
             <input type="checkbox" name="menu-selector" id="menu-selector">
             <label for="menu-selector" class="menu-open"><img
                         src="./imgs/burger.svg"
-                        alt="burger" class="burger" ></label>
+                        alt="burger" class="burger"></label>
             <label for="menu-selector" class="menu-close"><img
                         src="./imgs/close.svg"
                         alt="burger" class="close-burger"></label>
@@ -115,13 +115,21 @@
                 </div>
                 <!-- grid de 12 resultados default -->
                 <div class="gifo-container">
+
                     <div class="card-gifo">
-                        <!-- Cuando se hace hoover en un gifo se muestra esta información -->
-                        <p class="gif-user">User</p>
-                        <p class="gif-title">Titulo GIFO</p>
-                        <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
-                        <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
-                        <img src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo">
+                        <div class="container-hover">
+                            <div class="container-icon">
+                                <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
+                                <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
+                                <img src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo">
+                            </div>
+
+                            <!-- Cuando se hace hoover en un gifo se muestra esta información -->
+                            <div class="container-desc">
+                                <p class="gif-user">User</p>
+                                <p class="gif-title">Titulo GIFO</p>
+                            </div>
+                        </div>
                         <!-- fin hover en gifo -->
                         <!-- gifo en si mismo -->
                         <img class="gifo-trend" src="https://picsum.photos/id/689/600/400" alt="">

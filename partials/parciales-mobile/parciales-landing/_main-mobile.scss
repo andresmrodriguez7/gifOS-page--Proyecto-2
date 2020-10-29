@@ -85,7 +85,38 @@ main {
                 box-sizing: border-box;
                 .card-gifo {
                     position: relative;
-                    // border: 3px yellow dotted;
+                    width: 100%;
+                    .container-hover {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: space-between;
+                        height: 100%;
+                        width: 100%;
+                        &:hover {
+                            background-color: rgba(74, 30, 227, 0.4);
+                        }
+                        .container-icon {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            justify-content: flex-end;
+                            .icon-gifo {
+                                width: 20px;
+                                height: 20px;
+                                margin: 2px 2px;
+                            }
+                        }
+                        .container-desc {
+                            color: white;
+                            font-family: $font-primary;
+                            font-weight: 500;
+                            text-align: left;
+                            padding-left: 5px;
+                            p {
+                                font-size: 13px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
                     .gifo-trend {
                         position: absolute;
                         top: 0;
