@@ -523,9 +523,9 @@ body footer .footer-placer .derechos {
     width: 45%;
     margin-top: -5px;
     border: 2px solid #572EE5;
-    border-radius: 27px;
+    border-radius: 35px;
     text-align: left;
-    padding: 5px 5px 15px 5px;
+    padding: 5px 5px 10px 5px;
   }
   body main #buscador-principal .searcher-placer .search-container {
     width: 100%;
@@ -533,8 +533,25 @@ body footer .footer-placer .derechos {
     padding: 0;
     border: none;
   }
+  body main #buscador-principal .searcher-placer .search-container #lupa-izq {
+    display: none;
+  }
+  body main #buscador-principal .searcher-placer .search-container #lupa-der {
+    width: 23px;
+    height: 23px;
+  }
+  body main #buscador-principal .searcher-placer .search-container .lupa {
+    opacity: 30%;
+    width: 23px;
+    height: 23px;
+  }
   body main #buscador-principal .searcher-placer .search-container #buscar-top {
     width: 80%;
+  }
+  body main #buscador-principal .searcher-placer .search-container #menu-close {
+    display: none;
+    width: 18px;
+    height: 18px;
   }
   body main #buscador-principal .searcher-placer .opciones {
     display: -webkit-box;
@@ -551,7 +568,7 @@ body footer .footer-placer .derechos {
     line-height: 16px;
     margin-top: 10px;
   }
-  body main #buscador-principal .searcher-placer .opciones p img {
+  body main #buscador-principal .searcher-placer .opciones p .lupa {
     opacity: 30%;
   }
   body main #buscador-principal .searcher-placer .opciones p label {
@@ -589,8 +606,23 @@ body footer .footer-placer .derechos {
     -webkit-column-gap: 3vw;
             column-gap: 3vw;
   }
+  body main #buscador-principal #trending .gifo-container .card-gifo .container-hover {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body main #buscador-principal #trending .gifo-container .card-gifo .container-hover .container-icon .icon-gifo {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+  }
   body main #buscador-principal #trending .gifo-container .card-gifo .gifo-trend {
-    width: 95%;
+    width: 100%;
   }
   body main #buscador-principal #trending .ver-mas {
     border-radius: 25px;

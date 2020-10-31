@@ -78,28 +78,24 @@
             <!-- vector de los amigos ilustrados sobre el buscador -->
             <img src="./imgs/ilustra_header.svg" alt="ilustracion-grafica" class="ilustracion">
             <!-- Inicio del buscador principal -->
-            <div class="searcher-placer">
+            <div class="searcher-placer" id="searcher-placer">
                 <div class="search-container">
+                    <img src="./imgs/icon-search.svg" id="lupa-izq" alt="buscar" class="lupa">
+                    <input type="text" name="buscador" id="buscar-top" placeholder="Busca GIFOS y más" style="outline: none">
+                    <img src="./imgs/icon-search.svg" id="lupa-der" alt="buscar">
                     <img src="./imgs/close.svg" alt="burger" id="menu-close" class="menu-close">
-                    <input type="text" name="buscador" id="buscar-top" placeholder="Busca GIFOS y más">
-                    <img src="./imgs/icon-search.svg" alt="buscar" class="lupa">
                 </div>
-                <div class="opciones">
-                    <hr>
+                <div id="prueba">
+
+                </div>
+                <!-- <div class="opciones" id="opciones"> -->
+                <!-- <hr>
                     <p><img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 1</label></p>
                     <p><img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 2</label></p>
                     <p><img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 3</label></p>
-                    <p><img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 4</label></p>
-                </div>
+                    <p><img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 4</label></p> -->
+                <!-- </div> -->
 
-                <!-- Cuando el buscador principal está activo despliega lo siguiente -->
-                <!-- <div class="opciones">
-                    <hr>
-                    <img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 1</label>
-                    <img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 2</label>
-                    <img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 3</label>
-                    <img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 4</label>
-                </div> -->
             </div>
             <!-- fin del buscador -->
             <!-- Resultdos de la busqueda -->
@@ -116,8 +112,8 @@
                 <!-- grid de 12 resultados default -->
                 <div class="gifo-container">
 
-                    <div class="card-gifo">
-                        <div class="container-hover">
+                    <div id="card-gifo" class="card-gifo">
+                        <div id="container-hover" class="container-hover">
                             <div class="container-icon">
                                 <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
                                 <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
@@ -328,6 +324,7 @@
         </div>
     </footer>
     <script src="./apps/noc-mode.js"></script>
+    <script src="./apps/despliega.js"></script>
 </body>
 
 
