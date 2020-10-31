@@ -197,6 +197,14 @@ body main #buscador-principal .searcher-placer .search-container #buscar-top {
   color: white;
 }
 
+body main #buscador-principal .searcher-placer .search-container #lupa-izq {
+  display: none;
+}
+
+body main #buscador-principal .searcher-placer .search-container #menu-close {
+  display: none;
+}
+
 body main #buscador-principal .searcher-placer .opciones {
   display: none;
 }

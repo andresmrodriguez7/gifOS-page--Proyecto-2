@@ -189,6 +189,14 @@ body main #buscador-principal .searcher-placer .search-container #buscar-top {
   font-size: 18px;
 }
 
+body main #buscador-principal .searcher-placer .search-container #lupa-izq {
+  display: none;
+}
+
+body main #buscador-principal .searcher-placer .search-container #menu-close {
+  display: none;
+}
+
 body main #buscador-principal .searcher-placer .opciones {
   display: none;
 }
