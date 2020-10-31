@@ -32,12 +32,58 @@ buscador.addEventListener("blur", () => {
     contenedor.innerHTML = " ";
 
 })
-let gifo = document.getElementById("card-gifo");
-let select = document.getElementById("container-hover");
 
-gifo.addEventListener("mouseover", () => {
-    select.style.display = "flex";
-})
-gifo.addEventListener("mouseout", () => {
-    select.style.display = "none";
+
+const apiKey = "3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
+let pathTrending = "api.giphy.com/v1/gifs/trending";
+let containerGif = document.getElementById("gifo-container");
+async function buscarGifos(params) {
+    const busqueda = buscador.value;
+    let search = document.getElementById("search");
+    search.innerHTML = `<b>${busqueda}</b>`
+    const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&limit=12&offset=0&rating=g&lang=en`;
+    let llamado = await fetch(path);
+    console.log(llamado);
+    let json = await llamado.json();
+    console.log(json.data);
+    containerGif.innerHTML = " ";
+    for (let i = 0; i < json.data.length; i++) {
+        const element = json.data[i];
+        let src = element.images.fixed_width.url;
+        let gifoName = element.title;
+        let user = element.username;
+        let card = document.createElement("div");
+        card.id = "card-gifo"
+        card.className = "card-gifo"
+        card.innerHTML = ` <div id="container-hover" class="container-hover">
+        <div class="container-icon">
+            <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
+            <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
+            <img src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo">
+        </div>
+        <div class="container-desc">
+            <p class="gif-user">${user}</p>
+            <p class="gif-title">T${gifoName}</p>
+        </div>
+    </div>
+       <img class="gifo-trend" src="${src}" alt="">`
+        card.addEventListener("mouseover", () => {
+            card.firstElementChild.style.display = "flex";
+        })
+        card.addEventListener("mouseout", () => {
+            card.firstElementChild.style.display = "none";
+        })
+        containerGif.appendChild(card);
+    }
+
+}
+
+let disparadorSearch = document.getElementById("lupa-izq");
+
+disparadorSearch.addEventListener("click", () => {
+    try {
+        buscarGifos();
+    } catch (error) {
+        console.log(error);
+    }
 })

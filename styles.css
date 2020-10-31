@@ -442,7 +442,7 @@ body footer .footer-placer .derechos {
   font-family: "Roboto", sans-serif;
 }
 
-@media (min-width: 769px) and (max-width: 1445px) {
+@media (min-width: 769px) and (max-width: 1600px) {
   body header {
     padding: 40px 5%;
   }
