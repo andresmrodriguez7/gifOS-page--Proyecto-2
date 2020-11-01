@@ -37,11 +37,13 @@ buscador.addEventListener("blur", () => {
 const apiKey = "3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
 let pathTrending = "api.giphy.com/v1/gifs/trending";
 let containerGif = document.getElementById("gifo-container");
+let cantidad = 12;
+
 async function buscarGifos(params) {
     const busqueda = buscador.value;
     let search = document.getElementById("search");
     search.innerHTML = `<b>${busqueda}</b>`
-    const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&limit=12&offset=0&rating=g&lang=en`;
+    const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&limit=${cantidad}&offset=0&rating=g&lang=en`;
     let llamado = await fetch(path);
     console.log(llamado);
     let json = await llamado.json();
@@ -85,5 +87,26 @@ disparadorSearch.addEventListener("click", () => {
         buscarGifos();
     } catch (error) {
         console.log(error);
+    }
+})
+
+let vermas = document.getElementById("ver-mas");
+
+vermas.addEventListener("click", () => {
+    if (cantidad < 24) {
+        cantidad += 4;
+        try {
+            buscarGifos();
+        } catch (error) {
+            console.log(error);
+        }
+    } else if (cantidad = 24) {
+        vermas.innerHTML = `<p>ver menos</p>`
+        cantidad = 12;
+        try {
+            buscarGifos();
+        } catch (error) {
+            console.log(error);
+        }
     }
 })
