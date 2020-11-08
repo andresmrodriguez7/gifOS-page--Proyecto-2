@@ -122,7 +122,7 @@ main {
                 }
             }
             .gifos {
-                grid-template-columns: 35vw 35vw 35vw;
+                grid-template-columns: repeat(6, 35vw);
                 grid-template-rows: 26.8vw;
                 column-gap: 20px;
                 .card-gifo-carousel {

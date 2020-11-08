@@ -20,7 +20,7 @@ body {
     // media query desktop
 }
 
-@media (min-width: 769px) and (max-width: 1445px) {
+@media (min-width: 769px) and (max-width: 1600px) {
     body {
         // inicio del header de favoritos
         @import "./partials/parciales-desktop/parciales-landing/header-desktop";

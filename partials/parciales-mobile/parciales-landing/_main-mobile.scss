@@ -191,7 +191,7 @@ main {
                 // flex-wrap: nowrap;
                 // justify-content: space-between;
                 display: grid;
-                grid-template-columns: 76vw 76vw 76vw;
+                grid-template-columns: 76vw 76vw 76vw 76vw 76vw 76vw;
                 grid-template-rows: 58vw;
                 column-gap: 20px;
                 padding: 10px;
@@ -203,14 +203,45 @@ main {
                     width: 100%;
                     margin: 0;
                     box-sizing: border-box;
+                    .container-hover {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: space-between;
+                        height: 100%;
+                        width: 100%;
+                        &:hover {
+                            background-color: rgba(74, 30, 227, 0.4);
+                        }
+                        .container-icon {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            justify-content: flex-end;
+                            .icon-gifo {
+                                width: 30px;
+                                height: 30px;
+                                margin: 3px 3px;
+                            }
+                        }
+                        .container-desc {
+                            color: white;
+                            font-family: $font-primary;
+                            font-weight: 500;
+                            text-align: left;
+                            padding-left: 5px;
+                            p {
+                                font-size: 13px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
                     .gifo-trend {
                         position: absolute;
                         top: 0;
                         left: 0;
                         width: 76vw;
                         height: 58vw;
-                        margin: 0;
-                        z-index: 3;
+                        z-index: -1;
+                        // border: 3px green dotted;
                     }
                 }
             }

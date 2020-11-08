@@ -402,8 +402,8 @@ body main #gifos-tendencia .gifos-tendencia .slider {
 body main #gifos-tendencia .gifos-tendencia .gifos {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 76vw 76vw 76vw;
-      grid-template-columns: 76vw 76vw 76vw;
+  -ms-grid-columns: 76vw 76vw 76vw 76vw 76vw 76vw;
+      grid-template-columns: 76vw 76vw 76vw 76vw 76vw 76vw;
   -ms-grid-rows: 58vw;
       grid-template-rows: 58vw;
   -webkit-column-gap: 20px;
@@ -423,14 +423,64 @@ body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel {
           box-sizing: border-box;
 }
 
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover:hover {
+  background-color: rgba(74, 30, 227, 0.4);
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-icon .icon-gifo {
+  width: 30px;
+  height: 30px;
+  margin: 3px 3px;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-desc {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 5px;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-desc p {
+  font-size: 13px;
+  line-height: 20px;
+}
+
 body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .gifo-trend {
   position: absolute;
   top: 0;
   left: 0;
   width: 76vw;
   height: 58vw;
-  margin: 0;
-  z-index: 3;
+  z-index: -1;
 }
 
 body footer {
@@ -673,8 +723,8 @@ body footer .footer-placer .derechos {
     margin: 20px auto;
   }
   body main #gifos-tendencia .gifos-tendencia .gifos {
-    -ms-grid-columns: 35vw 35vw 35vw;
-        grid-template-columns: 35vw 35vw 35vw;
+    -ms-grid-columns: (35vw)[6];
+        grid-template-columns: repeat(6, 35vw);
     -ms-grid-rows: 26.8vw;
         grid-template-rows: 26.8vw;
     -webkit-column-gap: 20px;

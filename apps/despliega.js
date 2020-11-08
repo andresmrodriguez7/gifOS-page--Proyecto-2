@@ -8,17 +8,7 @@ const apiKey = "3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
 let pathTrending = "api.giphy.com/v1/gifs/trending";
 let containerGif = document.getElementById("gifo-container");
 let cantidad = 12;
-
-// Aqui desplegamos las opciones y jugamos con los iconos de busqueda
-buscador.addEventListener("keyup", (contenedor) => {
-    lupaDer.src = "./imgs/close.svg";
-    lupaDer.style.width = '18px';
-    lupaDer.style.height = '18px';
-    lupaIzq.style.display = "block";
-    cont.innerHTML = " ";
-    llamaSugerencias();
-
-})
+let tendencia = document.getElementById("gifos");
 
 async function llamaSugerencias() {
     const busqueda = buscador.value;
@@ -41,25 +31,6 @@ async function llamaSugerencias() {
     }
     cont.appendChild(contenedor);
 }
-
-// aqui borramos lo escrito en el buscador 
-lupaDer.addEventListener("click", () => {
-    buscador.value = "";
-    contenedor = document.getElementById("opciones");
-    contenedor.innerHTML = " ";
-    lupaDer.src = "./imgs/close.svg" ? lupaDer.src = "./imgs/icon-search.svg" : lupaDer.src = "./imgs/close.svg";
-    lupaDer.style.width = '23px';
-    lupaDer.style.height = '23px';
-    lupaIzq.style.display = 'none';
-})
-buscador.addEventListener("blur", () => {
-    contenedor = document.getElementById("opciones");
-    contenedor.innerHTML = " ";
-
-})
-
-// aqui hacemos la solicitud e imprimimos información del servidor de gifos
-
 
 async function buscarGifos(params) {
     const busqueda = buscador.value;
@@ -100,9 +71,71 @@ async function buscarGifos(params) {
         containerGif.appendChild(card);
         vermas.style.display = "block";
     }
+}
+
+async function buscarTendencia() {
+    const path = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=6&rating=g`;
+    let llamado = await fetch(path);
+    let json2 = await llamado.json();
+    console.log(json2);
+    for (let i = 0; i < json2.data.length; i++) {
+        const element = json2.data[i];
+        let src = element.images.fixed_width.url;
+        let gifoName = element.title;
+        let user = element.username;
+        let card = document.createElement("div");
+        card.className = "card-gifo-carousel"
+        card.innerHTML = ` <div id="container-hover" class="container-hover">
+        <div class="container-icon">
+            <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
+            <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
+            <img src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo">
+        </div>
+        <div class="container-desc">
+            <p class="gif-user">${user}</p>
+            <p class="gif-title">T${gifoName}</p>
+        </div>
+    </div>
+       <img class="gifo-trend" src="${src}" alt="gif-tendencia">`
+        card.addEventListener("mouseover", () => {
+            card.firstElementChild.style.display = "flex";
+        })
+        card.addEventListener("mouseout", () => {
+            card.firstElementChild.style.display = "none";
+        })
+        tendencia.appendChild(card);
+    }
 
 }
 
+buscarTendencia();
+
+// Aqui desplegamos las opciones y jugamos con los iconos de busqueda
+buscador.addEventListener("keyup", (contenedor) => {
+    lupaDer.src = "./imgs/close.svg";
+    lupaDer.style.width = '18px';
+    lupaDer.style.height = '18px';
+    lupaIzq.style.display = "block";
+    cont.innerHTML = " ";
+    llamaSugerencias();
+
+})
+
+// aqui borramos lo escrito en el buscador 
+lupaDer.addEventListener("click", () => {
+    buscador.value = "";
+    contenedor = document.getElementById("opciones");
+    contenedor.innerHTML = " ";
+    lupaDer.src = "./imgs/close.svg" ? lupaDer.src = "./imgs/icon-search.svg" : lupaDer.src = "./imgs/close.svg";
+    lupaDer.style.width = '23px';
+    lupaDer.style.height = '23px';
+    lupaIzq.style.display = 'none';
+})
+buscador.addEventListener("blur", () => {
+    contenedor = document.getElementById("opciones");
+    contenedor.innerHTML = " ";
+
+})
 
 // aqui disparamos la busqueda al ir escribiendo 
 buscador.addEventListener("keyup", () => {
@@ -113,9 +146,8 @@ buscador.addEventListener("keyup", () => {
     }
 })
 
-
+// aqui ejecutamos el boton ver más
 let gifoContainer = document.getElementById("gifo-comtainer");
-
 vermas.addEventListener("click", () => {
     if (cantidad < 24) {
         cantidad += 4;
