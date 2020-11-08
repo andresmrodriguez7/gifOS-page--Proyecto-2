@@ -199,6 +199,7 @@ body main #buscador-principal .searcher-placer .search-container #buscar-top {
 
 body main #buscador-principal .searcher-placer .search-container #lupa-izq {
   display: none;
+  opacity: 0.3;
 }
 
 body main #buscador-principal .searcher-placer .search-container #menu-close {
@@ -538,8 +539,9 @@ body footer .footer-placer .derechos {
     font-size: 35px;
     line-height: 50px;
     width: 40%;
+    padding: 40px auto;
     margin: 40px auto;
-    margin-top: 80px;
+    margin-top: 30px;
   }
   body main #buscador-principal .ilustracion {
     width: 30%;

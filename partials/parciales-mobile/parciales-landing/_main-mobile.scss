@@ -41,6 +41,7 @@ main {
                 }
                 #lupa-izq {
                     display: none;
+                    opacity: 0.3;
                 }
                 #menu-close {
                     display: none;
@@ -81,17 +82,17 @@ main {
                 }
             }
             .gifo-container {
-                display: grid;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: stretch;
+                justify-content: space-around;
                 padding: 0 4%;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: repeat(6, 38vw);
-                row-gap: 6vw;
-                column-gap: 4vw;
-                // border: 3px blue dotted;
                 box-sizing: border-box;
                 .card-gifo {
                     position: relative;
-                    width: 100%;
+                    width: 45%;
+                    height: 130px;
+                    margin: 10px auto;
                     .container-hover {
                         display: flex;
                         flex-flow: column nowrap;
@@ -135,6 +136,7 @@ main {
                 }
             }
             .ver-mas {
+                display: none;
                 border: 1px solid $font-color-primary;
                 border-radius: 27px;
                 height: 16vw;

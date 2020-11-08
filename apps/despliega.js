@@ -2,12 +2,15 @@ let buscador = document.getElementById("buscar-top");
 let cerrar = document.getElementById("menu-close");
 let cont = document.getElementById("prueba");
 let lupaIzq = document.getElementById("lupa-izq");
-let lupaDer = document.getElementById("lupa-der");
+let lupaDer = document.getElementById("lupa-close");
+let vermas = document.getElementById("ver-mas");
 
+// Aqui desplegamos las opciones y jugamos con los iconos de busqueda
 buscador.addEventListener("keydown", (contenedor) => {
-    cerrar.style.display = 'block';
-    lupaDer.style.display = 'none';
-    lupaIzq.style.display = 'block';
+    lupaDer.src = "./imgs/close.svg";
+    lupaDer.style.width = '18px';
+    lupaDer.style.height = '18px';
+    lupaIzq.style.display = "block"
     cont.innerHTML = " ";
     contenedor = document.createElement("div");
     contenedor.id = "opciones";
@@ -19,12 +22,15 @@ buscador.addEventListener("keydown", (contenedor) => {
     <p><img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 4</label></p>`
     cont.appendChild(contenedor);
 })
-cerrar.addEventListener("click", () => {
+
+// aqui borramos lo escrito en el buscador 
+lupaDer.addEventListener("click", () => {
+    buscador.value = "";
     contenedor = document.getElementById("opciones");
     contenedor.innerHTML = " ";
-    buscador.value = "";
-    cerrar.style.display = 'none';
-    lupaDer.style.display = 'block';
+    lupaDer.src = "./imgs/close.svg" ? lupaDer.src = "./imgs/icon-search.svg" : lupaDer.src = "./imgs/close.svg";
+    lupaDer.style.width = '23px';
+    lupaDer.style.height = '23px';
     lupaIzq.style.display = 'none';
 })
 buscador.addEventListener("blur", () => {
@@ -33,7 +39,7 @@ buscador.addEventListener("blur", () => {
 
 })
 
-
+// aqui hacemos la solicitud e imprimimos información del servidor de gifos
 const apiKey = "3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
 let pathTrending = "api.giphy.com/v1/gifs/trending";
 let containerGif = document.getElementById("gifo-container");
@@ -76,13 +82,14 @@ async function buscarGifos(params) {
             card.firstElementChild.style.display = "none";
         })
         containerGif.appendChild(card);
+        vermas.style.display = "block";
     }
 
 }
 
-let disparadorSearch = document.getElementById("lupa-izq");
 
-disparadorSearch.addEventListener("click", () => {
+// aqui disparamos la busqueda al ir escribiendo 
+buscador.addEventListener("keyup", () => {
     try {
         buscarGifos();
     } catch (error) {
@@ -90,17 +97,19 @@ disparadorSearch.addEventListener("click", () => {
     }
 })
 
-let vermas = document.getElementById("ver-mas");
+
+let gifoContainer = document.getElementById("gifo-comtainer");
 
 vermas.addEventListener("click", () => {
     if (cantidad < 24) {
         cantidad += 4;
         try {
+
             buscarGifos();
         } catch (error) {
             console.log(error);
         }
-    } else if (cantidad = 24) {
+    } else if (cantidad > 20) {
         vermas.innerHTML = `<p>ver menos</p>`
         cantidad = 12;
         try {
