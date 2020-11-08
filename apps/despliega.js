@@ -4,24 +4,43 @@ let cont = document.getElementById("prueba");
 let lupaIzq = document.getElementById("lupa-izq");
 let lupaDer = document.getElementById("lupa-close");
 let vermas = document.getElementById("ver-mas");
+const apiKey = "3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
+let pathTrending = "api.giphy.com/v1/gifs/trending";
+let containerGif = document.getElementById("gifo-container");
+let cantidad = 12;
 
 // Aqui desplegamos las opciones y jugamos con los iconos de busqueda
-buscador.addEventListener("keydown", (contenedor) => {
+buscador.addEventListener("keyup", (contenedor) => {
     lupaDer.src = "./imgs/close.svg";
     lupaDer.style.width = '18px';
     lupaDer.style.height = '18px';
-    lupaIzq.style.display = "block"
+    lupaIzq.style.display = "block";
+    cont.innerHTML = " ";
+    llamaSugerencias();
+
+})
+
+async function llamaSugerencias() {
+    const busqueda = buscador.value;
+    console.log(busqueda);
+    const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&limit=4&offset=0&rating=g&lang=en`;
+    console.log(path);
+    let llamado = await fetch(path);
+    let json1 = await llamado.json();
+    console.log(json1.data);
     cont.innerHTML = " ";
     contenedor = document.createElement("div");
     contenedor.id = "opciones";
     contenedor.className = "opciones";
-    contenedor.innerHTML = ` <hr>
-    <p><img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 1</label></p>
-    <p><img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 2</label></p>
-    <p><img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 3</label></p>
-    <p><img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">Sugerencia 4</label></p>`
+    contenedor.innerHTML = `<hr>`;
+    for (let i = 0; i < json1.data.length; i++) {
+        const element = json1.data[i];
+        let sugerencia = document.createElement("p");
+        sugerencia.innerHTML = `<img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">${element.title}</label>`
+        contenedor.appendChild(sugerencia);
+    }
     cont.appendChild(contenedor);
-})
+}
 
 // aqui borramos lo escrito en el buscador 
 lupaDer.addEventListener("click", () => {
@@ -40,10 +59,7 @@ buscador.addEventListener("blur", () => {
 })
 
 // aqui hacemos la solicitud e imprimimos información del servidor de gifos
-const apiKey = "3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
-let pathTrending = "api.giphy.com/v1/gifs/trending";
-let containerGif = document.getElementById("gifo-container");
-let cantidad = 12;
+
 
 async function buscarGifos(params) {
     const busqueda = buscador.value;
@@ -104,18 +120,20 @@ vermas.addEventListener("click", () => {
     if (cantidad < 24) {
         cantidad += 4;
         try {
-
             buscarGifos();
+            if (cantidad === 24) {
+                vermas.innerHTML = `<p>ver menos</p>`
+            }
         } catch (error) {
-            console.log(error);
+            alert("Hemos detectado el siguiente error en el servidor: ", error);
         }
-    } else if (cantidad > 20) {
-        vermas.innerHTML = `<p>ver menos</p>`
+    } else if (cantidad = 24) {
         cantidad = 12;
+        vermas.innerHTML = `<p>ver más</p>`
         try {
             buscarGifos();
         } catch (error) {
-            console.log(error);
+            alert("Hemos detectado el siguiente error en el servidor: ", error);
         }
     }
 })

@@ -250,23 +250,30 @@ body main #buscador-principal #trending .busqueda .search {
 }
 
 body main #buscador-principal #trending .gifo-container {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding: 0 4%;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: (38vw)[6];
-      grid-template-rows: repeat(6, 38vw);
-  row-gap: 6vw;
-  -webkit-column-gap: 4vw;
-          column-gap: 4vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body main #buscador-principal #trending .gifo-container .card-gifo {
   position: relative;
   z-index: 2;
+  width: 45%;
+  height: 130px;
+  margin: 10px auto;
 }
 
 body main #buscador-principal #trending .gifo-container .card-gifo .container-hover {
@@ -330,6 +337,7 @@ body main #buscador-principal #trending .gifo-container .card-gifo .gifo-trend {
 }
 
 body main #buscador-principal #trending .ver-mas {
+  display: none;
   border: 1px solid white;
   border-radius: 27px;
   height: 16vw;
@@ -614,14 +622,10 @@ body footer .footer-placer .derechos {
   body main #buscador-principal #trending .busqueda .search {
     font-size: 35px;
   }
-  body main #buscador-principal #trending .gifo-container {
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    -ms-grid-rows: (14vw)[3];
-        grid-template-rows: repeat(3, 14vw);
-    row-gap: 2vw;
-    -webkit-column-gap: 3vw;
-            column-gap: 3vw;
+  body main #buscador-principal #trending .gifo-container .card-gifo {
+    width: 23%;
+    height: 210px;
+    margin: 10px 0px;
   }
   body main #buscador-principal #trending .gifo-container .card-gifo .container-hover {
     display: none;

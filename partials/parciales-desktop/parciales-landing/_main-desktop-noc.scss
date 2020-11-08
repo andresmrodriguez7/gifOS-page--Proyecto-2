@@ -76,11 +76,10 @@ main {
                 }
             }
             .gifo-container {
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-template-rows: repeat(3, 14vw);
-                row-gap: 2vw;
-                column-gap: 3vw;
                 .card-gifo {
+                    width: 23%;
+                    height: 210px;
+                    margin: 10px 0px;
                     .container-hover {
                         display: none;
                         flex-direction: column;
