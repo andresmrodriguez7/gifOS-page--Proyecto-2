@@ -12,12 +12,9 @@ let tendencia = document.getElementById("gifos");
 
 async function llamaSugerencias() {
     const busqueda = buscador.value;
-    console.log(busqueda);
     const path = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${busqueda}&limit=4&offset=0&rating=g&lang=en`;
-    console.log(path);
     let llamado = await fetch(path);
     let json1 = await llamado.json();
-    console.log(json1.data);
     cont.innerHTML = " ";
     contenedor = document.createElement("div");
     contenedor.id = "opciones";
@@ -38,9 +35,7 @@ async function buscarGifos(params) {
     search.innerHTML = `<b>${busqueda}</b>`
     const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&limit=${cantidad}&offset=0&rating=g&lang=en`;
     let llamado = await fetch(path);
-    console.log(llamado);
     let json = await llamado.json();
-    console.log(json.data);
     containerGif.innerHTML = " ";
     for (let i = 0; i < json.data.length; i++) {
         const element = json.data[i];
@@ -77,7 +72,7 @@ async function buscarTendencia() {
     const path = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=6&rating=g`;
     let llamado = await fetch(path);
     let json2 = await llamado.json();
-    console.log(json2);
+
     for (let i = 0; i < json2.data.length; i++) {
         const element = json2.data[i];
         let src = element.images.fixed_width.url;
@@ -105,10 +100,23 @@ async function buscarTendencia() {
         })
         tendencia.appendChild(card);
     }
-
 }
 
-buscarTendencia();
+async function buscaTrending() {
+    const path = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
+    let llamado = await fetch(path);
+    let json3 = await llamado.json();
+    console.log(json3);
+    for (let i = 0; 1 < json3.data.length; i++) {
+        const element = json3.data[i];
+
+
+
+    }
+}
+buscaTrending();
+// aqui se actualizan los gifos en tendencia
+window.onload = buscarTendencia();
 
 // Aqui desplegamos las opciones y jugamos con los iconos de busqueda
 buscador.addEventListener("keyup", (contenedor) => {
@@ -142,7 +150,7 @@ buscador.addEventListener("keyup", () => {
     try {
         buscarGifos();
     } catch (error) {
-        console.log(error);
+        alert("Hemos detectado el siguiente error en el servidor: ", error);
     }
 })
 
