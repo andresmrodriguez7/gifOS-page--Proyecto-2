@@ -23,7 +23,7 @@ buscador.addEventListener("keyup", (contenedor) => {
 async function llamaSugerencias() {
     const busqueda = buscador.value;
     console.log(busqueda);
-    const path = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${busqueda}&limit=4&offset=0&rating=g&lang=en`;
+    const path = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${busqueda}&limit=4&offset=0&rating=g&lang=en`;
     console.log(path);
     let llamado = await fetch(path);
     let json1 = await llamado.json();
@@ -36,7 +36,7 @@ async function llamaSugerencias() {
     for (let i = 0; i < json1.data.length; i++) {
         const element = json1.data[i];
         let sugerencia = document.createElement("p");
-        sugerencia.innerHTML = `<img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">${element.title}</label>`
+        sugerencia.innerHTML = `<img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">${element.name}</label>`
         contenedor.appendChild(sugerencia);
     }
     cont.appendChild(contenedor);
