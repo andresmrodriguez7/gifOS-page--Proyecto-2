@@ -9,6 +9,7 @@ let pathTrending = "api.giphy.com/v1/gifs/trending";
 let containerGif = document.getElementById("gifo-container");
 let cantidad = 12;
 let tendencia = document.getElementById("gifos");
+let trends = document.getElementById("trends");
 
 async function llamaSugerencias() {
     const busqueda = buscador.value;
@@ -102,19 +103,25 @@ async function buscarTendencia() {
     }
 }
 
+function capitalize(word) {
+    return word[0].toUpperCase() + word.slice(1);
+}
+
 async function buscaTrending() {
     const path = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
     let llamado = await fetch(path);
     let json3 = await llamado.json();
-    console.log(json3);
-    for (let i = 0; 1 < json3.data.length; i++) {
+    console.log(json3.data);
+    for (let i = 0; i <= 5; i++) {
         const element = json3.data[i];
-
-
-
+        let trend = capitalize(element);
+        console.log(trend);
+        let option = document.createElement("span");
+        option.innerHTML = ` ${trend},`
+        trends.appendChild(option);
     }
 }
-buscaTrending();
+window.onload = buscaTrending();
 // aqui se actualizan los gifos en tendencia
 window.onload = buscarTendencia();
 
