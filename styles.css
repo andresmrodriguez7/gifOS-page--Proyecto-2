@@ -112,6 +112,7 @@ body header #menu-selector:checked ~ .menu-placer ul a {
 
 body header #menu-selector:checked ~ .menu-placer ul a li {
   margin-top: 30px;
+  cursor: pointer;
 }
 
 body header #menu-selector:checked ~ .menu-open {
@@ -342,6 +343,7 @@ body main #buscador-principal #trending .ver-mas p {
   line-height: 16vw;
   font-weight: 700;
   color: #572EE5;
+  cursor: pointer;
 }
 
 body main #gifos-tendencia {
@@ -564,6 +566,7 @@ body footer .footer-placer .derechos {
   }
   body header .menu-placer ul a li {
     margin: 0 20px;
+    cursor: pointer;
   }
   body header .button {
     display: block;
@@ -692,6 +695,7 @@ body footer .footer-placer .derechos {
   }
   body main #buscador-principal #trending .ver-mas p {
     line-height: 50px;
+    cursor: pointer;
   }
   body main #gifos-tendencia .gifos-tendencia {
     display: -webkit-box;
