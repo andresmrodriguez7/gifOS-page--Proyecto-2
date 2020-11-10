@@ -373,6 +373,7 @@ body footer .footer-placer .derechos {
     color: white;
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
+    cursor: pointer;
   }
   body footer .footer-placer {
     -webkit-box-orient: horizontal;
