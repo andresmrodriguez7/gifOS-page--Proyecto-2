@@ -39,6 +39,13 @@ main {
                     border: none;
                     font-size: 18px;
                 }
+                #lupa-izq {
+                    display: none;
+                    opacity: 0.3;
+                }
+                #menu-close {
+                    display: none;
+                }
             }
             .opciones {
                 display: none;
@@ -75,17 +82,48 @@ main {
                 }
             }
             .gifo-container {
-                display: grid;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: stretch;
+                justify-content: space-around;
                 padding: 0 4%;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: repeat(6, 38vw);
-                row-gap: 6vw;
-                column-gap: 4vw;
-                // border: 3px blue dotted;
                 box-sizing: border-box;
                 .card-gifo {
                     position: relative;
-                    // border: 3px yellow dotted;
+                    width: 45%;
+                    height: 130px;
+                    margin: 10px auto;
+                    .container-hover {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: space-between;
+                        height: 100%;
+                        width: 100%;
+                        &:hover {
+                            background-color: rgba(74, 30, 227, 0.4);
+                        }
+                        .container-icon {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            justify-content: flex-end;
+                            .icon-gifo {
+                                width: 20px;
+                                height: 20px;
+                                margin: 2px 2px;
+                            }
+                        }
+                        .container-desc {
+                            color: white;
+                            font-family: $font-primary;
+                            font-weight: 500;
+                            text-align: left;
+                            padding-left: 5px;
+                            p {
+                                font-size: 13px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
                     .gifo-trend {
                         position: absolute;
                         top: 0;
@@ -98,6 +136,7 @@ main {
                 }
             }
             .ver-mas {
+                display: none;
                 border: 1px solid $font-color-primary;
                 border-radius: 27px;
                 height: 16vw;
@@ -111,6 +150,7 @@ main {
                     line-height: 16vw;
                     font-weight: 700;
                     color: $font-color-primary;
+                    cursor: pointer;
                 }
             }
         }
@@ -152,7 +192,7 @@ main {
                 // flex-wrap: nowrap;
                 // justify-content: space-between;
                 display: grid;
-                grid-template-columns: 76vw 76vw 76vw;
+                grid-template-columns: 76vw 76vw 76vw 76vw 76vw 76vw;
                 grid-template-rows: 58vw;
                 column-gap: 20px;
                 padding: 10px;
@@ -164,14 +204,45 @@ main {
                     width: 100%;
                     margin: 0;
                     box-sizing: border-box;
+                    .container-hover {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: space-between;
+                        height: 100%;
+                        width: 100%;
+                        &:hover {
+                            background-color: rgba(74, 30, 227, 0.4);
+                        }
+                        .container-icon {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            justify-content: flex-end;
+                            .icon-gifo {
+                                width: 30px;
+                                height: 30px;
+                                margin: 3px 3px;
+                            }
+                        }
+                        .container-desc {
+                            color: white;
+                            font-family: $font-primary;
+                            font-weight: 500;
+                            text-align: left;
+                            padding-left: 5px;
+                            p {
+                                font-size: 13px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
                     .gifo-trend {
                         position: absolute;
                         top: 0;
                         left: 0;
                         width: 76vw;
                         height: 58vw;
-                        margin: 0;
-                        z-index: 3;
+                        z-index: -1;
+                        // border: 3px green dotted;
                     }
                 }
             }

@@ -112,6 +112,7 @@ body header #menu-selector:checked ~ .menu-placer ul a {
 
 body header #menu-selector:checked ~ .menu-placer ul a li {
   margin-top: 30px;
+  cursor: pointer;
 }
 
 body header #menu-selector:checked ~ .menu-open {
@@ -310,7 +311,7 @@ body footer .footer-placer .derechos {
   font-family: "Roboto", sans-serif;
 }
 
-@media (min-width: 769px) and (max-width: 1445px) {
+@media (min-width: 769px) and (max-width: 1600px) {
   body header {
     padding: 40px 5%;
   }
@@ -367,6 +368,7 @@ body footer .footer-placer .derechos {
   }
   body header .menu-placer ul a li {
     margin: 0 20px;
+    cursor: pointer;
   }
   body header .button {
     display: block;

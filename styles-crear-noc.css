@@ -114,6 +114,7 @@ body header #menu-selector:checked ~ .menu-placer ul a {
 
 body header #menu-selector:checked ~ .menu-placer ul a li {
   margin-top: 30px;
+  cursor: pointer;
 }
 
 body header #menu-selector:checked ~ .menu-open {
@@ -172,7 +173,7 @@ body footer .footer-placer .derechos {
   font-family: "Roboto", sans-serif;
 }
 
-@media (min-width: 769px) and (max-width: 1500px) {
+@media (min-width: 769px) and (max-width: 1600px) {
   body header {
     padding: 40px 5%;
   }
@@ -232,6 +233,7 @@ body footer .footer-placer .derechos {
   }
   body header .menu-placer ul a li {
     margin: 0 20px;
+    cursor: pointer;
   }
   body header .button {
     display: block;
@@ -350,6 +352,7 @@ body footer .footer-placer .derechos {
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
+    cursor: pointer;
   }
   body main #container-externo hr {
     height: 5px;
@@ -357,7 +360,7 @@ body footer .footer-placer .derechos {
     background-color: white;
     border: none;
   }
-  body main #container-externo .btn-buscar {
+  body main #container-externo .btn-comenzar {
     width: 127px;
     height: 50px;
     border: 1px white solid;
@@ -366,11 +369,12 @@ body footer .footer-placer .derechos {
     text-align: center;
     margin: 30px auto;
   }
-  body main #container-externo .btn-buscar p {
+  body main #container-externo .btn-comenzar p {
     font-size: 13px;
     color: white;
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
+    cursor: pointer;
   }
   body footer .footer-placer {
     -webkit-box-orient: horizontal;

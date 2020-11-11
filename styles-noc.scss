@@ -12,7 +12,7 @@ body {
     @import "./partials/parciales-mobile/parciales-landing/footer-mobile-noc";
 }
 
-@media (min-width: 769px) and (max-width: 1500px) {
+@media (min-width: 769px) and (max-width: 1600px) {
     body {
         // inicio del header
         @import "./partials/parciales-desktop/parciales-landing/header-desktop-noc";

@@ -94,6 +94,7 @@ main {
                 font-size: 18px;
                 font-family: $font-primary;
                 font-weight: 700;
+                cursor: pointer;
             }
         }
         hr {
@@ -102,7 +103,7 @@ main {
             background-color: white;
             border: none;
         }
-        .btn-buscar {
+        .btn-comenzar {
             width: 127px;
             height: 50px;
             border: 1px white solid;
@@ -115,6 +116,7 @@ main {
                 color: white;
                 font-weight: 700;
                 font-family: $font-primary;
+                cursor: pointer;
             }
         }
     }

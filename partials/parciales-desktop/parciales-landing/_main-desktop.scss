@@ -15,16 +15,33 @@ main {
             width: 45%;
             margin-top: -5px;
             border: 2px solid #572EE5;
-            border-radius: 27px;
+            border-radius: 35px;
             text-align: left;
-            padding: 5px 5px 15px 5px;
+            padding: 5px 5px 10px 5px;
             .search-container {
                 width: 100%;
                 margin: 0 auto;
                 padding: 0;
                 border: none;
+                #lupa-izq {
+                    display: none;
+                }
+                #lupa-close {
+                    width: 23px;
+                    height: 23px;
+                }
+                .lupa {
+                    opacity: 30%;
+                    width: 23px;
+                    height: 23px;
+                }
                 #buscar-top {
                     width: 80%;
+                }
+                #menu-close {
+                    display: none;
+                    width: 18px;
+                    height: 18px;
                 }
             }
             .opciones {
@@ -35,7 +52,7 @@ main {
                 p {
                     line-height: 16px;
                     margin-top: 10px;
-                    img {
+                    .lupa {
                         opacity: 30%;
                     }
                     label {
@@ -69,13 +86,22 @@ main {
                 }
             }
             .gifo-container {
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-template-rows: repeat(3, 14vw);
-                row-gap: 2vw;
-                column-gap: 3vw;
                 .card-gifo {
+                    width: 23%;
+                    height: 210px;
+                    margin: 10px 0px;
+                    .container-hover {
+                        display: none;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .container-icon .icon-gifo {
+                            width: 30px;
+                            height: 30px;
+                            margin: 2px;
+                        }
+                    }
                     .gifo-trend {
-                        width: 95%;
+                        width: 100%;
                     }
                 }
             }
@@ -85,6 +111,7 @@ main {
                 width: 127px;
                 p {
                     line-height: 50px;
+                    cursor: pointer;
                 }
             }
         }
@@ -106,7 +133,7 @@ main {
                 }
             }
             .gifos {
-                grid-template-columns: 35vw 35vw 35vw;
+                grid-template-columns: repeat(6, 35vw);
                 grid-template-rows: 26.8vw;
                 column-gap: 20px;
                 .card-gifo-carousel {

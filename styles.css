@@ -112,6 +112,7 @@ body header #menu-selector:checked ~ .menu-placer ul a {
 
 body header #menu-selector:checked ~ .menu-placer ul a li {
   margin-top: 30px;
+  cursor: pointer;
 }
 
 body header #menu-selector:checked ~ .menu-open {
@@ -189,6 +190,15 @@ body main #buscador-principal .searcher-placer .search-container #buscar-top {
   font-size: 18px;
 }
 
+body main #buscador-principal .searcher-placer .search-container #lupa-izq {
+  display: none;
+  opacity: 0.3;
+}
+
+body main #buscador-principal .searcher-placer .search-container #menu-close {
+  display: none;
+}
+
 body main #buscador-principal .searcher-placer .opciones {
   display: none;
 }
@@ -232,22 +242,79 @@ body main #buscador-principal #trending .busqueda .search {
 }
 
 body main #buscador-principal #trending .gifo-container {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding: 0 4%;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: (38vw)[6];
-      grid-template-rows: repeat(6, 38vw);
-  row-gap: 6vw;
-  -webkit-column-gap: 4vw;
-          column-gap: 4vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
 body main #buscador-principal #trending .gifo-container .card-gifo {
   position: relative;
+  width: 45%;
+  height: 130px;
+  margin: 10px auto;
+}
+
+body main #buscador-principal #trending .gifo-container .card-gifo .container-hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+body main #buscador-principal #trending .gifo-container .card-gifo .container-hover:hover {
+  background-color: rgba(74, 30, 227, 0.4);
+}
+
+body main #buscador-principal #trending .gifo-container .card-gifo .container-hover .container-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body main #buscador-principal #trending .gifo-container .card-gifo .container-hover .container-icon .icon-gifo {
+  width: 20px;
+  height: 20px;
+  margin: 2px 2px;
+}
+
+body main #buscador-principal #trending .gifo-container .card-gifo .container-hover .container-desc {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 5px;
+}
+
+body main #buscador-principal #trending .gifo-container .card-gifo .container-hover .container-desc p {
+  font-size: 13px;
+  line-height: 20px;
 }
 
 body main #buscador-principal #trending .gifo-container .card-gifo .gifo-trend {
@@ -260,6 +327,7 @@ body main #buscador-principal #trending .gifo-container .card-gifo .gifo-trend {
 }
 
 body main #buscador-principal #trending .ver-mas {
+  display: none;
   border: 1px solid #572EE5;
   border-radius: 27px;
   height: 16vw;
@@ -275,6 +343,7 @@ body main #buscador-principal #trending .ver-mas p {
   line-height: 16vw;
   font-weight: 700;
   color: #572EE5;
+  cursor: pointer;
 }
 
 body main #gifos-tendencia {
@@ -324,8 +393,8 @@ body main #gifos-tendencia .gifos-tendencia .slider {
 body main #gifos-tendencia .gifos-tendencia .gifos {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 76vw 76vw 76vw;
-      grid-template-columns: 76vw 76vw 76vw;
+  -ms-grid-columns: 76vw 76vw 76vw 76vw 76vw 76vw;
+      grid-template-columns: 76vw 76vw 76vw 76vw 76vw 76vw;
   -ms-grid-rows: 58vw;
       grid-template-rows: 58vw;
   -webkit-column-gap: 20px;
@@ -345,14 +414,64 @@ body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel {
           box-sizing: border-box;
 }
 
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover:hover {
+  background-color: rgba(74, 30, 227, 0.4);
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-icon .icon-gifo {
+  width: 30px;
+  height: 30px;
+  margin: 3px 3px;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-desc {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 5px;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-desc p {
+  font-size: 13px;
+  line-height: 20px;
+}
+
 body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .gifo-trend {
   position: absolute;
   top: 0;
   left: 0;
   width: 76vw;
   height: 58vw;
-  margin: 0;
-  z-index: 3;
+  z-index: -1;
 }
 
 body footer .footer-placer {
@@ -390,7 +509,7 @@ body footer .footer-placer .derechos {
   font-family: "Roboto", sans-serif;
 }
 
-@media (min-width: 769px) and (max-width: 1445px) {
+@media (min-width: 769px) and (max-width: 1600px) {
   body header {
     padding: 40px 5%;
   }
@@ -447,6 +566,7 @@ body footer .footer-placer .derechos {
   }
   body header .menu-placer ul a li {
     margin: 0 20px;
+    cursor: pointer;
   }
   body header .button {
     display: block;
@@ -471,9 +591,9 @@ body footer .footer-placer .derechos {
     width: 45%;
     margin-top: -5px;
     border: 2px solid #572EE5;
-    border-radius: 27px;
+    border-radius: 35px;
     text-align: left;
-    padding: 5px 5px 15px 5px;
+    padding: 5px 5px 10px 5px;
   }
   body main #buscador-principal .searcher-placer .search-container {
     width: 100%;
@@ -481,8 +601,25 @@ body footer .footer-placer .derechos {
     padding: 0;
     border: none;
   }
+  body main #buscador-principal .searcher-placer .search-container #lupa-izq {
+    display: none;
+  }
+  body main #buscador-principal .searcher-placer .search-container #lupa-close {
+    width: 23px;
+    height: 23px;
+  }
+  body main #buscador-principal .searcher-placer .search-container .lupa {
+    opacity: 30%;
+    width: 23px;
+    height: 23px;
+  }
   body main #buscador-principal .searcher-placer .search-container #buscar-top {
     width: 80%;
+  }
+  body main #buscador-principal .searcher-placer .search-container #menu-close {
+    display: none;
+    width: 18px;
+    height: 18px;
   }
   body main #buscador-principal .searcher-placer .opciones {
     display: -webkit-box;
@@ -499,7 +636,7 @@ body footer .footer-placer .derechos {
     line-height: 16px;
     margin-top: 10px;
   }
-  body main #buscador-principal .searcher-placer .opciones p img {
+  body main #buscador-principal .searcher-placer .opciones p .lupa {
     opacity: 30%;
   }
   body main #buscador-principal .searcher-placer .opciones p label {
@@ -528,17 +665,28 @@ body footer .footer-placer .derechos {
   body main #buscador-principal #trending .busqueda .search {
     font-size: 35px;
   }
-  body main #buscador-principal #trending .gifo-container {
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    -ms-grid-rows: (14vw)[3];
-        grid-template-rows: repeat(3, 14vw);
-    row-gap: 2vw;
-    -webkit-column-gap: 3vw;
-            column-gap: 3vw;
+  body main #buscador-principal #trending .gifo-container .card-gifo {
+    width: 23%;
+    height: 210px;
+    margin: 10px 0px;
+  }
+  body main #buscador-principal #trending .gifo-container .card-gifo .container-hover {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body main #buscador-principal #trending .gifo-container .card-gifo .container-hover .container-icon .icon-gifo {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
   }
   body main #buscador-principal #trending .gifo-container .card-gifo .gifo-trend {
-    width: 95%;
+    width: 100%;
   }
   body main #buscador-principal #trending .ver-mas {
     border-radius: 25px;
@@ -547,6 +695,7 @@ body footer .footer-placer .derechos {
   }
   body main #buscador-principal #trending .ver-mas p {
     line-height: 50px;
+    cursor: pointer;
   }
   body main #gifos-tendencia .gifos-tendencia {
     display: -webkit-box;
@@ -568,8 +717,8 @@ body footer .footer-placer .derechos {
     margin: 20px auto;
   }
   body main #gifos-tendencia .gifos-tendencia .gifos {
-    -ms-grid-columns: 35vw 35vw 35vw;
-        grid-template-columns: 35vw 35vw 35vw;
+    -ms-grid-columns: (35vw)[6];
+        grid-template-columns: repeat(6, 35vw);
     -ms-grid-rows: 26.8vw;
         grid-template-rows: 26.8vw;
     -webkit-column-gap: 20px;

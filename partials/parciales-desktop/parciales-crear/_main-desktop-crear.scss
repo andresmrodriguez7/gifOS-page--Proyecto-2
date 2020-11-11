@@ -75,6 +75,10 @@ main {
                 width: 480px;
                 height: 320px;
                 margin: 35px auto;
+                #marco-video {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
         .pasos {
@@ -93,6 +97,7 @@ main {
                 font-size: 18px;
                 font-family: $font-primary;
                 font-weight: 700;
+                cursor: pointer;
             }
         }
         hr {
@@ -101,7 +106,7 @@ main {
             background-color: #572EE5;
             border: none;
         }
-        .btn-buscar {
+        .btn-comenzar {
             width: 127px;
             height: 50px;
             border: 1px #572EE5 solid;
@@ -114,6 +119,7 @@ main {
                 color: #572EE5;
                 font-weight: 700;
                 font-family: $font-primary;
+                cursor: pointer;
             }
         }
     }
