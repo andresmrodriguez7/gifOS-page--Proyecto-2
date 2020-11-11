@@ -352,6 +352,7 @@ body footer .footer-placer .derechos {
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
+    cursor: pointer;
   }
   body main #container-externo hr {
     height: 5px;
@@ -359,7 +360,7 @@ body footer .footer-placer .derechos {
     background-color: white;
     border: none;
   }
-  body main #container-externo .btn-buscar {
+  body main #container-externo .btn-comenzar {
     width: 127px;
     height: 50px;
     border: 1px white solid;
@@ -368,7 +369,7 @@ body footer .footer-placer .derechos {
     text-align: center;
     margin: 30px auto;
   }
-  body main #container-externo .btn-buscar p {
+  body main #container-externo .btn-comenzar p {
     font-size: 13px;
     color: white;
     font-weight: 700;
