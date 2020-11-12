@@ -43,6 +43,7 @@ async function buscarGifos(params) {
         let src = element.images.fixed_width.url;
         let gifoName = element.title;
         let user = element.username;
+        let id = element.id;
         let card = document.createElement("div");
         card.id = "card-gifo"
         card.className = "card-gifo"
@@ -57,7 +58,7 @@ async function buscarGifos(params) {
             <p class="gif-title">T${gifoName}</p>
         </div>
     </div>
-       <img class="gifo-trend" src="${src}" alt="">`
+       <img id="${id}" class="gifo-trend" src="${src}" alt="${gifoName}">`
         card.addEventListener("mouseover", () => {
             card.firstElementChild.style.display = "flex";
         })
@@ -79,6 +80,7 @@ async function buscarTendencia() {
         let src = element.images.fixed_width.url;
         let gifoName = element.title;
         let user = element.username;
+        let id = element.id;
         let card = document.createElement("div");
         card.className = "card-gifo-carousel"
         card.innerHTML = ` <div id="container-hover" class="container-hover">
@@ -92,7 +94,7 @@ async function buscarTendencia() {
             <p class="gif-title">T${gifoName}</p>
         </div>
     </div>
-       <img class="gifo-trend" src="${src}" alt="gif-tendencia">`
+       <img id="${id}" class="gifo-trend" src="${src}" alt="gif-tendencia">`
         card.addEventListener("mouseover", () => {
             card.firstElementChild.style.display = "flex";
         })
@@ -132,19 +134,30 @@ buscador.addEventListener("keyup", (contenedor) => {
     lupaDer.style.height = '18px';
     lupaIzq.style.display = "block";
     cont.innerHTML = " ";
+    cont.style.display = "block";
     llamaSugerencias();
 
+})
+let brand = document.getElementById("brand");
+let results = document.getElementById("results");
+buscador.addEventListener("focusin", () => {
+    brand.style.display = "none";
+    containerGif.style.display = "flex";
+    results.style.display = "block";
 })
 
 // aqui borramos lo escrito en el buscador 
 lupaDer.addEventListener("click", () => {
     buscador.value = "";
+    brand.style.display = "block";
+    results.style.display = "none";
     contenedor = document.getElementById("opciones");
     contenedor.innerHTML = " ";
     lupaDer.src = "./imgs/close.svg" ? lupaDer.src = "./imgs/icon-search.svg" : lupaDer.src = "./imgs/close.svg";
     lupaDer.style.width = '23px';
     lupaDer.style.height = '23px';
     lupaIzq.style.display = 'none';
+
 })
 buscador.addEventListener("blur", () => {
     contenedor = document.getElementById("opciones");
