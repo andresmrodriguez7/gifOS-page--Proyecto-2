@@ -1,14 +1,54 @@
+// let noche = document.getElementById("noc-mode");
+
+// noche.addEventListener("click", (estilo) => {
+//     estilo = document.getElementById("estilos-gifos");
+//     hoja = estilo.href;
+
+//     if (hoja === "http://127.0.0.1:5500/styles-gifos-noc.css") {
+//         estilo.href = "http://127.0.0.1:5500/styles-gifos.css";
+
+//     } else if (hoja === "http://127.0.0.1:5500/styles-gifos.css") {
+//         estilo.href = "http://127.0.0.1:5500/styles-gifos-noc.css";
+
+//     }
+// })
+
 let noche = document.getElementById("noc-mode");
+let btnCrear = document.getElementById("btn-Crear");
+let lupa = document.getElementById("lupa-close");
 
-noche.addEventListener("click", (estilo) => {
-    estilo = document.getElementById("estilos-gifos");
-    hoja = estilo.href;
+btnCrear.addEventListener("mouseover", () => {
+    btnCrear.src = "./imgs/CTA-crear-gifo-hover.svg";
+});
 
-    if (hoja === "http://127.0.0.1:5500/styles-gifos-noc.css") {
-        estilo.href = "http://127.0.0.1:5500/styles-gifos.css";
+btnCrear.addEventListener("mouseout", () => {
+    btnCrear.src = "./imgs/button-crear-gifo.svg";
+    btnCrear.src = "./imgs/CTA-crear-gifo-active.svg"
+});
 
-    } else if (hoja === "http://127.0.0.1:5500/styles-gifos.css") {
-        estilo.href = "http://127.0.0.1:5500/styles-gifos-noc.css";
+// función que setea el tema nocturno
+function setTheme(themeName) {
+    localStorage.setItem("theme", themeName);
+    document.documentElement.className = themeName;
+}
+// intercambia los temas y los guarda localmente
 
+// para la primera carga de pagina verificamos el ultimo tema usado y luego lo cargamos
+(function() {
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-dark');
+    } else {
+        setTheme('theme-light');
     }
-})
+})();
+
+noche.addEventListener("click", function toggleTheme() {
+    let tema = localStorage.getItem("theme");
+    console.log(tema);
+    console.log("aqui");
+    if (tema === "theme-dark") {
+        setTheme("theme-light");
+    } else {
+        setTheme("theme-dark");
+    }
+});

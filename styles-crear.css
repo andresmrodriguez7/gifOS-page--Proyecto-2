@@ -12,6 +12,7 @@
   --body-bg-card: rgba(74, 30, 227, 0.4);
   --font-exception: #50e3c2;
   --font-color-card: #ffffff;
+  --color-hr-crear:#572ee5;
   --font-placeholder: #4a5b6b;
 }
 
@@ -24,6 +25,7 @@
   --font-color: #572ee5;
   --font-color-card: #ffffff;
   --font-exception: #50e3c2;
+  --color-hr-crear:#572ee5;
   --font-placeholder: #4a5b6b;
 }
 
@@ -269,6 +271,7 @@ body footer .footer-placer .derechos {
         -ms-flex-direction: row;
             flex-direction: row;
     border: 50px auto;
+    background-color: var(--body-main);
   }
   body main .adornos {
     position: relative;
@@ -302,36 +305,38 @@ body footer .footer-placer .derechos {
   }
   body main #container-externo #intermediate-container {
     position: relative;
-    border: 3px #572ee5 solid;
+    border: 3px var(--font-color) solid;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   body main #container-externo #intermediate-container .esq-sup-izq, body main #container-externo #intermediate-container .esq-inf-izq, body main #container-externo #intermediate-container .esq-sup-der, body main #container-externo #intermediate-container .esq-inf-der {
     position: absolute;
     top: 5%;
     left: 5%;
-    border-left: 3px #50e3c2 solid;
-    border-top: 3px #50e3c2 solid;
+    border-left: 3px var(--font-exception) solid;
+    border-top: 3px var(--font-exception) solid;
     width: 30px;
     height: 30px;
   }
   body main #container-externo #intermediate-container .esq-inf-izq {
     top: 87%;
-    border-left: 3px #50e3c2 solid;
-    border-bottom: 3px #50e3c2 solid;
+    border-left: 3px var(--font-exception) solid;
+    border-bottom: 3px var(--font-exception) solid;
     border-top: none;
   }
   body main #container-externo #intermediate-container .esq-sup-der {
     top: 5%;
     left: 90%;
-    border-right: 3px #50e3c2 solid;
+    border-right: 3px var(--font-exception) solid;
     border-bottom: none;
-    border-top: 3px #50e3c2 solid;
+    border-top: 3px var(--font-exception) solid;
     border-left: 0;
   }
   body main #container-externo #intermediate-container .esq-inf-der {
     top: 87%;
     left: 90%;
-    border-right: 3px #50e3c2 solid;
-    border-bottom: 3px #50e3c2 solid;
+    border-right: 3px var(--font-exception) solid;
+    border-bottom: 3px var(--font-exception) solid;
     border-top: none;
     border-left: 0;
   }
@@ -363,13 +368,13 @@ body footer .footer-placer .derechos {
   }
   body main #container-externo .pasos p {
     margin: 20px;
-    border: 1px #572ee5 solid;
+    border: 1px var(--font-color) solid;
     border-radius: 20px;
     width: 32px;
     height: 32px;
     text-align: center;
     line-height: 30px;
-    color: #572ee5;
+    color: var(--font-color);
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
@@ -377,14 +382,14 @@ body footer .footer-placer .derechos {
   }
   body main #container-externo hr {
     height: 5px;
-    color: #572ee5;
-    background-color: #572ee5;
+    color: var(--color-hr-crear);
+    background-color: var(--color-hr-crear);
     border: none;
   }
   body main #container-externo .btn-comenzar {
     width: 127px;
     height: 50px;
-    border: 1px #572ee5 solid;
+    border: 1px var(--font-color) solid;
     border-radius: 20px;
     line-height: 50px;
     text-align: center;
@@ -392,7 +397,7 @@ body footer .footer-placer .derechos {
   }
   body main #container-externo .btn-comenzar p {
     font-size: 13px;
-    color: #572ee5;
+    color: var(--font-color);
     font-weight: 700;
     font-family: "Montserrat", sans-serif;
     cursor: pointer;

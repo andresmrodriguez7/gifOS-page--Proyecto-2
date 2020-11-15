@@ -12,6 +12,7 @@
   --body-bg-card: rgba(74, 30, 227, 0.4);
   --font-exception: #50e3c2;
   --font-color-card: #ffffff;
+  --color-hr-crear:#572ee5;
   --font-placeholder: #4a5b6b;
 }
 
@@ -24,6 +25,7 @@
   --font-color: #572ee5;
   --font-color-card: #ffffff;
   --font-exception: #50e3c2;
+  --color-hr-crear:#572ee5;
   --font-placeholder: #4a5b6b;
 }
 
@@ -157,12 +159,15 @@ body header #menu-selector:checked ~ .menu-close .close-burger {
 
 body main #trending {
   text-align: center;
+  background-color: var(--body-main);
+  border-top: 20px solid var(--body-main);
+  border-bottom: 30px solid var(--body-main);
 }
 
 body main #trending .trending-placer {
   width: 70%;
   margin: 0 auto;
-  color: #4a1ee3;
+  color: var(--font-color);
   font-family: "Montserrat", sans-serif;
 }
 
@@ -178,7 +183,6 @@ body main #trending .trending-placer img {
 }
 
 body main #trending .gifo-container {
-  border: 2px red;
   display: -ms-grid;
   display: grid;
   padding: 0 4%;
@@ -195,6 +199,9 @@ body main #trending .gifo-container {
 
 body main #trending .gifo-container .card-gifo {
   position: relative;
+  color: var(--font-color-card);
+  font-family: "Montserrat", sans-serif;
+  z-index: 2;
 }
 
 body main #trending .gifo-container .card-gifo .gifo-trend {
@@ -207,7 +214,7 @@ body main #trending .gifo-container .card-gifo .gifo-trend {
 }
 
 body main #trending .ver-mas {
-  border: 1px solid #572EE5;
+  border: 1px solid var(--font-color);
   border-radius: 27px;
   height: 16vw;
   width: 40vw;
@@ -221,12 +228,12 @@ body main #trending .ver-mas p {
   margin: auto;
   line-height: 16vw;
   font-weight: 700;
-  color: #572EE5;
+  color: var(--font-color);
 }
 
 body main #gifos-tendencia {
   position: relative;
-  background-color: #f3f5f8;
+  background-color: var(--body-trending);
   z-index: 2;
 }
 
@@ -252,7 +259,7 @@ body main #gifos-tendencia .gifos-tendencia .trending-placer h3 {
   margin: auto;
   line-height: 16vw;
   font-weight: 700;
-  color: #572EE5;
+  color: var(--font-color);
 }
 
 body main #gifos-tendencia .gifos-tendencia .trending-placer p {
@@ -261,7 +268,7 @@ body main #gifos-tendencia .gifos-tendencia .trending-placer p {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   line-height: 16px;
-  color: black;
+  color: var(--font-color);
 }
 
 body main #gifos-tendencia .gifos-tendencia .slider {

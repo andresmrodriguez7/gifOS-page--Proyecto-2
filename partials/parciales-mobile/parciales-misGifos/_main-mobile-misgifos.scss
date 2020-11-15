@@ -1,10 +1,13 @@
 main {
     #trending {
         text-align: center;
+        background-color: var(--body-main);
+        border-top: 20px solid var(--body-main);
+        border-bottom: 30px solid var(--body-main);
         .trending-placer {
             width: 70%;
             margin: 0 auto;
-            color: #4a1ee3;
+            color: var(--font-color);
             font-family: $font-primary;
             .trending-title {
                 margin-top: 30px;
@@ -17,7 +20,6 @@ main {
             }
         }
         .gifo-container {
-            border: 2px red;
             display: grid;
             padding: 0 4%;
             grid-template-columns: 1fr 1fr;
@@ -28,6 +30,9 @@ main {
             box-sizing: border-box;
             .card-gifo {
                 position: relative;
+                color: var(--font-color-card);
+                font-family: $font-primary;
+                z-index: 2;
                 // border: 3px yellow dotted;
                 .gifo-trend {
                     position: absolute;
@@ -41,7 +46,7 @@ main {
             }
         }
         .ver-mas {
-            border: 1px solid $font-color-primary;
+            border: 1px solid var(--font-color);
             border-radius: 27px;
             height: 16vw;
             width: 40vw;
@@ -53,13 +58,13 @@ main {
                 margin: auto;
                 line-height: 16vw;
                 font-weight: 700;
-                color: $font-color-primary;
+                color: var(--font-color);
             }
         }
     }
     #gifos-tendencia {
         position: relative;
-        background-color: #f3f5f8;
+        background-color: var(--body-trending);
         z-index: 2;
         .gifos-tendencia {
             display: flex;
@@ -74,7 +79,7 @@ main {
                     margin: auto;
                     line-height: 16vw;
                     font-weight: 700;
-                    color: $font-color-primary;
+                    color: var(--font-color);
                 }
                 p {
                     width: 80%;
@@ -82,7 +87,7 @@ main {
                     font-size: 16px;
                     font-family: $font-primary;
                     line-height: 16px;
-                    color: black;
+                    color: var(--font-color);
                 }
             }
             .slider {

@@ -11,7 +11,7 @@ btnCrear.addEventListener("mouseout", () => {
     btnCrear.src = "./imgs/CTA-crear-gifo-active.svg"
 });
 
-// función que setea el tema nocturno
+// funcion que setea el tema nocturno
 function setTheme(themeName) {
     localStorage.setItem("theme", themeName);
     document.documentElement.className = themeName;
@@ -33,9 +33,12 @@ noche.addEventListener("click", function toggleTheme() {
     console.log("aqui");
     if (tema === "theme-dark") {
         setTheme("theme-light");
+        lupa.src="./imgs/icon-search.svg";
     } else {
         setTheme("theme-dark");
+        lupa.src="./imgs/icon-search-mod-noc.svg";
     }
+
 });
 
 
