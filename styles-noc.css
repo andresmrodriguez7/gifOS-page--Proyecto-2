@@ -3,6 +3,30 @@
   margin: 0;
 }
 
+.theme-dark {
+  --body-border: #000000;
+  --body-main: #37383c;
+  --body-trending: #222326;
+  --font-color: #ffffff;
+  --body-bg-menu: black;
+  --body-bg-card: rgba(74, 30, 227, 0.4);
+  --font-exception: #50e3c2;
+  --font-color-card: #ffffff;
+  --font-placeholder: #4a5b6b;
+}
+
+.theme-light {
+  --body-border: #572ee5;
+  --body-main: #ffffff;
+  --body-trending: #f3f5f8;
+  --body-bg-menu: rgba(87, 46, 229, 0.8);
+  --body-bg-card: rgba(74, 30, 227, 0.4);
+  --font-color: #572ee5;
+  --font-color-card: #ffffff;
+  --font-exception: #50e3c2;
+  --font-placeholder: #4a5b6b;
+}
+
 body {
   position: relative;
   width: 100%;
@@ -266,7 +290,6 @@ body main #buscador-principal #trending .gifo-container {
   padding: 0 4%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 body main #buscador-principal #trending .gifo-container .card-gifo {

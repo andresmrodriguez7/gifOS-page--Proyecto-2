@@ -3,6 +3,30 @@
   margin: 0;
 }
 
+.theme-dark {
+  --body-border: #000000;
+  --body-main: #37383c;
+  --body-trending: #222326;
+  --font-color: #ffffff;
+  --body-bg-menu: black;
+  --body-bg-card: rgba(74, 30, 227, 0.4);
+  --font-exception: #50e3c2;
+  --font-color-card: #ffffff;
+  --font-placeholder: #4a5b6b;
+}
+
+.theme-light {
+  --body-border: #572ee5;
+  --body-main: #ffffff;
+  --body-trending: #f3f5f8;
+  --body-bg-menu: rgba(87, 46, 229, 0.8);
+  --body-bg-card: rgba(74, 30, 227, 0.4);
+  --font-color: #572ee5;
+  --font-color-card: #ffffff;
+  --font-exception: #50e3c2;
+  --font-placeholder: #4a5b6b;
+}
+
 body {
   position: relative;
   width: 100%;
@@ -29,7 +53,8 @@ body header {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-top: 5px #572ee5 solid;
+  border-top: 5px var(--body-border) solid;
+  background-color: var(--body-main);
 }
 
 body header .logo-placer,
@@ -88,7 +113,7 @@ body header #menu-selector:checked ~ .menu-placer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(87, 46, 229, 0.8);
+  background-color: var(--body-bg-menu);
 }
 
 body header #menu-selector:checked ~ .menu-placer ul {
@@ -104,7 +129,7 @@ body header #menu-selector:checked ~ .menu-placer ul hr {
 
 body header #menu-selector:checked ~ .menu-placer ul a {
   text-decoration: none;
-  color: white;
+  color: var(--font-color-card);
   font-size: 1.5em;
   width: auto;
   font-family: 'Montserrat', sans-serif;
@@ -277,6 +302,10 @@ body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .gifo-tre
   z-index: 3;
 }
 
+body footer {
+  background-color: var(--body-main);
+}
+
 body footer .footer-placer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -295,6 +324,7 @@ body footer .footer-placer {
 body footer .footer-placer .compartir-en {
   margin: 20px 0;
   font-family: "Roboto", sans-serif;
+  color: var(--font-color);
 }
 
 body footer .footer-placer .compartir-en img {
@@ -303,11 +333,8 @@ body footer .footer-placer .compartir-en img {
   margin: 10px 7px;
 }
 
-body footer .footer-placer .compartir-en img :hover {
-  background-image: #572EE5;
-}
-
 body footer .footer-placer .derechos {
+  color: var(--font-color);
   margin-bottom: 30px;
   font-family: "Roboto", sans-serif;
 }
@@ -360,7 +387,7 @@ body footer .footer-placer .derechos {
     text-decoration: none;
     width: auto;
     font-family: 'Montserrat', sans-serif;
-    color: #572ee5;
+    color: var(--font-color);
     font-size: 13px;
     line-height: 16px;
     font-weight: 700;

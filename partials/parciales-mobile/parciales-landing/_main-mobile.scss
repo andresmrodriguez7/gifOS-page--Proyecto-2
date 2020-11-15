@@ -2,15 +2,17 @@ main {
     #buscador-principal {
         box-sizing: border-box;
         width: 100%;
+        background-color: var(--body-main);
+        border-top: 50px var(--body-main) solid;
         h1 {
             font-family: $font-primary;
             font-size: 25px;
-            color: $font-color-primary;
+            color: var(--font-color);
             text-align: center;
             width: 80%;
             margin: 0 auto;
             #texto-dif {
-                color: $font-color-variant;
+                color: var(--font-exception);
             }
         }
         .ilustracion {
@@ -22,9 +24,10 @@ main {
             width: 95%;
             margin: 0 auto;
             text-align: center;
+            background-color: var(--body-main);
             .search-container {
                 width: 100%;
-                border: 2px solid $font-color-primary;
+                border: 2px solid var(--font-color);
                 border-radius: 27px;
                 height: 50px;
                 display: flex;
@@ -33,11 +36,14 @@ main {
                 align-items: center;
                 padding: 0 2%;
                 box-sizing: border-box;
+                background-color: var(--body-main);
                 #buscar-top {
                     height: 22px;
                     width: 70%;
                     border: none;
                     font-size: 18px;
+                    background-color: var(--body-main);
+                    color: var(--font-color);
                 }
                 #lupa-izq {
                     display: none;
@@ -53,10 +59,11 @@ main {
         }
         #trending {
             text-align: center;
+            border-bottom: 50px var(--body-main) solid;
             .trending-placer {
                 width: 70%;
                 margin: 0 auto;
-                color: #4a1ee3;
+                color: var(--font-color);
                 font-family: $font-primary;
                 .trending-title {
                     font-size: 18px;
@@ -75,7 +82,7 @@ main {
             .busqueda {
                 width: 100%;
                 margin: 40px auto;
-                color: #4a1ee3;
+                color: var(--font-color);
                 font-family: $font-primary;
                 .search {
                     font-size: 25px;
@@ -93,6 +100,7 @@ main {
                     width: 45%;
                     height: 130px;
                     margin: 10px auto;
+                    z-index: 2;
                     .container-hover {
                         display: flex;
                         flex-flow: column nowrap;
@@ -100,7 +108,7 @@ main {
                         height: 100%;
                         width: 100%;
                         &:hover {
-                            background-color: rgba(74, 30, 227, 0.4);
+                            background-color: var(--body-bg-card);
                         }
                         .container-icon {
                             display: flex;
@@ -113,7 +121,7 @@ main {
                             }
                         }
                         .container-desc {
-                            color: white;
+                            color: var(--font-color-card);
                             font-family: $font-primary;
                             font-weight: 500;
                             text-align: left;
@@ -137,7 +145,7 @@ main {
             }
             .ver-mas {
                 display: none;
-                border: 1px solid $font-color-primary;
+                border: 1px solid var(--font-color);
                 border-radius: 27px;
                 height: 16vw;
                 width: 40vw;
@@ -149,7 +157,7 @@ main {
                     margin: auto;
                     line-height: 16vw;
                     font-weight: 700;
-                    color: $font-color-primary;
+                    color: var(--font-color);
                     cursor: pointer;
                 }
             }
@@ -157,7 +165,7 @@ main {
     }
     #gifos-tendencia {
         position: relative;
-        background-color: #f3f5f8;
+        background-color: var(--body-trending);
         z-index: 2;
         .gifos-tendencia {
             display: flex;
@@ -172,7 +180,7 @@ main {
                     margin: auto;
                     line-height: 16vw;
                     font-weight: 700;
-                    color: $font-color-primary;
+                    color: var(--font-color);
                 }
                 p {
                     width: 80%;
@@ -180,7 +188,7 @@ main {
                     font-size: 16px;
                     font-family: $font-primary;
                     line-height: 16px;
-                    color: black;
+                    color: var(--font-color);
                 }
             }
             .slider {

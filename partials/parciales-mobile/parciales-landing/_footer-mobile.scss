@@ -1,4 +1,5 @@
 footer {
+    background-color: var(--body-main);
     .footer-placer {
         display: flex;
         flex-flow: column nowrap;
@@ -8,16 +9,15 @@ footer {
         .compartir-en {
             margin: 20px 0;
             font-family: $font-secondary;
+            color: var(--font-color);
             img {
                 width: 18px;
                 height: 18px;
                 margin: 10px 7px;
-                 :hover {
-                    background-image: $font-color-primary;
-                }
             }
         }
         .derechos {
+            color: var(--font-color);
             margin-bottom: 30px;
             font-family: $font-secondary;
         }

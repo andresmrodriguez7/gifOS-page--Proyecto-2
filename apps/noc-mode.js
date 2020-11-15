@@ -3,7 +3,6 @@ let btnCrear = document.getElementById("btn-Crear");
 let lupa = document.getElementById("lupa-close");
 
 btnCrear.addEventListener("mouseover", () => {
-
     btnCrear.src = "./imgs/CTA-crear-gifo-hover.svg";
 });
 
@@ -12,20 +11,51 @@ btnCrear.addEventListener("mouseout", () => {
     btnCrear.src = "./imgs/CTA-crear-gifo-active.svg"
 });
 
-noche.addEventListener("click", (estilo) => {
-    estilo = document.getElementById("estilos");
-    hoja = estilo.href;
+// función que setea el tema nocturno
+function setTheme(themeName) {
+    localStorage.setItem("theme", themeName);
+    document.documentElement.className = themeName;
+}
+// intercambia los temas y los guarda localmente
 
-
-    if (hoja === "http://127.0.0.1:5500/styles-noc.css") {
-        estilo.href = "http://127.0.0.1:5500/styles.css";
-        btnCrear.src = "./imgs/button-crear-gifo.svg";
-        lupa.src = "./imgs/icon-search.svg"
-
-    } else if (hoja === "http://127.0.0.1:5500/styles.css") {
-        estilo.href = "http://127.0.0.1:5500/styles-noc.css";
-        btnCrear.src = "./imgs/CTA-crear-gifo-active.svg"
-        lupa.src = "./imgs/icon-search-mod-noc.svg"
-
+// para la primera carga de pagina verificamos el ultimo tema usado y luego lo cargamos
+(function() {
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-dark');
+    } else {
+        setTheme('theme-light');
     }
-})
+})();
+
+noche.addEventListener("click", function toggleTheme() {
+    let tema = localStorage.getItem("theme");
+    console.log(tema);
+    console.log("aqui");
+    if (tema === "theme-dark") {
+        setTheme("theme-light");
+    } else {
+        setTheme("theme-dark");
+    }
+});
+
+
+
+
+
+// noche.addEventListener("click", (estilo) => {
+//     estilo = document.getElementById("estilos");
+//     hoja = estilo.href;
+
+
+//     if (hoja === "http://127.0.0.1:5500/styles-noc.css") {
+//         estilo.href = "http://127.0.0.1:5500/styles.css";
+//         btnCrear.src = "./imgs/button-crear-gifo.svg";
+//         lupa.src = "./imgs/icon-search.svg"
+
+//     } else if (hoja === "http://127.0.0.1:5500/styles.css") {
+//         estilo.href = "http://127.0.0.1:5500/styles-noc.css";
+//         btnCrear.src = "./imgs/CTA-crear-gifo-active.svg"
+//         lupa.src = "./imgs/icon-search-mod-noc.svg"
+
+//     }
+// })

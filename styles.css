@@ -3,6 +3,30 @@
   margin: 0;
 }
 
+.theme-dark {
+  --body-border: #000000;
+  --body-main: #37383c;
+  --body-trending: #222326;
+  --font-color: #ffffff;
+  --body-bg-menu: black;
+  --body-bg-card: rgba(74, 30, 227, 0.4);
+  --font-exception: #50e3c2;
+  --font-color-card: #ffffff;
+  --font-placeholder: #4a5b6b;
+}
+
+.theme-light {
+  --body-border: #572ee5;
+  --body-main: #ffffff;
+  --body-trending: #f3f5f8;
+  --body-bg-menu: rgba(87, 46, 229, 0.8);
+  --body-bg-card: rgba(74, 30, 227, 0.4);
+  --font-color: #572ee5;
+  --font-color-card: #ffffff;
+  --font-exception: #50e3c2;
+  --font-placeholder: #4a5b6b;
+}
+
 body {
   position: relative;
   width: 100%;
@@ -29,7 +53,8 @@ body header {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-top: 5px #572ee5 solid;
+  border-top: 5px var(--body-border) solid;
+  background-color: var(--body-main);
 }
 
 body header .logo-placer,
@@ -88,7 +113,7 @@ body header #menu-selector:checked ~ .menu-placer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(87, 46, 229, 0.8);
+  background-color: var(--body-bg-menu);
 }
 
 body header #menu-selector:checked ~ .menu-placer ul {
@@ -104,7 +129,7 @@ body header #menu-selector:checked ~ .menu-placer ul hr {
 
 body header #menu-selector:checked ~ .menu-placer ul a {
   text-decoration: none;
-  color: white;
+  color: var(--font-color-card);
   font-size: 1.5em;
   width: auto;
   font-family: 'Montserrat', sans-serif;
@@ -134,19 +159,21 @@ body main #buscador-principal {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
+  background-color: var(--body-main);
+  border-top: 50px var(--body-main) solid;
 }
 
 body main #buscador-principal h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 25px;
-  color: #572EE5;
+  color: var(--font-color);
   text-align: center;
   width: 80%;
   margin: 0 auto;
 }
 
 body main #buscador-principal h1 #texto-dif {
-  color: #50e3c2;
+  color: var(--font-exception);
 }
 
 body main #buscador-principal .ilustracion {
@@ -159,11 +186,12 @@ body main #buscador-principal .searcher-placer {
   width: 95%;
   margin: 0 auto;
   text-align: center;
+  background-color: var(--body-main);
 }
 
 body main #buscador-principal .searcher-placer .search-container {
   width: 100%;
-  border: 2px solid #572EE5;
+  border: 2px solid var(--font-color);
   border-radius: 27px;
   height: 50px;
   display: -webkit-box;
@@ -181,6 +209,7 @@ body main #buscador-principal .searcher-placer .search-container {
   padding: 0 2%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: var(--body-main);
 }
 
 body main #buscador-principal .searcher-placer .search-container #buscar-top {
@@ -188,6 +217,8 @@ body main #buscador-principal .searcher-placer .search-container #buscar-top {
   width: 70%;
   border: none;
   font-size: 18px;
+  background-color: var(--body-main);
+  color: var(--font-color);
 }
 
 body main #buscador-principal .searcher-placer .search-container #lupa-izq {
@@ -205,12 +236,13 @@ body main #buscador-principal .searcher-placer .opciones {
 
 body main #buscador-principal #trending {
   text-align: center;
+  border-bottom: 50px var(--body-main) solid;
 }
 
 body main #buscador-principal #trending .trending-placer {
   width: 70%;
   margin: 0 auto;
-  color: #4a1ee3;
+  color: var(--font-color);
   font-family: "Montserrat", sans-serif;
 }
 
@@ -233,7 +265,7 @@ body main #buscador-principal #trending .trending-placer hr {
 body main #buscador-principal #trending .busqueda {
   width: 100%;
   margin: 40px auto;
-  color: #4a1ee3;
+  color: var(--font-color);
   font-family: "Montserrat", sans-serif;
 }
 
@@ -264,6 +296,7 @@ body main #buscador-principal #trending .gifo-container .card-gifo {
   width: 45%;
   height: 130px;
   margin: 10px auto;
+  z-index: 2;
 }
 
 body main #buscador-principal #trending .gifo-container .card-gifo .container-hover {
@@ -282,7 +315,7 @@ body main #buscador-principal #trending .gifo-container .card-gifo .container-ho
 }
 
 body main #buscador-principal #trending .gifo-container .card-gifo .container-hover:hover {
-  background-color: rgba(74, 30, 227, 0.4);
+  background-color: var(--body-bg-card);
 }
 
 body main #buscador-principal #trending .gifo-container .card-gifo .container-hover .container-icon {
@@ -305,7 +338,7 @@ body main #buscador-principal #trending .gifo-container .card-gifo .container-ho
 }
 
 body main #buscador-principal #trending .gifo-container .card-gifo .container-hover .container-desc {
-  color: white;
+  color: var(--font-color-card);
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   text-align: left;
@@ -328,7 +361,7 @@ body main #buscador-principal #trending .gifo-container .card-gifo .gifo-trend {
 
 body main #buscador-principal #trending .ver-mas {
   display: none;
-  border: 1px solid #572EE5;
+  border: 1px solid var(--font-color);
   border-radius: 27px;
   height: 16vw;
   width: 40vw;
@@ -342,13 +375,13 @@ body main #buscador-principal #trending .ver-mas p {
   margin: auto;
   line-height: 16vw;
   font-weight: 700;
-  color: #572EE5;
+  color: var(--font-color);
   cursor: pointer;
 }
 
 body main #gifos-tendencia {
   position: relative;
-  background-color: #f3f5f8;
+  background-color: var(--body-trending);
   z-index: 2;
 }
 
@@ -374,7 +407,7 @@ body main #gifos-tendencia .gifos-tendencia .trending-placer h3 {
   margin: auto;
   line-height: 16vw;
   font-weight: 700;
-  color: #572EE5;
+  color: var(--font-color);
 }
 
 body main #gifos-tendencia .gifos-tendencia .trending-placer p {
@@ -383,7 +416,7 @@ body main #gifos-tendencia .gifos-tendencia .trending-placer p {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   line-height: 16px;
-  color: black;
+  color: var(--font-color);
 }
 
 body main #gifos-tendencia .gifos-tendencia .slider {
@@ -474,6 +507,10 @@ body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .gifo-tre
   z-index: -1;
 }
 
+body footer {
+  background-color: var(--body-main);
+}
+
 body footer .footer-placer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -492,6 +529,7 @@ body footer .footer-placer {
 body footer .footer-placer .compartir-en {
   margin: 20px 0;
   font-family: "Roboto", sans-serif;
+  color: var(--font-color);
 }
 
 body footer .footer-placer .compartir-en img {
@@ -500,11 +538,8 @@ body footer .footer-placer .compartir-en img {
   margin: 10px 7px;
 }
 
-body footer .footer-placer .compartir-en img :hover {
-  background-image: #572EE5;
-}
-
 body footer .footer-placer .derechos {
+  color: var(--font-color);
   margin-bottom: 30px;
   font-family: "Roboto", sans-serif;
 }
@@ -557,7 +592,7 @@ body footer .footer-placer .derechos {
     text-decoration: none;
     width: auto;
     font-family: 'Montserrat', sans-serif;
-    color: #572ee5;
+    color: var(--font-color);
     font-size: 13px;
     line-height: 16px;
     font-weight: 700;
@@ -590,7 +625,7 @@ body footer .footer-placer .derechos {
   body main #buscador-principal .searcher-placer {
     width: 45%;
     margin-top: -5px;
-    border: 2px solid #572EE5;
+    border: 2px solid var(--font-color);
     border-radius: 35px;
     text-align: left;
     padding: 5px 5px 10px 5px;
@@ -643,7 +678,7 @@ body footer .footer-placer .derechos {
     margin-left: 15px;
     font-size: 20px;
     vertical-align: auto;
-    color: gray;
+    color: var(--font-placeholder);
     font-family: Arial, Helvetica, sans-serif;
   }
   body main #buscador-principal #trending .trending-placer {
@@ -659,7 +694,7 @@ body footer .footer-placer .derechos {
   body main #buscador-principal #trending .busqueda {
     width: 100%;
     margin: 40px auto;
-    color: #4a1ee3;
+    color: var(--font-color);
     font-family: 'Montserrat', sans-serif;
   }
   body main #buscador-principal #trending .busqueda .search {
