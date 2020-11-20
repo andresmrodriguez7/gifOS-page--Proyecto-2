@@ -1,6 +1,7 @@
 let noche = document.getElementById("noc-mode");
 let btnCrear = document.getElementById("btn-Crear");
 let lupa = document.getElementById("lupa-close");
+let logoHeader= document.getElementById("logoHeader");
 
 btnCrear.addEventListener("mouseover", () => {
     btnCrear.src = "./imgs/CTA-crear-gifo-hover.svg";
@@ -21,9 +22,9 @@ function setTheme(themeName) {
 // para la primera carga de pagina verificamos el ultimo tema usado y luego lo cargamos
 (function() {
     if (localStorage.getItem('theme') === 'theme-dark') {
-        setTheme('theme-dark');
+        setTheme('theme-dark');        
     } else {
-        setTheme('theme-light');
+        setTheme('theme-light');       
     }
 })();
 
@@ -34,9 +35,11 @@ noche.addEventListener("click", function toggleTheme() {
     if (tema === "theme-dark") {
         setTheme("theme-light");
         lupa.src="./imgs/icon-search.svg";
+        logoHeader.src="./imgs/logo-desktop.svg";
     } else {
         setTheme("theme-dark");
         lupa.src="./imgs/icon-search-mod-noc.svg";
+        logoHeader.src="./imgs/Logo-modo-noc.svg";
     }
 
 });

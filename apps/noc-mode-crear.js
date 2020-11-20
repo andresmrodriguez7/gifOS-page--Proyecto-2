@@ -17,6 +17,7 @@ let noche = document.getElementById("noc-mode");
 let btnCrear = document.getElementById("btn-Crear");
 let lupa = document.getElementById("lupa-close");
 
+
 btnCrear.addEventListener("mouseover", () => {
     btnCrear.src = "./imgs/CTA-crear-gifo-hover.svg";
 });
@@ -30,6 +31,7 @@ btnCrear.addEventListener("mouseout", () => {
 function setTheme(themeName) {
     localStorage.setItem("theme", themeName);
     document.documentElement.className = themeName;
+   
 }
 // intercambia los temas y los guarda localmente
 
@@ -37,8 +39,10 @@ function setTheme(themeName) {
 (function() {
     if (localStorage.getItem('theme') === 'theme-dark') {
         setTheme('theme-dark');
+       
     } else {
         setTheme('theme-light');
+       
     }
 })();
 

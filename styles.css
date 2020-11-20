@@ -680,7 +680,7 @@ body footer .footer-placer .derechos {
     margin-left: 15px;
     font-size: 20px;
     vertical-align: auto;
-    color: var(--font-placeholder);
+    color: var(--font-color);
     font-family: Arial, Helvetica, sans-serif;
   }
   body main #buscador-principal #trending .trending-placer {
