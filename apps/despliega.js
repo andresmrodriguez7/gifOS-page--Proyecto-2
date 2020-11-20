@@ -10,6 +10,9 @@ let containerGif = document.getElementById("gifo-container");
 let cantidad = 12;
 let tendencia = document.getElementById("gifos");
 let trends = document.getElementById("trends");
+let modal = document.getElementById("modal")
+let modalExit = document.getElementById("modal-close");
+let gifExtend = document.getElementById("gif-selected")
 
 async function llamaSugerencias() {
     const busqueda = buscador.value;
@@ -31,22 +34,17 @@ async function llamaSugerencias() {
     }
     cont.appendChild(contenedor);
     let select = document.getElementsByClassName("suggest");
-
-
     for (let i = 0; i < select.length; i++) {
         const element = select[i];
         element.addEventListener("mouseover", () => {
             event.target.style.color = "#0078d7";
         })
-
         element.addEventListener("mouseout", () => {
-
             if (localStorage.getItem('theme') === 'theme-light') {
                 event.target.style.color = "#572ee5";
             } else {
                 event.target.style.color = "white";
             }
-
         })
         element.addEventListener("click", () => {
             buscador.value = element.innerHTML;
@@ -54,6 +52,13 @@ async function llamaSugerencias() {
             contenedor.innerHTML = " ";
         })
     }
+}
+async function llamaGifExtend(params) {
+    let id = params;
+    const path = `https://api.giphy.com/v1/gifs/?gif_id=${id}&api_key=3cqcb8LEg33MtM0vWp2nMTE6iMswMXML`;
+    let llamado = await fetch(path);
+    let json = await llamado.json();
+    gifExtend.src = json.data.images.fixed_width.url;
 }
 
 async function buscarGifos(params) {
@@ -75,13 +80,13 @@ async function buscarGifos(params) {
         card.className = "card-gifo"
         card.innerHTML = ` <div id="container-hover" class="container-hover">
         <div class="container-icon">
-            <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
-            <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
-            <img src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo">
+            <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo down">
+            <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo fav">
+            <img  id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
         </div>
         <div class="container-desc">
             <p class="gif-user">${user}</p>
-            <p class="gif-title">T${gifoName}</p>
+            <p class="gif-title">${gifoName}</p>
         </div>
     </div>
        <img id="${id}" class="gifo-trend" src="${src}" alt="${gifoName}">`
@@ -94,6 +99,20 @@ async function buscarGifos(params) {
         containerGif.appendChild(card);
         vermas.style.display = "block";
     }
+    let extendIcon = document.getElementsByClassName("icon-gifo extend");
+    for (let i = 0; i < extendIcon.length; i++) {
+        const element = extendIcon[i];
+        element.addEventListener("click", () => {
+            modal.style.display = "block";
+            let id = event.target.id;
+            llamaGifExtend(id);
+        })
+        modalExit.addEventListener("click", () => {
+            modal.style.display = "none";
+        })
+
+    }
+
 }
 
 async function buscarTendencia() {
