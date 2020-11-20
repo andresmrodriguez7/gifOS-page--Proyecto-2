@@ -19,11 +19,15 @@ main {
             position: absolute;
             top: 138px;
             left: 235px;
+            height: auto;
+
         }
         .pelicula {
             position: absolute;
             top: 400px;
             right: 100px;
+            width: auto;
+            height: auto;
         }
     }
     #container-externo {
@@ -38,6 +42,7 @@ main {
             position: relative;
             border: 3px var(--font-color) solid;
             box-sizing: border-box;
+            height: auto;
             .esq-sup-izq {
                 position: absolute;
                 top: 5%;

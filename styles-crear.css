@@ -187,7 +187,7 @@ body main .adornos .camara {
 body main .adornos .luz-camara {
   position: absolute;
   top: 182px;
-  left: 256px;
+  left: 266px;
   height: 80px;
 }
 
@@ -214,6 +214,7 @@ body main #container-externo #intermediate-container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 300px;
+  margin: 5px;
 }
 
 body main #container-externo #intermediate-container #marco-camara {
@@ -229,8 +230,9 @@ body main #container-externo #intermediate-container #marco-camara #marco-video 
 
 body main #container-externo #intermediate-container #marco-camara #mostrarGif {
   display: none;
-  width: 100%;
+  width: 80%;
   height: 100%;
+  margin: 0 auto;
 }
 
 body main #container-externo .pasos {
@@ -418,11 +420,14 @@ body footer .footer-placer .derechos {
     position: absolute;
     top: 138px;
     left: 235px;
+    height: auto;
   }
   body main .adornos .pelicula {
     position: absolute;
     top: 400px;
     right: 100px;
+    width: auto;
+    height: auto;
   }
   body main #container-externo {
     position: absolute;
@@ -437,6 +442,7 @@ body footer .footer-placer .derechos {
     border: 3px var(--font-color) solid;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+    height: auto;
   }
   body main #container-externo #intermediate-container .esq-sup-izq, body main #container-externo #intermediate-container .esq-inf-izq, body main #container-externo #intermediate-container .esq-sup-der, body main #container-externo #intermediate-container .esq-inf-der {
     position: absolute;

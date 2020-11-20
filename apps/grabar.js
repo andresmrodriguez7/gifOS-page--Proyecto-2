@@ -2,8 +2,10 @@ let btnEmpezar = document.getElementById("btn-comenzar");
 let video = document.getElementById("marco-video");
 let btnTerminar = document.getElementById("btn-terminar");
 let mostrarGif = document.getElementById("mostrarGif");
-let btnGuardar= document.getElementById("btn-guardar");
+let btnGuardar = document.getElementById("btn-guardar");
 let recorder = null;
+let pathUpload = "https://upload.giphy.com/v1/gifs";
+const apiKey = "3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
 
 
 function getStreamAndRecord() {
@@ -18,9 +20,9 @@ function getStreamAndRecord() {
             video.play();
             recorder = RecordRTC(stream, {
                 type: 'gif',
-                frameRate: 1,
+                frameRate: 7,
                 quality: 10,
-                width: 340,
+                width: 370,
                 hidden: 240,
                 onGifRecordingStarted: function () {
                     console.log('started')
@@ -44,11 +46,11 @@ btnTerminar.addEventListener('click', () => {
         let blob = recorder.getBlob();
         var uri = URL.createObjectURL(blob);
         console.log(uri);
-        video.style.display="none";
-        mostrarGif.style.display="block";
+        video.style.display = "none";
+        mostrarGif.style.display = "block";
         mostrarGif.src = uri;
-        btnTerminar.style.display="none";
-        btnGuardar.style.display="block";
+        btnTerminar.style.display = "none";
+        btnGuardar.style.display = "block";
         // form.append('file', blob, 'myGif.gif');
         // console.log(form.get('file'));
     });

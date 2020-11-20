@@ -18,7 +18,7 @@ main {
         .luz-camara {
             position: absolute;
             top: 182px;
-            left: 256px;
+            left: 266px;
             height: 80px;
         }
         .pelicula {
@@ -41,6 +41,7 @@ main {
             border: 3px var(--font-color) solid;
             box-sizing: border-box;
             height: 300px;
+            margin: 5px;
             #marco-camara {
                 width: 90%;
                 height: 90%;
@@ -51,8 +52,9 @@ main {
                 }
                 #mostrarGif {
                     display: none;
-                    width: 100%;
+                    width: 80%;
                     height: 100%;
+                    margin: 0 auto;
                 }
             }
         }

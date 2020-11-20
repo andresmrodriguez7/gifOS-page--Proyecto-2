@@ -23,9 +23,20 @@ async function llamaSugerencias() {
     contenedor.innerHTML = `<hr>`;
     for (let i = 0; i < json1.data.length; i++) {
         const element = json1.data[i];
+        let id = i;
         let sugerencia = document.createElement("p");
-        sugerencia.innerHTML = `<img src="./imgs/icon-search.svg" alt="buscar" class="lupa"><label for="">${element.name}</label>`
+        sugerencia.innerHTML = `<img src="./imgs/icon-search.svg" alt="buscar" name="${id}" class="lupa"><label class="suggest" for="${id}">${element.name}</label>`
         contenedor.appendChild(sugerencia);
+
+    }
+    let select = document.getElementsByClassName("suggest");
+    console.log(select);
+    for (let i = 0; i < select.length; i++) {
+        const element = select[i];
+        element.addEventListener("click", () => {
+            buscador.value = element.innerHTML;
+        })
+
     }
     cont.appendChild(contenedor);
 }
@@ -159,11 +170,12 @@ lupaDer.addEventListener("click", () => {
     lupaIzq.style.display = 'none';
 
 })
-buscador.addEventListener("blur", () => {
-    contenedor = document.getElementById("opciones");
-    contenedor.innerHTML = " ";
 
-})
+// buscador.addEventListener("blur", () => {
+//     contenedor = document.getElementById("opciones");
+//     contenedor.innerHTML = " ";
+
+// })
 
 // aqui disparamos la busqueda al ir escribiendo 
 buscador.addEventListener("keyup", () => {
