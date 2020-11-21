@@ -16,6 +16,7 @@
 let noche = document.getElementById("noc-mode");
 let btnCrear = document.getElementById("btn-Crear");
 let lupa = document.getElementById("lupa-close");
+let logoHeader= document.getElementById("logoHeader");
 
 btnCrear.addEventListener("mouseover", () => {
     btnCrear.src = "./imgs/CTA-crear-gifo-hover.svg";
@@ -48,7 +49,9 @@ noche.addEventListener("click", function toggleTheme() {
     console.log("aqui");
     if (tema === "theme-dark") {
         setTheme("theme-light");
+        logoHeader.src="./imgs/logo-desktop.svg";
     } else {
         setTheme("theme-dark");
+        logoHeader.src="./imgs/logo-desktop.svg";
     }
 });
