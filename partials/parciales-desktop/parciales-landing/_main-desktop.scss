@@ -160,6 +160,7 @@ main {
     #modal-external-container {
         position: relative;
         width: 50%;
+        margin-top: 0;
                z-index: 1001;
                #modal-close{
                    position: absolute;
@@ -170,6 +171,7 @@ main {
                }
         #gif-selected {
             width: 100%;
+            height: 450px;
             margin: 0 auto;
            
         }
@@ -181,10 +183,13 @@ main {
             p{
                 line-height: 40px;
                 font-family: $font-primary;
+                font-size: 1em;
             }
             div{
                 .icon-gifo{
                     margin: 3px;
+                    width: 2em;
+                    height: 2em;
                 }
             }
         }

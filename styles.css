@@ -509,6 +509,70 @@ body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .gifo-tre
   z-index: -1;
 }
 
+body #modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(221, 219, 219, 0.7);
+  z-index: 1000;
+  padding: 5% 2.5%;
+}
+
+body #modal #modal-external-container {
+  position: relative;
+  margin-top: 30vw;
+  width: 95%;
+  z-index: 1001;
+}
+
+body #modal #modal-external-container #modal-close {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  width: 20px;
+  height: 20px;
+}
+
+body #modal #modal-external-container #gif-selected {
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+}
+
+body #modal #modal-external-container .modal-internal-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body #modal #modal-external-container .modal-internal-container p {
+  line-height: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+}
+
+body #modal #modal-external-container .modal-internal-container div .icon-gifo {
+  margin: 3px;
+  width: 25px;
+  height: 25px;
+}
+
+body #modal #modal-external-container .modal-internal-container div .icon-gifo:hover {
+  -webkit-box-shadow: 3px 3px 15px rgba(74, 30, 227, 0.4);
+          box-shadow: 3px 3px 15px rgba(74, 30, 227, 0.4);
+}
+
 body footer {
   background-color: var(--body-main);
 }
@@ -779,6 +843,7 @@ body footer .footer-placer .derechos {
   body #modal #modal-external-container {
     position: relative;
     width: 50%;
+    margin-top: 0;
     z-index: 1001;
   }
   body #modal #modal-external-container #modal-close {
@@ -790,6 +855,7 @@ body footer .footer-placer .derechos {
   }
   body #modal #modal-external-container #gif-selected {
     width: 100%;
+    height: 450px;
     margin: 0 auto;
   }
   body #modal #modal-external-container .modal-internal-container {
@@ -808,9 +874,12 @@ body footer .footer-placer .derechos {
   body #modal #modal-external-container .modal-internal-container p {
     line-height: 40px;
     font-family: "Montserrat", sans-serif;
+    font-size: 1em;
   }
   body #modal #modal-external-container .modal-internal-container div .icon-gifo {
     margin: 3px;
+    width: 2em;
+    height: 2em;
   }
   body footer .footer-placer {
     -webkit-box-orient: horizontal;

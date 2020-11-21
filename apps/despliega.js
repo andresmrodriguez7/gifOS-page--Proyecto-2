@@ -12,8 +12,10 @@ let tendencia = document.getElementById("gifos");
 let trends = document.getElementById("trends");
 let modal = document.getElementById("modal")
 let modalExit = document.getElementById("modal-close");
-let gifExtend = document.getElementById("gif-selected")
+let gifExtend = document.getElementById("gif-selected");
+let titleExtend = document.getElementById("titleExtend")
 
+// en esta funcion se piden las sugerencias del buscador y nos suscribimos a los eventos que permiten usar dichas sugerencias
 async function llamaSugerencias() {
     const busqueda = buscador.value;
     const path = `https://api.giphy.com/v1/gifs/search/tags?api_key=${apiKey}&q=${busqueda}&limit=4&offset=0&rating=g&lang=en`;
@@ -53,14 +55,19 @@ async function llamaSugerencias() {
         })
     }
 }
+
+// en esta función solicitamos el gif especifico que el usuario quiere expandir
 async function llamaGifExtend(params) {
     let id = params;
-    const path = `https://api.giphy.com/v1/gifs/?gif_id=${id}&api_key=3cqcb8LEg33MtM0vWp2nMTE6iMswMXML`;
+    const path = `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${id}`;
     let llamado = await fetch(path);
     let json = await llamado.json();
-    gifExtend.src = json.data.images.fixed_width.url;
+    console.log(json.data[0]);
+    gifExtend.src = json.data[0].images.fixed_width.url;
+    titleExtend.innerHTML=json.data[0].title;
 }
 
+// este servicio solicita los 12 gifos iniciales de una busqueda convencional
 async function buscarGifos(params) {
     const busqueda = buscador.value;
     let search = document.getElementById("search");
@@ -109,12 +116,14 @@ async function buscarGifos(params) {
         })
         modalExit.addEventListener("click", () => {
             modal.style.display = "none";
+            gifExtend.src = "./imgs/Loading.gif";
         })
 
     }
 
 }
 
+// esta función busca los gif en tendencia y se actualizan siempre al cargar la pagina
 async function buscarTendencia() {
     const path = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=6&rating=g`;
     let llamado = await fetch(path);
@@ -132,7 +141,7 @@ async function buscarTendencia() {
         <div class="container-icon">
             <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
             <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
-            <img src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo">
+            <img  id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
         </div>
         <div class="container-desc">
             <p class="gif-user">${user}</p>
@@ -147,13 +156,29 @@ async function buscarTendencia() {
             card.firstElementChild.style.display = "none";
         })
         tendencia.appendChild(card);
+        let extendIcon = document.getElementsByClassName("icon-gifo extend");
+        for (let i = 0; i < extendIcon.length; i++) {
+            const element = extendIcon[i];
+            element.addEventListener("click", () => {
+                modal.style.display = "block";
+                let id = event.target.id;
+                llamaGifExtend(id);
+            })
+            modalExit.addEventListener("click", () => {
+                modal.style.display = "none";
+                gifExtend.src = "./imgs/Loading.gif";
+            })
+    
+        }
     }
 }
 
+// esta función coloca los terminos obtenidos en la primera con mayuscula
 function capitalize(word) {
     return word[0].toUpperCase() + word.slice(1);
 }
 
+// esta funcion busca los terminos o tag en tendencia
 async function buscaTrending() {
     const path = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
     let llamado = await fetch(path);
@@ -168,9 +193,12 @@ async function buscaTrending() {
         trends.appendChild(option);
     }
 }
-window.onload = buscaTrending();
+
 // aqui se actualizan los gifos en tendencia
 window.onload = buscarTendencia();
+// aqui se actualizan los tags en tendencia
+window.onload = buscaTrending();
+
 
 // Aqui desplegamos las opciones y jugamos con los iconos de busqueda
 buscador.addEventListener("keyup", (contenedor) => {
@@ -204,6 +232,7 @@ lupaDer.addEventListener("click", () => {
     lupaIzq.style.display = 'none';
 
 })
+
 
 buscador.addEventListener("blur", () => {
     setTimeout(() => {
