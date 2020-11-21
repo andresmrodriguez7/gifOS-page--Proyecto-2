@@ -230,7 +230,7 @@ body main #container-externo #intermediate-container #marco-camara #marco-video 
 
 body main #container-externo #intermediate-container #marco-camara #mostrarGif {
   display: none;
-  width: 80%;
+  width: 60%;
   height: 100%;
   margin: 0 auto;
 }
