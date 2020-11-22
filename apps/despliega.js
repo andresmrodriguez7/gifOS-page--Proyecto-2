@@ -13,7 +13,9 @@ let trends = document.getElementById("trends");
 let modal = document.getElementById("modal")
 let modalExit = document.getElementById("modal-close");
 let gifExtend = document.getElementById("gif-selected");
-let titleExtend = document.getElementById("titleExtend")
+let titleExtend = document.getElementById("titleExtend");
+let favorites = [];
+
 
 // en esta funcion se piden las sugerencias del buscador y nos suscribimos a los eventos que permiten usar dichas sugerencias
 async function llamaSugerencias() {
@@ -55,6 +57,8 @@ async function llamaSugerencias() {
         })
     }
 }
+// en esta funcion extraemos los id de gif para enviarlos a favoritos
+
 
 // en esta función solicitamos el gif especifico que el usuario quiere expandir
 async function llamaGifExtend(params) {
@@ -62,9 +66,8 @@ async function llamaGifExtend(params) {
     const path = `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${id}`;
     let llamado = await fetch(path);
     let json = await llamado.json();
-    console.log(json.data[0]);
     gifExtend.src = json.data[0].images.fixed_width.url;
-    titleExtend.innerHTML=json.data[0].title;
+    titleExtend.innerHTML = json.data[0].title;
 }
 
 // este servicio solicita los 12 gifos iniciales de una busqueda convencional
@@ -87,8 +90,8 @@ async function buscarGifos(params) {
         card.className = "card-gifo"
         card.innerHTML = ` <div id="container-hover" class="container-hover">
         <div class="container-icon">
-            <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo down">
-            <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo fav">
+            <img id="${id}" src="./imgs/icon-download.svg" alt="icon" class="icon-gifo down">
+            <img id="${id}" src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo fav">
             <img  id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
         </div>
         <div class="container-desc">
@@ -106,7 +109,10 @@ async function buscarGifos(params) {
         containerGif.appendChild(card);
         vermas.style.display = "block";
     }
+    // aqui me suscribo a los eventos para extender y seleccionar favoritos
     let extendIcon = document.getElementsByClassName("icon-gifo extend");
+ 
+
     for (let i = 0; i < extendIcon.length; i++) {
         const element = extendIcon[i];
         element.addEventListener("click", () => {
@@ -118,9 +124,11 @@ async function buscarGifos(params) {
             modal.style.display = "none";
             gifExtend.src = "./imgs/Loading.gif";
         })
-
     }
+   guardarFavorito();
 
+   
+   
 }
 
 // esta función busca los gif en tendencia y se actualizan siempre al cargar la pagina
@@ -139,8 +147,8 @@ async function buscarTendencia() {
         card.className = "card-gifo-carousel"
         card.innerHTML = ` <div id="container-hover" class="container-hover">
         <div class="container-icon">
-            <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
-            <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
+            <img id="${id}" src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
+            <img id="${id}" src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo fav">
             <img  id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
         </div>
         <div class="container-desc">
@@ -168,10 +176,30 @@ async function buscarTendencia() {
                 modal.style.display = "none";
                 gifExtend.src = "./imgs/Loading.gif";
             })
-    
+            
         }
+
     }
+    guardarFavorito();
 }
+
+function guardarFavorito(params) {
+    let favIcon = document.getElementsByClassName("icon-gifo fav");
+    for (let i = 0; i < favIcon.length; i++) {
+        const element = favIcon[i];
+        element.addEventListener("click", () => {
+            let idFav = (event.target.id);
+            if (element.src==="./imgs/icon-fav-active.svg") {
+                alert("Ya has guardado este gif como favorito");
+            }else{
+                favorites.push(idFav);
+            }
+            element.src = "./imgs/icon-fav-active.svg";
+            localStorage.setItem("favoritos", JSON.stringify(favorites))
+            console.log(localStorage.getItem("favoritos"));
+        })
+    }
+    }
 
 // esta función coloca los terminos obtenidos en la primera con mayuscula
 function capitalize(word) {
@@ -183,11 +211,9 @@ async function buscaTrending() {
     const path = `https://api.giphy.com/v1/trending/searches?api_key=${apiKey}`;
     let llamado = await fetch(path);
     let json3 = await llamado.json();
-    console.log(json3.data);
     for (let i = 0; i <= 5; i++) {
         const element = json3.data[i];
         let trend = capitalize(element);
-        console.log(trend);
         let option = document.createElement("span");
         option.innerHTML = ` ${trend},`
         trends.appendChild(option);

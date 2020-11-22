@@ -13,15 +13,25 @@ main {
             }
         }
         .gifo-container {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: repeat(3, 14vw);
-            row-gap: 2vw;
-            column-gap: 3vw;
-            .card-gifo {
-                .gifo-trend {
-                    width: 95%;
+           .card-gifo {
+                    width: 23%;
+                    height: 210px;
+                    margin: 10px 0px;
+                   
+                    .container-hover {
+                        display: none;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .container-icon .icon-gifo {
+                            width: 30px;
+                            height: 30px;
+                            margin: 2px;
+                        }
+                    }
+                    .gifo-trend {
+                        width: 100%;
+                    }
                 }
-            }
         }
         .ver-mas {
             border-radius: 25px;
