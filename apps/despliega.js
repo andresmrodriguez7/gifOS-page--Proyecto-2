@@ -109,10 +109,9 @@ async function buscarGifos(params) {
         containerGif.appendChild(card);
         vermas.style.display = "block";
     }
+
     // aqui me suscribo a los eventos para extender y seleccionar favoritos
     let extendIcon = document.getElementsByClassName("icon-gifo extend");
- 
-
     for (let i = 0; i < extendIcon.length; i++) {
         const element = extendIcon[i];
         element.addEventListener("click", () => {
@@ -125,10 +124,10 @@ async function buscarGifos(params) {
             gifExtend.src = "./imgs/Loading.gif";
         })
     }
-   guardarFavorito();
+    guardarFavorito();
 
-   
-   
+
+
 }
 
 // esta función busca los gif en tendencia y se actualizan siempre al cargar la pagina
@@ -176,22 +175,23 @@ async function buscarTendencia() {
                 modal.style.display = "none";
                 gifExtend.src = "./imgs/Loading.gif";
             })
-            
+
         }
 
     }
     guardarFavorito();
 }
 
+// esta funcion guarda un gif como favorito
 function guardarFavorito(params) {
     let favIcon = document.getElementsByClassName("icon-gifo fav");
     for (let i = 0; i < favIcon.length; i++) {
         const element = favIcon[i];
         element.addEventListener("click", () => {
             let idFav = (event.target.id);
-            if (element.src==="./imgs/icon-fav-active.svg") {
+            if (element.src === "./imgs/icon-fav-active.svg") {
                 alert("Ya has guardado este gif como favorito");
-            }else{
+            } else {
                 favorites.push(idFav);
             }
             element.src = "./imgs/icon-fav-active.svg";
@@ -199,7 +199,7 @@ function guardarFavorito(params) {
             console.log(localStorage.getItem("favoritos"));
         })
     }
-    }
+}
 
 // esta función coloca los terminos obtenidos en la primera con mayuscula
 function capitalize(word) {
@@ -215,8 +215,18 @@ async function buscaTrending() {
         const element = json3.data[i];
         let trend = capitalize(element);
         let option = document.createElement("span");
-        option.innerHTML = ` ${trend},`
+        if (i < 5) {
+            option.innerHTML = `${trend}, `
+        } else {
+            option.innerHTML = `${trend} `
+            console.log("aqui")
+        }
         trends.appendChild(option);
+        option.addEventListener("click", () => {
+            buscador.value = option.innerHTML.slice(0, -2);
+            buscarGifos();
+        })
+
     }
 }
 

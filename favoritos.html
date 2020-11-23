@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gifOS Page | Favoritos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link id="estilos-fav" rel="stylesheet" type="text/css" media="all" href="styles-fav.css">
 </head>
 
 <body>
     <header>
-         <!-- logo desktop diurno -->
-         <div class="logo-placer">
-            <a href="./index.html"> <img id="logoHeader" src="./imgs/logo-desktop.svg" alt="logo-desktop" class="logo"></a>
+        <!-- logo desktop diurno -->
+        <div class="logo-placer">
+            <a href="./index.html"> <img id="logoHeader" src="./imgs/logo-desktop.svg" alt="logo-desktop"
+                    class="logo"></a>
         </div>
         <!-- logo desktop nocturno -->
         <div class="logo-noc-placer">
@@ -22,11 +25,11 @@
         </div>
         <!-- logo mobile -->
         <div class="logo-mob-placer">
-            <a href="./index.html"> <img src="./imgs/logo-mobile.svg" alt="logo-mobile" class="logo-mob"> </a>
+            <a href="./index.html"> <img src="./imgs/logo-desktop.svg" alt="logo-mobile" class="logo-mob"> </a>
         </div>
         <!-- logo mobile nocturno -->
         <div class="logo-mob-noc-placer">
-            <a href="./index.html"> <img src="./imgs/logo-mobile-modo-noct.svg" alt="logo-mobile" class="logo-mob-noc"></a>
+            <a href="./index.html"> <img src="./imgs/Logo-modo-noc.svg" alt="logo-mobile" class="logo-mob-noc"></a>
         </div>
         <!-- Este buscador solo aparece con el header sticky -->
         <div class="searcher-placer">
@@ -39,12 +42,10 @@
         <!-- VERSION MOBILE -->
         <div>
             <input type="checkbox" name="menu-selector" id="menu-selector">
-            <label for="menu-selector" class="menu-open"><img
-                        src="./imgs/burger.svg"
-                        alt="burger" class="burger" ></label>
-            <label for="menu-selector" class="menu-close"><img
-                        src="./imgs/close.svg"
-                        alt="burger" class="close-burger"></label>
+            <label for="menu-selector" class="menu-open"><img src="./imgs/burger.svg" alt="burger"
+                    class="burger"></label>
+            <label for="menu-selector" class="menu-close"><img src="./imgs/close.svg" alt="burger"
+                    class="close-burger"></label>
 
             <nav class="menu-placer">
                 <ul class="menu">
@@ -64,18 +65,22 @@
             </nav>
             <!-- El boton de crear gifo tiene un active y un hover -->
             <!-- boton normal -->
-            <a href="./crear.html"><img id="btn-Crear" src="./imgs/button-crear-gifo.svg" alt="boton-crear-gifo" class="button"></a>
+            <a href="./crear.html"><img id="btn-Crear" src="./imgs/button-crear-gifo.svg" alt="boton-crear-gifo"
+                    class="button"></a>
             <!-- boton hover -->
-            <a href="./crear.html"> <img src="./imgs/CTA-crear-gifo-hover.svg" alt="boton-crear-gifo" class="button-hover"></a>
+            <a href="./crear.html"> <img src="./imgs/CTA-crear-gifo-hover.svg" alt="boton-crear-gifo"
+                    class="button-hover"></a>
             <!-- boton active -->
-            <a href="./crear.html"> <img src="./imgs/CTA-crear-gifo-active.svg" alt="boton-crear-gifo" class="button-active"></a> <img src="./imgs/CTA-crear-gifo-active.svg" alt="boton-crear-gifo" class="button-active">
+            <a href="./crear.html"> <img src="./imgs/CTA-crear-gifo-active.svg" alt="boton-crear-gifo"
+                    class="button-active"></a> <img src="./imgs/CTA-crear-gifo-active.svg" alt="boton-crear-gifo"
+                class="button-active">
             <!-- fin del boton crear gifo -->
         </div>
     </header>
     <main>
         <section id="trending">
             <div class="trending-placer">
-                <img src="./imgs/icon-favoritos.svg" alt="icon-fav">
+                <img id="corazoncito" src="./imgs/icon-favoritos.svg" alt="icon-fav">
                 <h2 class="trending-title">Favoritos</h2>
 
             </div>
@@ -84,14 +89,14 @@
 
             </div>
             <!-- boton ver mas -->
-           
+
         </section>
 
         </section>
         <!-- inicia seccion donde se muestras los GIFOS en tendencia -->
         <section id="gifos-tendencia">
             <!-- este div lleva un background diferente -->
-            <div class="gifos-tendencia">
+            <div id="gifos-tendencia" class="gifos-tendencia">
                 <div class="trending-placer">
                     <h3>Trending GIFOS</h3>
                     <p>Mira los ultimos GIFOS de nuestra comunidad.</p>
@@ -99,46 +104,41 @@
                 <!-- slider izquierdo -->
                 <img src="./imgs/button-slider-left.svg" alt="slider-left" class="slider">
                 <!-- gifos en tendencia -->
-                <div class="gifos">
-                    <div class="card-gifo-carousel">
-                        <!-- Cuando se hace hoover en un gifo se muestra esta información -->
-                        <p class="gif-user">User</p>
-                        <p class="gif-title">Titulo GIFO</p>
-                        <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
-                        <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
-                        <img src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo">
-                        <!-- fin hover en gifo -->
-                        <!-- gifo en si mismo -->
-                        <img class="gifo-trend" src="https://picsum.photos/id/250/250" alt="GIFO-trending">
-                    </div>
-                    <div class="card-gifo-carousel">
-                        <!-- Cuando se hace hoover en un gifo se muestra esta información -->
-                        <p class="gif-user">User</p>
-                        <p class="gif-title">Titulo GIFO</p>
-                        <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
-                        <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
-                        <img src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo">
-                        <!-- fin hover en gifo -->
-                        <!-- gifo en si mismo -->
-                        <img class="gifo-trend" src="https://picsum.photos/id/250/250" alt="GIFO-trending">
-                    </div>
-                    <div class="card-gifo-carousel">
-                        <!-- Cuando se hace hoover en un gifo se muestra esta información -->
-                        <p class="gif-user">User</p>
-                        <p class="gif-title">Titulo GIFO</p>
-                        <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
-                        <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
-                        <img src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo">
-                        <!-- fin hover en gifo -->
-                        <!-- gifo en si mismo -->
-                        <img class="gifo-trend" src="https://picsum.photos/id/250/250" alt="GIFO-trending">
-                    </div>
+                <div id="gifos" class="gifos">
+                    <!-- <div class="card-gifo-carousel">
+                            <div id="container-hover" class="container-hover">
+                                <div class="container-icon">
+                                    <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
+                                    <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
+                                    <img src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo">
+                                </div>
+                                <div class="container-desc">
+                                    <p class="gif-user">User</p>
+                                    <p class="gif-title">Titulo GIFO</p>
+                                </div>
+                            </div>
+                            <img class="gifo-trend" src="https://picsum.photos/id/689/600/400" alt="">
+                        </div> -->
+
                 </div>
                 <!-- slider derecho -->
                 <img src="./imgs/Button-Slider-right.svg" alt="slider-right" class="slider">
             </div>
         </section>
     </main>
+    <div class="modal" id="modal">
+        <div id="modal-external-container">
+            <img id="modal-close" src="./imgs/close.svg" alt="close">
+            <img id="gif-selected" src="./imgs/Loading.gif" alt="">
+            <div class="modal-internal-container">
+                <p id="titleExtend">Titulo de prueba</p>
+                <div>
+                    <img src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
+                    <img src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo">
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="footer-placer">
             <div class="compartir-en">

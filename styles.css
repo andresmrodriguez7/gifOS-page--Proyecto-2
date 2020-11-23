@@ -59,7 +59,8 @@ body header {
   background-color: var(--body-main);
 }
 
-body header .logo-placer,
+body header Ocultamos lo que no necesitamos aun
+.logo-placer,
 body header .logo-noc-placer,
 body header .logo-mob-noc-placer,
 body header .button,
@@ -68,9 +69,14 @@ body header .button-active {
   display: none;
 }
 
-body header .logo-mob-placer .logo-mob {
-  width: 49px;
-  height: 49px;
+body header .logo-mob-placer {
+  display: none;
+}
+
+body header .logo-placer {
+  display: block;
+  width: 60px;
+  height: 60px;
 }
 
 body header .searcher-placer {
@@ -471,6 +477,7 @@ body main #gifos-tendencia .gifos-tendencia .gifos {
           box-sizing: border-box;
   width: 100%;
   overflow: scroll;
+  overflow-y: hidden;
 }
 
 body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel {
@@ -570,7 +577,7 @@ body #modal #modal-external-container #modal-close {
 
 body #modal #modal-external-container #gif-selected {
   width: 100%;
-  height: 250px;
+  height: 290px;
   margin: 0 auto;
 }
 
@@ -591,7 +598,8 @@ body #modal #modal-external-container .modal-internal-container {
 body #modal #modal-external-container .modal-internal-container p {
   line-height: 20px;
   font-family: "Montserrat", sans-serif;
-  font-size: 9px;
+  font-size: 10px;
+  font-weight: 700;
 }
 
 body #modal #modal-external-container .modal-internal-container div .icon-gifo {

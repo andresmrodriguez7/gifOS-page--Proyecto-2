@@ -11,7 +11,7 @@ header {
     box-sizing: border-box;
     border-top: 5px var(--body-border) solid;
     background-color: var(--body-main);
-    // Ocultamos lo que no necesitamos aun
+    Ocultamos lo que no necesitamos aun
     .logo-placer,
     .logo-noc-placer,
     .logo-mob-noc-placer,
@@ -20,11 +20,20 @@ header {
     .button-active {
         display: none;
     }
+    // .logo-mob-placer {
+    //     .logo-mob {
+    //         width: 49px;
+    //         height: 49px;
+    //     }
+    // }
     .logo-mob-placer {
-        .logo-mob {
-            width: 49px;
-            height: 49px;
-        }
+        display: none;
+    }
+    // muestro lo que debo mostrar
+    .logo-placer {
+        display: block;
+        width: 60px;
+        height: 60px;
     }
     .searcher-placer {
         display: none;

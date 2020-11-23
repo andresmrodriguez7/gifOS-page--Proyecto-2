@@ -59,7 +59,8 @@ body header {
   background-color: var(--body-main);
 }
 
-body header .logo-placer,
+body header Ocultamos lo que no necesitamos aun
+.logo-placer,
 body header .logo-noc-placer,
 body header .logo-mob-noc-placer,
 body header .button,
@@ -68,9 +69,14 @@ body header .button-active {
   display: none;
 }
 
-body header .logo-mob-placer .logo-mob {
-  width: 49px;
-  height: 49px;
+body header .logo-mob-placer {
+  display: none;
+}
+
+body header .logo-placer {
+  display: block;
+  width: 60px;
+  height: 60px;
 }
 
 body header .searcher-placer {

@@ -70,7 +70,6 @@ main {
                     width: 100%;
                     height: 100%;
                     z-index: -1;
-                    // border: 3px green dotted;
                 }
             }
         }
@@ -123,31 +122,109 @@ main {
                 display: none;
             }
             .gifos {
-                // display: flex;
-                // flex-direction: row;
-                // flex-wrap: nowrap;
-                // justify-content: space-between;
                 display: grid;
-                grid-template-columns: 76vw 76vw 76vw;
+                grid-template-columns: 76vw 76vw 76vw 76vw 76vw 76vw;
                 grid-template-rows: 58vw;
                 column-gap: 20px;
                 padding: 10px;
                 box-sizing: border-box;
                 width: 100%;
                 overflow: scroll;
+                overflow-y: hidden;
                 .card-gifo-carousel {
                     position: relative;
                     width: 100%;
                     margin: 0;
                     box-sizing: border-box;
+                    .container-hover {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        justify-content: space-between;
+                        height: 100%;
+                        width: 100%;
+                        &:hover {
+                            background-color: rgba(74, 30, 227, 0.4);
+                        }
+                        .container-icon {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            justify-content: flex-end;
+                            .icon-gifo {
+                                width: 30px;
+                                height: 30px;
+                                margin: 3px 3px;
+                            }
+                        }
+                        .container-desc {
+                            color: white;
+                            font-family: $font-primary;
+                            font-weight: 500;
+                            text-align: left;
+                            padding-left: 5px;
+                            p {
+                                font-size: 13px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
                     .gifo-trend {
                         position: absolute;
                         top: 0;
                         left: 0;
                         width: 76vw;
                         height: 58vw;
-                        margin: 0;
-                        z-index: 3;
+                        z-index: -1;
+                    }
+                }
+            }
+        }
+    }
+}
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(221, 219, 219, 0.7);
+    z-index: 1000;
+    padding: 5% 2.5%;
+    #modal-external-container {
+        position: relative;
+        margin-top: 30vw;
+        width: 95%;
+        z-index: 1001;
+        #modal-close {
+            position: absolute;
+            right: 0;
+            top: -30px;
+            width: 20px;
+            height: 20px;
+        }
+        #gif-selected {
+            width: 100%;
+            height: 290px;
+            margin: 0 auto;
+        }
+        .modal-internal-container {
+            display: flex;
+            flex-flow: row nowrap;
+            width: 100%;
+            justify-content: space-between;
+            p {
+                line-height: 20px;
+                font-family: $font-primary;
+                font-size: 8px;
+                font-weight: 700;
+            }
+            div {
+                .icon-gifo {
+                    margin: 3px;
+                    width: 25px;
+                    height: 25px;
+                    &:hover {
+                        box-shadow: 3px 3px 15px rgba(74, 30, 227, 0.4);
                     }
                 }
             }
