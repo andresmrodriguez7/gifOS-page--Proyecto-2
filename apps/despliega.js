@@ -174,11 +174,8 @@ async function buscarTendencia() {
                 modal.style.display = "none";
                 gifExtend.src = "./imgs/Loading.gif";
             })
-
         }
-
     }
-
     guardarFavorito();
 }
 
@@ -199,7 +196,7 @@ function guardarFavorito() {
             }
             element.src = "./imgs/icon-fav-active.svg";
             localStorage.setItem("favoritos", JSON.stringify(favorites))
-            console.log(localStorage.getItem("favoritos"));
+            
         })
     }
 }
@@ -221,7 +218,7 @@ async function buscaTrending() {
         if (i < 5) {
             option.innerHTML = `${trend}, `
         } else {
-            option.innerHTML = `${trend} `
+            option.innerHTML = `${trend}  `
             console.log("aqui")
         }
         trends.appendChild(option);

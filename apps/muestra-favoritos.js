@@ -6,6 +6,7 @@ let gifExtend = document.getElementById("gif-selected");
 
 // con esta funcion consultamos el localstorage y mostramos los gif guardados
 async function muestraFavoritos(params) {
+    favContainer.innerHTML=""  
     let favorites = JSON.parse(localStorage.getItem("favoritos"));
     // verificamos si hay algun gif guardado para poner icono
     if (favorites === null) {
@@ -48,7 +49,40 @@ async function muestraFavoritos(params) {
             card.firstElementChild.style.display = "none";
         })
         favContainer.appendChild(card);
+        let extendIcon = document.getElementsByClassName("icon-gifo extend");
+        for (let i = 0; i < extendIcon.length; i++) {
+            const element = extendIcon[i];
+            element.addEventListener("click", () => {
+                modal.style.display = "block";
+                let id = event.target.id;
+                llamaGifExtend(id);
+            })
+            modalExit.addEventListener("click", () => {
+                modal.style.display = "none";
+                gifExtend.src = "./imgs/Loading.gif";
+            })
+        }
+        let unselect = document.getElementsByClassName("icon-gifo fav");
+        // console.log(unselect);
+        for (let i = 0; i < unselect.length; i++) {
+            const element = unselect[i];
+            element.addEventListener("click", () => {
+                let id = event.target.id;
+                eliminarFav(id);
+                console.log(`aqui`);
+                console.log(id);
+            })
+        }
     }
+}
+
+function eliminarFav(id) {
+let favGuardados= JSON.parse(localStorage.getItem("favoritos"));
+let index= favGuardados.indexOf(id);
+console.log(favGuardados);
+favGuardados.splice(index, 1);
+localStorage.setItem("favoritos", JSON.stringify(favGuardados));
+muestraFavoritos();  
 }
 
 window.onload = muestraFavoritos();
@@ -78,7 +112,7 @@ async function buscarTendencia() {
         <div class="container-icon">
             <img id="${id}" src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
             <img id="${id}" src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo fav">
-            <img  id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
+            <img id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
         </div>
         <div class="container-desc">
             <p class="gif-user">${user}</p>
@@ -109,4 +143,5 @@ async function buscarTendencia() {
         }
     }
 }
+
 window.onload = buscarTendencia();
