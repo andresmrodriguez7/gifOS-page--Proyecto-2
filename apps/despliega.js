@@ -124,9 +124,8 @@ async function buscarGifos(params) {
             gifExtend.src = "./imgs/Loading.gif";
         })
     }
+
     guardarFavorito();
-
-
 
 }
 
@@ -152,7 +151,7 @@ async function buscarTendencia() {
         </div>
         <div class="container-desc">
             <p class="gif-user">${user}</p>
-            <p class="gif-title">T${gifoName}</p>
+            <p class="gif-title">${gifoName}</p>
         </div>
     </div>
        <img id="${id}" class="gifo-trend" src="${src}" alt="gif-tendencia">`
@@ -179,14 +178,18 @@ async function buscarTendencia() {
         }
 
     }
+
     guardarFavorito();
 }
 
 // esta funcion guarda un gif como favorito
-function guardarFavorito(params) {
+function guardarFavorito() {
     let favIcon = document.getElementsByClassName("icon-gifo fav");
     for (let i = 0; i < favIcon.length; i++) {
         const element = favIcon[i];
+        if (localStorage.getItem("favoritos", JSON.stringify(favorites))) {
+            favorites= JSON.parse(localStorage.getItem("favoritos"));
+        }
         element.addEventListener("click", () => {
             let idFav = (event.target.id);
             if (element.src === "./imgs/icon-fav-active.svg") {
