@@ -9,7 +9,6 @@ let permisos = document.getElementById("permisos");
 let recorder = null;
 const apiKey = "3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
 let pathUpload = "https://upload.giphy.com/v1/gifs?api_key=3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
-
 let misGIFOS = [];
 let form = new FormData();
 
@@ -68,8 +67,6 @@ btnTerminar.addEventListener('click', () => {
         btnTerminar.style.display = "none";
         btnGuardar.style.display = "block";
         form.append('file', blob, 'myGif.gif');
-        // form.append('file', blob, 'myGif.gif');
-        // console.log(form.get('file'));
     });
 })
 
@@ -77,6 +74,7 @@ btnGuardar.addEventListener('click', () => {
     let idGifoCreado = createGif(form);
     misGIFOS.push(idGifoCreado);
     console.log(misGIFOS);
+    localStorage.setItem("misGifos", misGIFOS);
 
 });
 
@@ -84,9 +82,11 @@ async function createGif(formdata) {
     const response = await fetch(pathUpload, {
         method: 'POST',
         body: formdata,
-        mode: "no-cors"
+        // mode: "no-cors"
     });
     console.log(response);
-    const result = await response.json();
-    return result.data.id;
+    const json = await response.json();
+    console.log(JSON.stringify(json));
+    let id = json.data.id;
+    return id;
 }

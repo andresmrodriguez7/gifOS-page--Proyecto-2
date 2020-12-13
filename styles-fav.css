@@ -294,7 +294,7 @@ body main #trending .ver-mas p {
 
 body main #gifos-tendencia {
   position: relative;
-  background-color: var(--body-main);
+  background-color: var(--body-trending);
   z-index: 2;
 }
 

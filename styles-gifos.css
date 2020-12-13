@@ -205,9 +205,61 @@ body main #trending .gifo-container {
 
 body main #trending .gifo-container .card-gifo {
   position: relative;
+  width: 45%;
+  height: 130px;
+  margin: 10px auto;
+  z-index: 2;
+}
+
+body main #trending .gifo-container .card-gifo .container-hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+body main #trending .gifo-container .card-gifo .container-hover:hover {
+  background-color: var(--body-bg-card);
+}
+
+body main #trending .gifo-container .card-gifo .container-hover .container-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body main #trending .gifo-container .card-gifo .container-hover .container-icon .icon-gifo {
+  width: 20px;
+  height: 20px;
+  margin: 2px 2px;
+}
+
+body main #trending .gifo-container .card-gifo .container-hover .container-desc {
   color: var(--font-color-card);
   font-family: "Montserrat", sans-serif;
-  z-index: 2;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 5px;
+}
+
+body main #trending .gifo-container .card-gifo .container-hover .container-desc p {
+  font-size: 13px;
+  line-height: 20px;
 }
 
 body main #trending .gifo-container .card-gifo .gifo-trend {
@@ -292,8 +344,8 @@ body main #gifos-tendencia .gifos-tendencia .slider {
 body main #gifos-tendencia .gifos-tendencia .gifos {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 76vw 76vw 76vw;
-      grid-template-columns: 76vw 76vw 76vw;
+  -ms-grid-columns: 76vw 76vw 76vw 76vw 76vw 76vw;
+      grid-template-columns: 76vw 76vw 76vw 76vw 76vw 76vw;
   -ms-grid-rows: 58vw;
       grid-template-rows: 58vw;
   -webkit-column-gap: 20px;
@@ -303,6 +355,7 @@ body main #gifos-tendencia .gifos-tendencia .gifos {
           box-sizing: border-box;
   width: 100%;
   overflow: scroll;
+  overflow-y: hidden;
 }
 
 body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel {
@@ -313,14 +366,129 @@ body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel {
           box-sizing: border-box;
 }
 
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover:hover {
+  background-color: rgba(74, 30, 227, 0.4);
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-icon .icon-gifo {
+  width: 30px;
+  height: 30px;
+  margin: 3px 3px;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-desc {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 5px;
+}
+
+body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .container-hover .container-desc p {
+  font-size: 13px;
+  line-height: 20px;
+}
+
 body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .gifo-trend {
   position: absolute;
   top: 0;
   left: 0;
   width: 76vw;
   height: 58vw;
-  margin: 0;
-  z-index: 3;
+  z-index: -1;
+}
+
+body #modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(221, 219, 219, 0.7);
+  z-index: 1000;
+  padding: 5% 2.5%;
+}
+
+body #modal #modal-external-container {
+  position: relative;
+  margin-top: 30vw;
+  width: 95%;
+  z-index: 1001;
+}
+
+body #modal #modal-external-container #modal-close {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  width: 20px;
+  height: 20px;
+}
+
+body #modal #modal-external-container #gif-selected {
+  width: 100%;
+  height: 290px;
+  margin: 0 auto;
+}
+
+body #modal #modal-external-container .modal-internal-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body #modal #modal-external-container .modal-internal-container p {
+  line-height: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+body #modal #modal-external-container .modal-internal-container div .icon-gifo {
+  margin: 3px;
+  width: 25px;
+  height: 25px;
+}
+
+body #modal #modal-external-container .modal-internal-container div .icon-gifo:hover {
+  -webkit-box-shadow: 3px 3px 15px rgba(74, 30, 227, 0.4);
+          box-shadow: 3px 3px 15px rgba(74, 30, 227, 0.4);
 }
 
 body footer {
@@ -503,7 +671,6 @@ body footer .footer-placer .derechos {
             column-gap: 20px;
     width: 85%;
     margin: 0 auto;
-    overflow: scroll;
     overflow-y: hidden;
     overflow-x: hidden;
   }
