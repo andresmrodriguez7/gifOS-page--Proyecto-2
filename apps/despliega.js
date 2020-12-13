@@ -15,6 +15,8 @@ let modalExit = document.getElementById("modal-close");
 let gifExtend = document.getElementById("gif-selected");
 let titleExtend = document.getElementById("titleExtend");
 let favorites = [];
+let lSlider = document.getElementById("left-slider");
+let rSlider = document.getElementById("right-slider");
 
 
 // en esta funcion se piden las sugerencias del buscador y nos suscribimos a los eventos que permiten usar dichas sugerencias
@@ -185,7 +187,7 @@ function guardarFavorito() {
     for (let i = 0; i < favIcon.length; i++) {
         const element = favIcon[i];
         if (localStorage.getItem("favoritos", JSON.stringify(favorites))) {
-            favorites= JSON.parse(localStorage.getItem("favoritos"));
+            favorites = JSON.parse(localStorage.getItem("favoritos"));
         }
         element.addEventListener("click", () => {
             let idFav = (event.target.id);
@@ -196,7 +198,7 @@ function guardarFavorito() {
             }
             element.src = "./imgs/icon-fav-active.svg";
             localStorage.setItem("favoritos", JSON.stringify(favorites))
-            
+
         })
     }
 }
@@ -215,11 +217,12 @@ async function buscaTrending() {
         const element = json3.data[i];
         let trend = capitalize(element);
         let option = document.createElement("span");
+        option.className = "trend-tags";
         if (i < 5) {
             option.innerHTML = `${trend}, `
         } else {
             option.innerHTML = `${trend}  `
-            console.log("aqui")
+
         }
         trends.appendChild(option);
         option.addEventListener("click", () => {
@@ -229,6 +232,29 @@ async function buscaTrending() {
 
     }
 }
+let sLeft = tendencia.scrollLeft;
+console.log(sLeft);
+
+lSlider.addEventListener('mouseover', () => {
+    lSlider.src = "./imgs/button-slider-left-hover.svg"
+});
+lSlider.addEventListener('mouseout', () => {
+    lSlider.src = "./imgs/button-slider-left.svg"
+});
+rSlider.addEventListener('mouseover', () => {
+    rSlider.src = "./imgs/button-slider-right-hover.svg"
+});
+rSlider.addEventListener('mouseout', () => {
+    rSlider.src = "./imgs/button-slider-right.svg"
+});
+
+lSlider.addEventListener('click', function leftSlider() {
+    tendencia.scrollLeft -= 510;
+
+});
+rSlider.addEventListener('click', function rightSlider() {
+    tendencia.scrollLeft += 510;
+});
 
 // aqui se actualizan los gifos en tendencia
 window.onload = buscarTendencia();

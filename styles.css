@@ -292,8 +292,12 @@ body main #buscador-principal #trending .trending-placer .trending-title {
   margin-bottom: 10px;
 }
 
-body main #buscador-principal #trending .trending-placer p {
+body main #buscador-principal #trending .trending-placer #trends {
   font-size: 1rem;
+}
+
+body main #buscador-principal #trending .trending-placer #trends .trend-tags {
+  cursor: pointer;
 }
 
 body main #buscador-principal #trending .trending-placer hr {
@@ -459,11 +463,16 @@ body main #gifos-tendencia .gifos-tendencia .trending-placer p {
   color: var(--font-color);
 }
 
-body main #gifos-tendencia .gifos-tendencia .slider {
+body main #gifos-tendencia .gifos-tendencia #left-slider {
+  display: none;
+}
+
+body main #gifos-tendencia .gifos-tendencia #right-slider {
   display: none;
 }
 
 body main #gifos-tendencia .gifos-tendencia .gifos {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 76vw 76vw 76vw 76vw 76vw 76vw;
@@ -847,6 +856,22 @@ body footer .footer-placer .derechos {
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
   }
+  body main #gifos-tendencia .gifos-tendencia #left-slider {
+    position: absolute;
+    left: 2.5%;
+    top: 60%;
+    width: 3em;
+    display: block;
+    z-index: 100;
+  }
+  body main #gifos-tendencia .gifos-tendencia #right-slider {
+    position: absolute;
+    left: 94%;
+    top: 60%;
+    width: 3em;
+    display: block;
+    z-index: 100;
+  }
   body main #gifos-tendencia .gifos-tendencia .trending-placer h3 {
     font-size: 30px;
     line-height: 30px;
@@ -858,15 +883,20 @@ body footer .footer-placer .derechos {
     margin: 20px auto;
   }
   body main #gifos-tendencia .gifos-tendencia .gifos {
-    -ms-grid-columns: (35vw)[6];
-        grid-template-columns: repeat(6, 35vw);
+    -ms-grid-columns: (33vw)[6];
+        grid-template-columns: repeat(6, 33vw);
     -ms-grid-rows: 26.8vw;
         grid-template-rows: 26.8vw;
     -webkit-column-gap: 20px;
             column-gap: 20px;
+    width: 85%;
+    margin: 0 auto;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
   body main #gifos-tendencia .gifos-tendencia .gifos .card-gifo-carousel .gifo-trend {
-    width: 35vw;
+    width: 33vw;
     height: 26.8vw;
   }
   body #modal {
@@ -895,7 +925,7 @@ body footer .footer-placer .derechos {
   }
   body #modal #modal-external-container #gif-selected {
     width: 100%;
-    height: 450px;
+    height: 500px;
     margin: 0 auto;
   }
   body #modal #modal-external-container .modal-internal-container {

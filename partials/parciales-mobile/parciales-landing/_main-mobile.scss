@@ -62,7 +62,7 @@ main {
                 flex-flow: column nowrap;
                 width: 95%;
                 margin: 0 auto;
-                :last-child {
+                 :last-child {
                     margin-bottom: 15px;
                 }
                 p {
@@ -94,8 +94,11 @@ main {
                     margin-top: 50px;
                     margin-bottom: 10px;
                 }
-                p {
+                #trends {
                     font-size: 1rem;
+                    .trend-tags {
+                        cursor: pointer;
+                    }
                 }
                 hr {
                     margin: 40px auto 60px auto;
@@ -214,10 +217,14 @@ main {
                     color: var(--font-color);
                 }
             }
-            .slider {
+            #left-slider {
+                display: none;
+            }
+            #right-slider {
                 display: none;
             }
             .gifos {
+                position: relative;
                 display: grid;
                 grid-template-columns: 76vw 76vw 76vw 76vw 76vw 76vw;
                 grid-template-rows: 58vw;
@@ -276,6 +283,7 @@ main {
         }
     }
 }
+
 #modal {
     display: none;
     position: fixed;
