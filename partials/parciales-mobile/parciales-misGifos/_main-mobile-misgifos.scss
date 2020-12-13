@@ -69,6 +69,12 @@ main {
         .gifos-tendencia {
             display: flex;
             flex-flow: column nowrap;
+            #left-slider {
+                display: none;
+            }
+            #right-slider {
+                display: none;
+            }
             .trending-placer {
                 width: 100%;
                 text-align: center;

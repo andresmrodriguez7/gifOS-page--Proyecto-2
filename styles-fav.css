@@ -308,6 +308,14 @@ body main #gifos-tendencia .gifos-tendencia {
           flex-flow: column nowrap;
 }
 
+body main #gifos-tendencia .gifos-tendencia #left-slider {
+  display: none;
+}
+
+body main #gifos-tendencia .gifos-tendencia #right-slider {
+  display: none;
+}
+
 body main #gifos-tendencia .gifos-tendencia .trending-placer {
   width: 100%;
   text-align: center;
