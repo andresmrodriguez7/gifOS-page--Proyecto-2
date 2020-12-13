@@ -3,10 +3,12 @@ const apiKey = "3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
 let tendencia = document.getElementById("gifos");
 let modalExit = document.getElementById("modal-close");
 let gifExtend = document.getElementById("gif-selected");
+let lSlider = document.getElementById("left-slider");
+let rSlider = document.getElementById("right-slider");
 
 // con esta funcion consultamos el localstorage y mostramos los gif guardados
 async function muestraFavoritos(params) {
-    favContainer.innerHTML=""  
+    favContainer.innerHTML = ""
     let favorites = JSON.parse(localStorage.getItem("favoritos"));
     // verificamos si hay algun gif guardado para poner icono
     if (favorites === null) {
@@ -21,7 +23,7 @@ async function muestraFavoritos(params) {
         const path = `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${element}`;
         let llamado = await fetch(path);
         let json = await llamado.json();
-                let elemento = json.data[0];
+        let elemento = json.data[0];
         let src = elemento.images.fixed_width.url;
         let gifoName = elemento.title;
         let user = elemento.username;
@@ -74,15 +76,37 @@ async function muestraFavoritos(params) {
             })
         }
     }
+
 }
+// aqui se le pone hover a los sliders
+lSlider.addEventListener('mouseover', () => {
+    lSlider.src = "./imgs/button-slider-left-hover.svg"
+});
+lSlider.addEventListener('mouseout', () => {
+    lSlider.src = "./imgs/button-slider-left.svg"
+});
+rSlider.addEventListener('mouseover', () => {
+    rSlider.src = "./imgs/button-slider-right-hover.svg"
+});
+rSlider.addEventListener('mouseout', () => {
+    rSlider.src = "./imgs/button-slider-right.svg"
+});
+
+// aqui se le hace slider con los botones
+lSlider.addEventListener('click', function leftSlider() {
+    tendencia.scrollLeft -= 510;
+});
+rSlider.addEventListener('click', function rightSlider() {
+    tendencia.scrollLeft += 510;
+});
 
 function eliminarFav(id) {
-let favGuardados= JSON.parse(localStorage.getItem("favoritos"));
-let index= favGuardados.indexOf(id);
-console.log(favGuardados);
-favGuardados.splice(index, 1);
-localStorage.setItem("favoritos", JSON.stringify(favGuardados));
-muestraFavoritos();  
+    let favGuardados = JSON.parse(localStorage.getItem("favoritos"));
+    let index = favGuardados.indexOf(id);
+    console.log(favGuardados);
+    favGuardados.splice(index, 1);
+    localStorage.setItem("favoritos", JSON.stringify(favGuardados));
+    muestraFavoritos();
 }
 
 window.onload = muestraFavoritos();
@@ -128,7 +152,7 @@ async function buscarTendencia() {
         })
         tendencia.appendChild(card);
         let extendIcon = document.getElementsByClassName("icon-gifo extend");
-        
+
         for (let i = 0; i < extendIcon.length; i++) {
             const element = extendIcon[i];
             element.addEventListener("click", () => {

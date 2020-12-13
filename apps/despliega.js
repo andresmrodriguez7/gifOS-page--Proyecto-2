@@ -232,9 +232,8 @@ async function buscaTrending() {
 
     }
 }
-let sLeft = tendencia.scrollLeft;
-console.log(sLeft);
 
+// aqui se le pone hover a los sliders
 lSlider.addEventListener('mouseover', () => {
     lSlider.src = "./imgs/button-slider-left-hover.svg"
 });
@@ -248,9 +247,9 @@ rSlider.addEventListener('mouseout', () => {
     rSlider.src = "./imgs/button-slider-right.svg"
 });
 
+// aqui se le hace slider con los botones
 lSlider.addEventListener('click', function leftSlider() {
     tendencia.scrollLeft -= 510;
-
 });
 rSlider.addEventListener('click', function rightSlider() {
     tendencia.scrollLeft += 510;
