@@ -12,8 +12,8 @@
 
 <body>
     <header>
-         <!-- logo desktop diurno -->
-         <div class="logo-placer">
+        <!-- logo desktop diurno -->
+        <div class="logo-placer">
             <a href="./index.html"> <img id="logoHeader" src="./imgs/logo-desktop.svg" alt="logo-desktop" class="logo"></a>
         </div>
         <!-- logo desktop nocturno -->
@@ -85,7 +85,17 @@
                     <div class="esq-sup-der"></div>
                     <div class="esq-inf-izq"></div>
                     <div class="esq-inf-der"></div>
-                    <div id="marco-camara"> <video id="marco-video" src=""></video> <img id="mostrarGif" src=""></img> </div>
+                    <div id="video-startup">
+                        <p id="welcome">Aquí podrás crear tus propios <span id="welcome-dif">GIFOS</span></p>
+                        <p class="disclaimer">!Crea tus GIFOS en sólo 3 pasos!</p>
+                        <p class="disclaimer">(sólo necesitas una cámara para grabar el video)</p>
+                    </div>
+                    <div id="permisos" style="display: none;">
+                        <p id="permiso">¿Nos das permiso de usar tu cámara?</p>
+                        <p class="disclaimer">El acceso a tu cámara será válido sólo por el tiempo en el que estés creando el GIFO.</p>
+                    </div>
+                    <div id="marco-camara"> <video id="marco-video" src=""></video> <img id="mostrarGif" src=""></img>
+                    </div>
                 </div>
                 <div class="pasos">
                     <div>
@@ -101,6 +111,9 @@
                 <hr>
                 <div id="btn-comenzar" class="btn-comenzar">
                     <p>COMENZAR</p>
+                </div>
+                <div id="btn-grabar" class="btn-comenzar" style="display: none;">
+                    <p>GRABAR</p>
                 </div>
                 <div id="btn-terminar" class="btn-comenzar" style="display: none;">
                     <p>TERMINAR</p>

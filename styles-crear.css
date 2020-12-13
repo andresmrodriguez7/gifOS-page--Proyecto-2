@@ -480,6 +480,50 @@ body footer .footer-placer .derechos {
     border-top: none;
     border-left: 0;
   }
+  body main #container-externo #intermediate-container #video-startup {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 60%;
+    text-align: center;
+    z-index: 100;
+  }
+  body main #container-externo #intermediate-container #video-startup #welcome {
+    font-family: "Montserrat", sans-serif;
+    color: var(--font-color);
+    font-weight: 700;
+    font-size: 25px;
+    padding: 5px 0;
+  }
+  body main #container-externo #intermediate-container #video-startup #welcome #welcome-dif {
+    color: var(--font-exception);
+  }
+  body main #container-externo #intermediate-container #video-startup .disclaimer {
+    font-size: 1em;
+    padding: 5px 0;
+    font-family: "Roboto", sans-serif;
+    color: var(--font-color);
+  }
+  body main #container-externo #intermediate-container #permisos {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 60%;
+    text-align: center;
+    z-index: 100;
+    font-family: "Montserrat", sans-serif;
+    color: var(--font-color);
+    font-weight: 700;
+    font-size: 25px;
+    padding: 5px 0;
+  }
+  body main #container-externo #intermediate-container #permisos .disclaimer {
+    font-size: 16px;
+    padding: 10px 0;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+    color: var(--font-color);
+  }
   body main #container-externo #intermediate-container #marco-camara {
     width: 480px;
     height: 350px;
