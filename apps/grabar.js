@@ -9,7 +9,7 @@ let permisos = document.getElementById("permisos");
 let recorder = null;
 const apiKey = "3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
 let pathUpload = "https://upload.giphy.com/v1/gifs?api_key=3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
-let misGIFOS = [];
+let misGIFOS = null;
 let form = new FormData();
 
 
@@ -71,11 +71,8 @@ btnTerminar.addEventListener('click', () => {
 })
 
 btnGuardar.addEventListener('click', () => {
-    let idGifoCreado = createGif(form);
-    misGIFOS.push(idGifoCreado);
-    console.log(misGIFOS);
-    localStorage.setItem("misGifos", misGIFOS);
-
+    createGif(form);
+    // misGIFOS.push(idGifoCreado);
 });
 
 async function createGif(formdata) {
@@ -86,7 +83,19 @@ async function createGif(formdata) {
     });
     console.log(response);
     const json = await response.json();
-    console.log(JSON.stringify(json));
+    // let id = JSON.stringify(json.data.id);
     let id = json.data.id;
-    return id;
+    console.log(id);
+
+    misGIFOS = JSON.parse(localStorage.getItem("misGifos"));
+    if (misGIFOS === null) {
+        misGIFOS = [];
+        misGIFOS.push(id);
+        console.log(misGIFOS);
+        localStorage.setItem("misGifos", JSON.stringify(misGIFOS));
+    } else {
+        misGIFOS.push(id);
+        console.log(misGIFOS);
+        localStorage.setItem("misGifos", JSON.stringify(misGIFOS));
+    }
 }
