@@ -32,7 +32,7 @@ async function muestraMisGif() {
         card.innerHTML = `<div id="container-hover" class="container-hover">
         <div class="container-icon">
             <img id="${id}" src="./imgs/icon-download.svg" alt="icon" class="icon-gifo down">
-            <img id="${id}" src="./imgs/icon-fav-active.svg" alt="icon" class="icon-gifo fav">
+            <img id="${id}" src="./imgs/icon-trash-normal.svg" alt="icon" class="icon-gifo fav">
             <img  id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
         </div>
         <div class="container-desc">

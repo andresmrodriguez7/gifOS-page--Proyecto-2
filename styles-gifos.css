@@ -189,16 +189,19 @@ body main #trending .trending-placer img {
 }
 
 body main #trending .gifo-container {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   padding: 0 4%;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: (38vw)[4];
-      grid-template-rows: repeat(4, 38vw);
-  row-gap: 6vw;
-  -webkit-column-gap: 4vw;
-          column-gap: 4vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -607,17 +610,28 @@ body footer .footer-placer .derechos {
     width: 30px;
     height: 30px;
   }
-  body main #trending .gifo-container {
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    -ms-grid-rows: (14vw)[2];
-        grid-template-rows: repeat(2, 14vw);
-    row-gap: 2vw;
-    -webkit-column-gap: 3vw;
-            column-gap: 3vw;
+  body main #trending .gifo-container .card-gifo {
+    width: 23%;
+    height: 210px;
+    margin: 10px 0px;
+  }
+  body main #trending .gifo-container .card-gifo .container-hover {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body main #trending .gifo-container .card-gifo .container-hover .container-icon .icon-gifo {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
   }
   body main #trending .gifo-container .card-gifo .gifo-trend {
-    width: 95%;
+    width: 100%;
   }
   body main #trending .ver-mas {
     border-radius: 25px;
