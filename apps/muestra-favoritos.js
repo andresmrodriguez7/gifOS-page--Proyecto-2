@@ -26,6 +26,7 @@ async function muestraFavoritos(params) {
         let elemento = json.data[0];
         let src = elemento.images.fixed_width.url;
         let gifoName = elemento.title;
+        let download = element.bitly_url;
         let user = elemento.username;
         let id = elemento.id;
         let card = document.createElement("div");
@@ -33,7 +34,7 @@ async function muestraFavoritos(params) {
         card.className = "card-gifo"
         card.innerHTML = `<div id="container-hover" class="container-hover">
         <div class="container-icon">
-            <img id="${id}" src="./imgs/icon-download.svg" alt="icon" class="icon-gifo down">
+        <a href="${download}" target="_blank" class="icon-gifo down"> <img id="${id}" src="./imgs/icon-download.svg" alt="icon"></a>
             <img id="${id}" src="./imgs/icon-fav-active.svg" alt="icon" class="icon-gifo fav">
             <img  id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
         </div>
@@ -128,13 +129,14 @@ async function buscarTendencia() {
         const element = json2.data[i];
         let src = element.images.fixed_width.url;
         let gifoName = element.title;
+        let download = element.bitly_url;
         let user = element.username;
         let id = element.id;
         let card = document.createElement("div");
         card.className = "card-gifo-carousel"
         card.innerHTML = ` <div id="container-hover" class="container-hover">
         <div class="container-icon">
-            <img id="${id}" src="./imgs/icon-download.svg" alt="icon" class="icon-gifo">
+        <a href="${download}" target="_blank" class="icon-gifo down"> <img id="${id}" src="./imgs/icon-download.svg" alt="icon"></a>
             <img id="${id}" src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo fav">
             <img id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
         </div>
