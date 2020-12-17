@@ -23,6 +23,7 @@ async function muestraMisGif() {
         let json = await llamado.json();
         let elemento = json.data[0];
         let src = elemento.images.fixed_width.url;
+        let download = elemento.bitly_url;
         let gifoName = elemento.title;
         let user = elemento.username;
         let id = elemento.id;
@@ -31,9 +32,9 @@ async function muestraMisGif() {
         card.className = "card-gifo"
         card.innerHTML = `<div id="container-hover" class="container-hover">
         <div class="container-icon">
-            <img id="${id}" src="./imgs/icon-download.svg" alt="icon" class="icon-gifo down">
-            <img id="${id}" src="./imgs/icon-trash-normal.svg" alt="icon" class="icon-gifo fav">
-            <img  id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
+        <a href="${download}" target="_blank" ><img id="${id}" src="./imgs/icon-download.svg" alt="icon" class="icon-gifo down"></a>
+            <img id="${id}" src="./imgs/icon-trash-normal.svg" alt="icon" class="icon-gifo trash">
+            <img id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
         </div>
         <div class="container-desc">
             <p class="gif-user">${user}</p>
@@ -62,6 +63,16 @@ async function muestraMisGif() {
                 gifExtend.src = "./imgs/Loading.gif";
             })
         }
+        let trashCan = document.getElementsByClassName("icon-gifo trash");
+
+        for (let i = 0; i < trashCan.length; i++) {
+            const element = trashCan[i];
+            element.addEventListener("click", () => {
+                let id = event.target.id;
+                deleteGif(id);
+
+            })
+        }
         // let unselect = document.getElementsByClassName("icon-gifo fav");
         // console.log(unselect);
         // for (let i = 0; i < unselect.length; i++) {
@@ -73,6 +84,22 @@ async function muestraMisGif() {
         //         console.log(id);
         //     })
         // }
+    }
+}
+
+
+function deleteGif(params) {
+    let deleteId = params;
+    let misGIFOS = JSON.parse(localStorage.getItem("misGifos"));
+    for (let i = 0; i < misGIFOS.length; i++) {
+        const element = misGIFOS[i];
+        if (deleteId === element) {
+            let indice = misGIFOS.indexOf(element);
+            console.log(indice);
+            misGIFOS.splice(indice, 1);
+            localStorage.setItem("misGifos", JSON.stringify(misGIFOS));
+            muestraMisGif();
+        }
     }
 }
 
