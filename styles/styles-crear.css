@@ -59,7 +59,7 @@ body header {
   background-color: var(--body-main);
 }
 
-body header Ocultamos lo que no necesitamos aun .logo-placer,
+body header .logo-placer,
 body header .logo-noc-placer,
 body header .logo-mob-noc-placer,
 body header .button,
@@ -135,11 +135,11 @@ body header #menu-selector:checked ~ .menu-placer ul hr {
 }
 
 body header #menu-selector:checked ~ .menu-placer ul a {
-  text-decoration: none;
   color: var(--font-color-card);
   font-size: 1.5em;
   width: auto;
   font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
 }
 
 body header #menu-selector:checked ~ .menu-placer ul a li {

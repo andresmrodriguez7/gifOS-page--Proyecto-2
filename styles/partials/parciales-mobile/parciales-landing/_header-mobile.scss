@@ -11,7 +11,7 @@ header {
     box-sizing: border-box;
     border-top: 5px var(--body-border) solid;
     background-color: var(--body-main);
-    Ocultamos lo que no necesitamos aun
+    // Ocultamos lo que no necesitamos aun
     .logo-placer,
     .logo-noc-placer,
     .logo-mob-noc-placer,
@@ -75,11 +75,11 @@ header {
                 width: 30%;
             }
             a {
-                text-decoration: none;
                 color: var(--font-color-card);
                 font-size: 1.5em;
                 width: auto;
                 font-family: 'Montserrat', sans-serif;
+                text-decoration: none;
                 li {
                     margin-top: 30px;
                     cursor: pointer;
