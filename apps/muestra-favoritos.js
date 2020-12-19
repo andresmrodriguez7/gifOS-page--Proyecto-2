@@ -8,7 +8,7 @@ let rSlider = document.getElementById("right-slider");
 
 // con esta funcion consultamos el localstorage y mostramos los gif guardados
 async function muestraFavoritos(params) {
-    favContainer.innerHTML = ""
+    favContainer.innerHTML = " "
     let favorites = JSON.parse(localStorage.getItem("favoritos"));
     // verificamos si hay algun gif guardado para poner icono
     if (favorites === null) {
@@ -17,7 +17,6 @@ async function muestraFavoritos(params) {
         image.style.width = "80px"
         image.style.height = "80px"
     }
-    console.log(favorites);
     for (let i = 0; i < favorites.length; i++) {
         const element = favorites[i];
         const path = `https://api.giphy.com/v1/gifs?api_key=${apiKey}&ids=${element}`;
@@ -66,14 +65,11 @@ async function muestraFavoritos(params) {
             })
         }
         let unselect = document.getElementsByClassName("icon-gifo fav");
-        // console.log(unselect);
         for (let i = 0; i < unselect.length; i++) {
             const element = unselect[i];
             element.addEventListener("click", () => {
                 let id = event.target.id;
                 eliminarFav(id);
-                console.log(`aqui`);
-                console.log(id);
             })
         }
     }
@@ -101,13 +97,29 @@ rSlider.addEventListener('click', function rightSlider() {
     tendencia.scrollLeft += 510;
 });
 
+// esta función elimina un favorito
+// let unselect = document.getElementsByClassName("icon-gifo fav");
+
+// for (let i = 0; i < unselect.length; i++) {
+//     const element = unselect[i];
+//     element.addEventListener("click", () => {
+//         let id = event.target.id;
+//         eliminarFav(id);
+//     })
+// }
+
 function eliminarFav(id) {
+    let deleteId = id;
     let favGuardados = JSON.parse(localStorage.getItem("favoritos"));
-    let index = favGuardados.indexOf(id);
-    console.log(favGuardados);
-    favGuardados.splice(index, 1);
-    localStorage.setItem("favoritos", JSON.stringify(favGuardados));
-    muestraFavoritos();
+    for (let i = 0; i < favGuardados.length; i++) {
+        const element = favGuardados[i];
+        if (deleteId === element) {
+            let indice = favGuardados.indexOf(element);
+            favGuardados.splice(indice, 1);
+            localStorage.setItem("favoritos", JSON.stringify(favGuardados));
+            muestraFavoritos();
+        }
+    }
 }
 
 window.onload = muestraFavoritos();
