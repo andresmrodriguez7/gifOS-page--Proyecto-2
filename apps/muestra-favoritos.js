@@ -33,7 +33,7 @@ async function muestraFavoritos(params) {
         card.className = "card-gifo"
         card.innerHTML = `<div id="container-hover" class="container-hover">
         <div class="container-icon">
-        <a href="${download}" target="_blank" class="icon-gifo down"> <img id="${id}" src="./imgs/icon-download.svg" alt="icon"></a>
+        <a href="${download}" target="_blank" class="icon-gifo down"> <img id="${id}" src="./imgs/icon-download.svg" alt="icon" class="download"></a>
             <img id="${id}" src="./imgs/icon-trash-normal.svg" alt="icon" class="icon-gifo fav">
             <img  id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
         </div>
@@ -148,7 +148,7 @@ async function buscarTendencia() {
         card.className = "card-gifo-carousel"
         card.innerHTML = ` <div id="container-hover" class="container-hover">
         <div class="container-icon">
-        <a href="${download}" target="_blank" class="icon-gifo down"> <img id="${id}" src="./imgs/icon-download.svg" alt="icon"></a>
+        <a href="${download}" target="_blank"> <img id="${id}" src="./imgs/icon-download.svg" alt="icon" class="icon-gif down"></a>
             <img id="${id}" src="./imgs/icon-fav.svg" alt="icon" class="icon-gifo favs">
             <img id="${id}" src="./imgs/icon-max-normal.svg" alt="icon" class="icon-gifo extend">
         </div>
