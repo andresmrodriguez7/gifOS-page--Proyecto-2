@@ -128,13 +128,12 @@ body header #menu-selector:checked ~ .menu-placer ul {
   text-align: center;
 }
 
-body header #menu-selector:checked ~ .menu-placer ul hr {
-  margin: 0px auto;
-  margin-top: 15px;
-  width: 30%;
+body header #menu-selector:checked ~ .menu-placer ul li {
+  margin-top: 30px;
+  cursor: pointer;
 }
 
-body header #menu-selector:checked ~ .menu-placer ul a {
+body header #menu-selector:checked ~ .menu-placer ul li a {
   color: var(--font-color-card);
   font-size: 1.5em;
   width: auto;
@@ -142,9 +141,10 @@ body header #menu-selector:checked ~ .menu-placer ul a {
   text-decoration: none;
 }
 
-body header #menu-selector:checked ~ .menu-placer ul a li {
-  margin-top: 30px;
-  cursor: pointer;
+body header #menu-selector:checked ~ .menu-placer ul li hr {
+  margin: 0px auto;
+  margin-top: 15px;
+  width: 30%;
 }
 
 body header #menu-selector:checked ~ .menu-open {
@@ -577,10 +577,11 @@ body footer .footer-placer .derechos {
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
   }
-  body header .menu-placer ul hr {
-    display: none;
+  body header .menu-placer ul li {
+    margin: 0 20px;
+    cursor: pointer;
   }
-  body header .menu-placer ul a {
+  body header .menu-placer ul li a {
     text-decoration: none;
     width: auto;
     font-family: 'Montserrat', sans-serif;
@@ -591,9 +592,8 @@ body footer .footer-placer .derechos {
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
   }
-  body header .menu-placer ul a li {
-    margin: 0 20px;
-    cursor: pointer;
+  body header .menu-placer ul li hr {
+    display: none;
   }
   body header .button {
     display: block;

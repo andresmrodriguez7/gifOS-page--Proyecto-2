@@ -27,22 +27,22 @@ header {
             width: 100%;
             display: flex;
             flex-flow: row nowrap;
-            hr {
-                display: none;
-            }
-            a {
-                text-decoration: none;
-                width: auto;
-                font-family: 'Montserrat', sans-serif;
-                color: var(--font-color);
-                font-size: 13px;
-                line-height: 16px;
-                font-weight: 700;
-                text-transform: uppercase;
-                font-family: 'Montserrat', sans-serif;
-                li {
-                    margin: 0 20px;
-                    cursor: pointer;
+            li {
+                margin: 0 20px;
+                cursor: pointer;
+                a {
+                    text-decoration: none;
+                    width: auto;
+                    font-family: 'Montserrat', sans-serif;
+                    color: var(--font-color);
+                    font-size: 13px;
+                    line-height: 16px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-family: 'Montserrat', sans-serif;
+                }
+                hr {
+                    display: none;
                 }
             }
         }

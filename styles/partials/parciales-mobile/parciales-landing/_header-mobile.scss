@@ -69,20 +69,20 @@ header {
         ul {
             list-style: none;
             text-align: center;
-            hr {
-                margin: 0px auto;
-                margin-top: 15px;
-                width: 30%;
-            }
-            a {
-                color: var(--font-color-card);
-                font-size: 1.5em;
-                width: auto;
-                font-family: 'Montserrat', sans-serif;
-                text-decoration: none;
-                li {
-                    margin-top: 30px;
-                    cursor: pointer;
+            li {
+                margin-top: 30px;
+                cursor: pointer;
+                a {
+                    color: var(--font-color-card);
+                    font-size: 1.5em;
+                    width: auto;
+                    font-family: 'Montserrat', sans-serif;
+                    text-decoration: none;
+                }
+                hr {
+                    margin: 0px auto;
+                    margin-top: 15px;
+                    width: 30%;
                 }
             }
         }
