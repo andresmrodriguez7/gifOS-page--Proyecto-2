@@ -1,179 +1,239 @@
-main {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    border: 50px auto;
-    background-color: var(--body-main);
-    .adornos {
-        position: relative;
-        width: 100%;
-        height: 630px;
-        .camara {
-            position: absolute;
-            top: 120px;
-            left: 110px;
-            width: 123px;
-            height: 162px;
-        }
-        .luz-camara {
-            position: absolute;
-            top: 138px;
-            left: 235px;
-            height: auto;
-        }
-        .pelicula {
-            position: absolute;
-            top: 400px;
-            right: 100px;
-            width: auto;
-            height: auto;
-        }
-    }
-    #container-externo {
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 25%;
-        width: 688px;
-        height: 390px;
-        #intermediate-container {
-            position: relative;
-            border: 3px var(--font-color) solid;
-            box-sizing: border-box;
-            height: auto;
-            .esq-sup-izq {
-                position: absolute;
-                top: 5%;
-                left: 5%;
-                border-left: 3px var(--font-exception) solid;
-                border-top: 3px var(--font-exception) solid;
-                width: 30px;
-                height: 30px;
-            }
-            .esq-inf-izq {
-                @extend .esq-sup-izq;
-                top: 87%;
-                border-left: 3px var(--font-exception) solid;
-                border-bottom: 3px var(--font-exception) solid;
-                border-top: none;
-            }
-            .esq-sup-der {
-                @extend .esq-sup-izq;
-                top: 5%;
-                left: 90%;
-                border-right: 3px var(--font-exception) solid;
-                border-bottom: none;
-                border-top: 3px var(--font-exception) solid;
-                border-left: 0;
-            }
-            .esq-inf-der {
-                @extend .esq-sup-izq;
-                top: 87%;
-                left: 90%;
-                border-right: 3px var(--font-exception) solid;
-                border-bottom: 3px var(--font-exception) solid;
-                border-top: none;
-                border-left: 0;
-            }
-            #video-startup {
-                position: absolute;
-                top: 30%;
-                left: 20%;
-                width: 60%;
-                text-align: center;
-                z-index: 100;
-                #welcome {
-                    font-family: $font-primary;
-                    color: var(--font-color);
-                    font-weight: 700;
-                    font-size: 25px;
-                    padding: 5px 0;
-                    #welcome-dif {
-                        color: var(--font-exception);
+                    main {
+                        position: relative;
+                        display: flex;
+                        flex-direction: row;
+                        border: 50px auto;
+                        background-color: var(--body-main);
+                        .adornos {
+                            position: relative;
+                            width: 100%;
+                            height: 630px;
+                            .camara {
+                                position: absolute;
+                                top: 120px;
+                                left: 110px;
+                                width: 123px;
+                                height: 162px;
+                            }
+                            .luz-camara {
+                                position: absolute;
+                                top: 138px;
+                                left: 235px;
+                                height: auto;
+                            }
+                            .pelicula {
+                                position: absolute;
+                                top: 400px;
+                                right: 100px;
+                                width: auto;
+                                height: auto;
+                            }
+                        }
+                        #container-externo {
+                            position: absolute;
+                            display: block;
+                            top: 0;
+                            left: 25%;
+                            width: 688px;
+                            height: 390px;
+                            #intermediate-container {
+                                position: relative;
+                                border: 3px var(--font-color) solid;
+                                box-sizing: border-box;
+                                height: auto;
+                                .esq-sup-izq {
+                                    position: absolute;
+                                    top: 5%;
+                                    left: 5%;
+                                    border-left: 3px var(--font-exception) solid;
+                                    border-top: 3px var(--font-exception) solid;
+                                    width: 30px;
+                                    height: 30px;
+                                }
+                                .esq-inf-izq {
+                                    @extend .esq-sup-izq;
+                                    top: 87%;
+                                    border-left: 3px var(--font-exception) solid;
+                                    border-bottom: 3px var(--font-exception) solid;
+                                    border-top: none;
+                                }
+                                .esq-sup-der {
+                                    @extend .esq-sup-izq;
+                                    top: 5%;
+                                    left: 90%;
+                                    border-right: 3px var(--font-exception) solid;
+                                    border-bottom: none;
+                                    border-top: 3px var(--font-exception) solid;
+                                    border-left: 0;
+                                }
+                                .esq-inf-der {
+                                    @extend .esq-sup-izq;
+                                    top: 87%;
+                                    left: 90%;
+                                    border-right: 3px var(--font-exception) solid;
+                                    border-bottom: 3px var(--font-exception) solid;
+                                    border-top: none;
+                                    border-left: 0;
+                                }
+                                #video-startup {
+                                    position: absolute;
+                                    top: 30%;
+                                    left: 20%;
+                                    width: 60%;
+                                    text-align: center;
+                                    z-index: 100;
+                                    #welcome {
+                                        font-family: $font-primary;
+                                        color: var(--font-color);
+                                        font-weight: 700;
+                                        font-size: 25px;
+                                        padding: 5px 0;
+                                        #welcome-dif {
+                                            color: var(--font-exception);
+                                        }
+                                    }
+                                    .disclaimer {
+                                        font-size: 1em;
+                                        padding: 5px 0;
+                                        font-family: $font-secondary;
+                                        color: var(--font-color);
+                                    }
+                                }
+                                #permisos {
+                                    position: absolute;
+                                    top: 30%;
+                                    left: 20%;
+                                    width: 60%;
+                                    text-align: center;
+                                    z-index: 100;
+                                    font-family: $font-primary;
+                                    color: var(--font-color);
+                                    font-weight: 700;
+                                    font-size: 25px;
+                                    padding: 5px 0;
+                                    .disclaimer {
+                                        font-size: 16px;
+                                        padding: 10px 0;
+                                        font-weight: 400;
+                                        font-family: $font-secondary;
+                                        color: var(--font-color);
+                                    }
+                                }
+                                #marco-camara {
+                                    position: relative;
+                                    width: 480px;
+                                    height: 350px;
+                                    margin: 35px auto;
+                                    #marco-video {
+                                        position: relative;
+                                        width: 100%;
+                                        height: 100%;
+                                        z-index: 10;
+                                    }
+                                    #mostrarGif {
+                                        position: relative;
+                                        display: none;
+                                        width: 100%;
+                                        height: 100%;
+                                        z-index: 20;
+                                    }
+                                    #subiendo {
+                                        position: absolute;
+                                        display: flex;
+                                        flex-flow: column;
+                                        justify-content: center;
+                                        width: 100%;
+                                        height: 100%;
+                                        text-align: center;
+                                        font-family: $font-primary;
+                                        color: var(--font-color-card);
+                                        font-size: 18px;
+                                        background-color: var(--body-bg-card);
+                                        z-index: 100;
+                                        box-sizing: border-box;
+                                        .subiendo-gif {
+                                            padding: 10px auto;
+                                        }
+                                    }
+                                    #subido {
+                                        position: absolute;
+                                        display: flex;
+                                        flex-direction: column;
+                                        width: 100%;
+                                        height: 100%;
+                                        text-align: center;
+                                        font-family: $font-primary;
+                                        color: var(--font-color-card);
+                                        font-size: 18px;
+                                        background-color: var(--body-bg-card);
+                                        box-sizing: border-box;
+                                        z-index: 100;
+                                        #iconos {
+                                            display: flex;
+                                            flex-flow: row nowrap;
+                                            justify-content: flex-end;
+                                            padding: 0 5px;
+                                            #enlace-descarga {
+                                                img {
+                                                    margin: 5px 3px 0px 3px;
+                                                }
+                                            }
+                                            img {
+                                                margin: 5px 3px;
+                                            }
+                                        }
+                                        #mensaje {
+                                            margin-top: 100px;
+                                            display: flex;
+                                            flex-flow: column;
+                                            justify-content: center;
+                                            .subido-gif {
+                                                margin: 10px auto;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .pasos {
+                                display: flex;
+                                flex-flow: row nowrap;
+                                justify-content: center;
+                                p {
+                                    margin: 20px;
+                                    border: 1px var(--font-color) solid;
+                                    border-radius: 20px;
+                                    width: 32px;
+                                    height: 32px;
+                                    text-align: center;
+                                    line-height: 30px;
+                                    color: var(--font-color);
+                                    font-size: 18px;
+                                    font-family: $font-primary;
+                                    font-weight: 700;
+                                    cursor: pointer;
+                                }
+                            }
+                            hr {
+                                height: 5px;
+                                color: var(--color-hr-crear);
+                                background-color: var(--color-hr-crear);
+                                border: none;
+                            }
+                            .btn-comenzar {
+                                width: 127px;
+                                height: 50px;
+                                border: 1px var(--font-color) solid;
+                                border-radius: 20px;
+                                line-height: 50px;
+                                text-align: center;
+                                margin: 30px auto;
+                                p {
+                                    font-size: 13px;
+                                    color: var(--font-color);
+                                    font-weight: 700;
+                                    font-family: $font-primary;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
                     }
-                }
-                .disclaimer {
-                    font-size: 1em;
-                    padding: 5px 0;
-                    font-family: $font-secondary;
-                    color: var(--font-color);
-                }
-            }
-            #permisos {
-                position: absolute;
-                top: 30%;
-                left: 20%;
-                width: 60%;
-                text-align: center;
-                z-index: 100;
-                font-family: $font-primary;
-                color: var(--font-color);
-                font-weight: 700;
-                font-size: 25px;
-                padding: 5px 0;
-                .disclaimer {
-                    font-size: 16px;
-                    padding: 10px 0;
-                    font-weight: 400;
-                    font-family: $font-secondary;
-                    color: var(--font-color);
-                }
-            }
-            #marco-camara {
-                width: 480px;
-                height: 350px;
-                margin: 35px auto;
-                #marco-video {
-                    width: 100%;
-                    height: 100%;
-                }
-                #mostrarGif {
-                    display: none;
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-        .pasos {
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: center;
-            p {
-                margin: 20px;
-                border: 1px var(--font-color) solid;
-                border-radius: 20px;
-                width: 32px;
-                height: 32px;
-                text-align: center;
-                line-height: 30px;
-                color: var(--font-color);
-                font-size: 18px;
-                font-family: $font-primary;
-                font-weight: 700;
-                cursor: pointer;
-            }
-        }
-        hr {
-            height: 5px;
-            color: var(--color-hr-crear);
-            background-color: var(--color-hr-crear);
-            border: none;
-        }
-        .btn-comenzar {
-            width: 127px;
-            height: 50px;
-            border: 1px var(--font-color) solid;
-            border-radius: 20px;
-            line-height: 50px;
-            text-align: center;
-            margin: 30px auto;
-            p {
-                font-size: 13px;
-                color: var(--font-color);
-                font-weight: 700;
-                font-family: $font-primary;
-                cursor: pointer;
-            }
-        }
-    }
-}

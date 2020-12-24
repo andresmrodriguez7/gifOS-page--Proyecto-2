@@ -525,18 +525,104 @@ body footer .footer-placer .derechos {
     color: var(--font-color);
   }
   body main #container-externo #intermediate-container #marco-camara {
+    position: relative;
     width: 480px;
     height: 350px;
     margin: 35px auto;
   }
   body main #container-externo #intermediate-container #marco-camara #marco-video {
+    position: relative;
     width: 100%;
     height: 100%;
+    z-index: 10;
   }
   body main #container-externo #intermediate-container #marco-camara #mostrarGif {
+    position: relative;
     display: none;
     width: 100%;
     height: 100%;
+    z-index: 20;
+  }
+  body main #container-externo #intermediate-container #marco-camara #subiendo {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    color: var(--font-color-card);
+    font-size: 18px;
+    background-color: var(--body-bg-card);
+    z-index: 100;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  body main #container-externo #intermediate-container #marco-camara #subiendo .subiendo-gif {
+    padding: 10px auto;
+  }
+  body main #container-externo #intermediate-container #marco-camara #subido {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    color: var(--font-color-card);
+    font-size: 18px;
+    background-color: var(--body-bg-card);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    z-index: 100;
+  }
+  body main #container-externo #intermediate-container #marco-camara #subido #iconos {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 0 5px;
+  }
+  body main #container-externo #intermediate-container #marco-camara #subido #iconos #enlace-descarga img {
+    margin: 5px 3px 0px 3px;
+  }
+  body main #container-externo #intermediate-container #marco-camara #subido #iconos img {
+    margin: 5px 3px;
+  }
+  body main #container-externo #intermediate-container #marco-camara #subido #mensaje {
+    margin-top: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body main #container-externo #intermediate-container #marco-camara #subido #mensaje .subido-gif {
+    margin: 10px auto;
   }
   body main #container-externo .pasos {
     display: -webkit-box;

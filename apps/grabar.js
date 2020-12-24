@@ -6,6 +6,9 @@ let mostrarGif = document.getElementById("mostrarGif");
 let btnGuardar = document.getElementById("btn-guardar");
 let descript = document.getElementById("video-startup");
 let permisos = document.getElementById("permisos");
+let subiendo = document.getElementById("subiendo");
+let subido = document.getElementById("subido");
+
 let recorder = null;
 const apiKey = "3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
 let pathUpload = "https://upload.giphy.com/v1/gifs?api_key=3cqcb8LEg33MtM0vWp2nMTE6iMswMXML";
@@ -72,7 +75,7 @@ btnTerminar.addEventListener('click', () => {
         var uri = URL.createObjectURL(blob);
         console.log(uri);
         video.style.display = "none";
-        mostrarGif.style.display = "block";
+        mostrarGif.style.display = "flex";
         mostrarGif.src = uri;
         btnTerminar.style.display = "none";
         btnGuardar.style.display = "block";
@@ -85,11 +88,15 @@ btnTerminar.addEventListener('click', () => {
 })
 
 btnGuardar.addEventListener('click', () => {
+    subiendo.style.display = "flex";
+    btnGuardar.innerHTML = '<img src="./imgs/loader.svg" alt="loading">';
     createGif(form);
-    video.style.backgroundColor = "blue";
-    // misGIFOS.push(idGifoCreado);
-    btnGuardar.innerHTML = '<img src="./imgs/loader.svg" alt="loading">'
-    setTimeout(() => { btnGuardar.innerHTML = '<a href="./misGifos.html"><p>¡Listo!</p></a>' }, 3500);
+    setTimeout(() => {
+        subiendo.style.display = "none";
+        subido.style.display = "flex";
+        btnGuardar.innerHTML = '<a href="./misGifos.html"><p>¡Listo!</p></a>'
+    }, 7000);
+
 
 });
 
@@ -99,12 +106,10 @@ async function createGif(formdata) {
         body: formdata,
         // mode: "no-cors"
     });
-    console.log(response);
     const json = await response.json();
     // let id = JSON.stringify(json.data.id);
     let id = json.data.id;
     console.log(id);
-
     misGIFOS = JSON.parse(localStorage.getItem("misGifos"));
     if (misGIFOS === null) {
         misGIFOS = [];

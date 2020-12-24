@@ -94,7 +94,25 @@
                         <p id="permiso">¿Nos das permiso de usar tu cámara?</p>
                         <p class="disclaimer">El acceso a tu cámara será válido sólo por el tiempo en el que estés creando el GIFO.</p>
                     </div>
-                    <div id="marco-camara"> <video id="marco-video"></video> <img id="mostrarGif">
+
+                    <div id="marco-camara">
+                        <div id="subiendo" style="display: none;">
+                            <img src="./imgs/loader.svg" alt="loading">
+                            <p class="subiendo-gif">Estamos subiendo tu GIFO</p>
+                        </div>
+                        <div id="subido" style="display: none;">
+                            <div id="iconos">
+                                <a id="enlace-descarga" href="./misGifos.html"><img src="./imgs/icon-download.svg" alt="download" class="iconos-enlace"></a>
+                                <img src="./imgs/icon-link-normal.svg" alt="link" class="iconos-enlace">
+                            </div>
+                            <div id="mensaje">
+                                <img src="./imgs/ok.svg" alt="ok">
+                                <p class="subido-gif">GIFO subido con éxito</p>
+                            </div>
+
+                        </div>
+                        <video id="marco-video"></video>
+                        <img id="mostrarGif">
                     </div>
                 </div>
                 <div class="pasos">
@@ -116,10 +134,10 @@
                     <p>GRABAR</p>
                 </div>
                 <div id="btn-terminar" class="btn-comenzar" style="display: none;">
-                    <p>TERMINAR</p>
+                    <p>FINALIZAR</p>
                 </div>
                 <div id="btn-guardar" class="btn-comenzar" style="display: none; cursor: pointer;">
-                    <p> GUARDAR</p>
+                    <p>SUBIR GIFO</p>
                     <a href="./misGifos.html"></a>
                 </div>
             </div>
