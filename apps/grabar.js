@@ -91,13 +91,6 @@ btnGuardar.addEventListener('click', () => {
     subiendo.style.display = "flex";
     btnGuardar.innerHTML = '<img src="./imgs/loader.svg" alt="loading">';
     createGif(form);
-    setTimeout(() => {
-        subiendo.style.display = "none";
-        subido.style.display = "flex";
-        btnGuardar.innerHTML = '<a href="./misGifos.html"><p>¡Listo!</p></a>'
-    }, 7000);
-
-
 });
 
 async function createGif(formdata) {
@@ -108,6 +101,9 @@ async function createGif(formdata) {
     });
     const json = await response.json();
     // let id = JSON.stringify(json.data.id);
+    subiendo.style.display = "none";
+    subido.style.display = "flex";
+    btnGuardar.innerHTML = '<a href="./misGifos.html"><p>¡Listo!</p></a>'
     let id = json.data.id;
     console.log(id);
     misGIFOS = JSON.parse(localStorage.getItem("misGifos"));
